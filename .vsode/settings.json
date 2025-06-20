@@ -1,0 +1,7 @@
+// .vscode/settings.json
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.sortImports.args": ["--profile", "black"]
+}
