@@ -4,3 +4,5 @@
 .env
 
 ambroxol_output*/
+
+GraphReasoning/__pycache__/
