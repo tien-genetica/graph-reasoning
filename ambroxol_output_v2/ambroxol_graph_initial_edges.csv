@@ -1,0 +1,84 @@
+,node_1,node_2,edge_list,weight_list
+0,abx,cerebrospinal fluid (csf),penetrates into,1.0
+1,abx,dementia with lewy bodies (dlb),is a modifying treatment in,1.0
+2,abx,effects,show,1.0
+3,abx,glucocerebrosidase (gcase) activity,enhances effect on,1.0
+4,abx,lysosomal alpha-synuclein clearance,enhances,1.0
+5,abx,mechanism of action,has unique mechanism on,1.0
+6,abx,synucleinopathies,is tested in models of,1.0
+7,abx,toxic alpha-synuclein (as) species,reduces concentration of,1.0
+8,abx,treatment rationale,is established by,1.0
+9,advanced malignancy,exclusion criteria,is part of,1.0
+10,alpha-synuclein,dementia with lewy bodies,is a hallmark of,1.0
+11,alpha-synuclein,pathological deposition,causes,1.0
+12,alpha-synuclein autophagy-lysosome degradation pathways,gcase enzyme activity,enhanced by,1.0
+13,ambroxol (abx),dementia with lewy bodies (dlb),is a modifying drug for,1.0
+14,ambroxol (abx),modifying drug,is a type of,1.0
+15,ambroxol (abx),patients,is administered to,1.0
+16,ambroxol in new and early dementia with lewy bodies (aneed),clinical study,is a,1.0
+17,aneed,effects,investigates,1.0
+18,aneed,safety,investigates,1.0
+19,aneed,tolerability,investigates,1.0
+20,aneed study,clinical trial,is an,1.0
+21,antibiotic abx,clinical trial,is part of,1.0
+22,antibiotic abx,efficacy profile,evaluates,1.0
+23,antibiotic abx,patients with dlb,is tested on,1.0
+24,antibiotic abx,safety profile,evaluates,1.0
+25,antibiotic abx,synucleinopathies,is used for treating,1.0
+26,antibiotic abx,tolerability profile,evaluates,1.0
+27,antiparkinsonian drugs,study participants,are used by,1.0
+28,antiparkinsonian medications,dosage,are prescribed in,1.0
+29,caregiver,frequency of contact,contacts,1.0
+30,caregiver,participant,has contact with,1.0
+31,chaperone-mediated autophagy (cma),abx,is a potential treatment for,1.0
+32,chaperone-mediated autophagy (cma),pathological alpha-synuclein,may reduce,1.0
+33,chaperone-mediated autophagy (cma),pathological alpha-synuclein (as) depositions,may reduce,1.0
+34,clinical outcome measures,treatment efficacy,measures,1.0
+35,cma,enhancement of clearance,may lead to,1.0
+36,degradation pathways,ambroxol (abx),may affect,1.0
+37,dementia medications,dosage,are prescribed in,1.0
+38,dementia medications,study participants,are used by,1.0
+39,dementia with lewy bodies,alpha-synuclein,is characterized by,1.0
+40,dementia with lewy bodies,disease-modifying pharmacological treatment,has no available,1.0
+41,dementia with lewy bodies (dlb),dementia,is a type of,1.0
+42,dementia with lewy bodies (dlb),diagnosis,is a type of,1.0
+43,dementia with lewy bodies (dlb),gba gene mutations,show higher incidence of,1.0
+44,dementia with lewy bodies (dlb),synucleinopathies,is a type of,1.0
+45,digital cerebrospinal fluid (csf) biomarkers,treatment efficacy,measures,1.0
+46,double-blind,clinical trial,is a characteristic of,1.0
+47,exclusion criteria,medical conditions,includes,1.0
+48,exclusion criteria,psychiatric disorders,includes,1.0
+49,exclusion criteria,surgical conditions,includes,1.0
+50,gba gene mutations,dementia with lewy bodies (dlb),are more prevalent in,1.0
+51,gba gene mutations,parkinson's disease (pd),are associated with a higher incidence in,1.0
+52,gba gene mutations,risk of developing pd,increases the,1.0
+53,gba mutations,dementia with lewy bodies,are associated with,1.0
+54,gcase activity,alpha-synuclein metabolism,is associated with,1.0
+55,gcase dysfunction,gba gene mutations,is caused by,1.0
+56,gcase enzyme activity,ambroxol (abx),may increase,1.0
+57,gcase enzyme levels,ambroxol (abx),may increase,1.0
+58,genome-wide association study (gwas),gba gene mutations,confirms correlation with,1.0
+59,glucocerebrosidase,gcase dysfunction,is related to,1.0
+60,human cells,glucocerebrosidase (gcase) activity,is affected by,1.0
+61,in vivo experiments,gcase enzyme activity,demonstrate effects on,1.0
+62,inclusion criteria,study participants,applies to,1.0
+63,informed consent capacity,participant,is required from,1.0
+64,major cardiovascular events,initial visit,occurred prior to,1.0
+65,mckeith criteria,diagnosis,establishes,1.0
+66,mild cognitive impairment due to dlb (mci-dlb),diagnosis,is a type of,1.0
+67,mini-mental state examination (mmse) score,screening,is a measure in,1.0
+68,multicenter clinical trial,phase iia,is a type of,1.0
+69,parallel group design,clinical trial,is a design type of,1.0
+70,parkinson's disease (pd),risk of developing,is higher for carriers of,1.0
+71,patients,dementia with lewy bodies (dlb),have,1.0
+72,placebo-controlled,clinical trial,is a characteristic of,1.0
+73,population studies,gba mutations,demonstrate higher incidence of,1.0
+74,preclinical evidence,clinical evidence,supports,1.0
+75,preclinical trials,abx,show promising effects of,1.0
+76,randomized,clinical trial,is a characteristic of,1.0
+77,rationale for treatment,abx,is based on,1.0
+78,reduced alpha-synuclein clearance,autophagic pathways,is caused by failure in,1.0
+79,reduced alpha-synuclein clearance,endolysosomal pathways,is caused by failure in,1.0
+80,sensitivity to antibiotics,exclusion criteria,is part of,1.0
+81,toxic alpha-synuclein (as) species,pathological alpha-synuclein (as) depositions,is related to,1.0
+82,traditional cerebrospinal fluid (csf) biomarkers,treatment efficacy,measures,1.0

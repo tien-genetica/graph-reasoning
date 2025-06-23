@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="ambroxol"/>
+<node id="parkinson's disease (pd)"/>
+<node id="gba gene mutation"/>
+<node id="dementia with lewy bodies"/>
+<node id="alpha-synuclein"/>
+<node id="alpha synuclein"/>
+<edge source="ambroxol" target="parkinson's disease (pd)">
+  <data key="d0">is used
+for</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="gba gene mutation">
+  <data key="d0">increase risk
+of</data>
+</edge>
+<edge source="gba gene mutation" target="dementia with lewy bodies">
+  <data key="d0">increase risk
+of developing</data>
+</edge>
+<edge source="dementia with lewy bodies" target="alpha-synuclein">
+  <data key="d0">is characterized
+by</data>
+</edge>
+<edge source="alpha-synuclein" target="alpha synuclein">
+  <data key="d0"></data>
+</edge>
+</graph></graphml>

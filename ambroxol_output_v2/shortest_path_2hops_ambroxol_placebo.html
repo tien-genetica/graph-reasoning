@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 1000px;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 1000px;
+                 height: 500px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": 5, "id": "pharmaceutical companies", "label": "pharmaceutical companies", "shape": "dot", "size": 2}, {"group": 5, "id": "clinical trial", "label": "clinical trial", "shape": "dot", "size": 48}, {"group": 6, "id": "clinical practice", "label": "clinical practice", "shape": "dot", "size": 2}, {"group": 6, "id": "dosage", "label": "dosage", "shape": "dot", "size": 9}, {"group": 13, "id": "ambroxol", "label": "ambroxol", "shape": "dot", "size": 98}, {"group": 13, "id": "british inds", "label": "british inds", "shape": "dot", "size": 1}, {"group": 13, "id": "mutant gcase", "label": "mutant gcase", "shape": "dot", "size": 1}, {"group": 13, "id": "current clinical trials", "label": "current clinical trials", "shape": "dot", "size": 1}, {"group": 5, "id": "drug development", "label": "drug development", "shape": "dot", "size": 1}, {"group": 7, "id": "enzyme replacement therapy (ert)", "label": "enzyme replacement therapy (ert)", "shape": "dot", "size": 14}, {"group": 12, "id": "patients", "label": "patients", "shape": "dot", "size": 61}, {"group": 22, "id": "treatment duration", "label": "treatment duration", "shape": "dot", "size": 7}, {"group": 11, "id": "gaucher disease type 1 (gd1)", "label": "gaucher disease type 1 (gd1)", "shape": "dot", "size": 7}, {"group": 5, "id": "biotech company", "label": "biotech company", "shape": "dot", "size": 2}, {"group": 14, "id": "risk of parkinson\u0027s disease (pd)", "label": "risk of parkinson\u0027s disease (pd)", "shape": "dot", "size": 5}, {"group": 14, "id": "chronic liver disease (cld) patients", "label": "chronic liver disease (cld) patients", "shape": "dot", "size": 7}, {"group": 5, "id": "clinical participants", "label": "clinical participants", "shape": "dot", "size": 1}, {"group": 7, "id": "treatment efficacy", "label": "treatment efficacy", "shape": "dot", "size": 6}, {"group": 7, "id": "high-dose administration", "label": "high-dose administration", "shape": "dot", "size": 2}, {"group": 2, "id": "gcase activity", "label": "gcase activity", "shape": "dot", "size": 19}, {"group": 2, "id": "4 mm concentration", "label": "4 mm concentration", "shape": "dot", "size": 2}, {"group": 2, "id": "5 mm concentration", "label": "5 mm concentration", "shape": "dot", "size": 2}, {"group": 13, "id": "medical prescription", "label": "medical prescription", "shape": "dot", "size": 1}, {"group": 5, "id": "early development phase", "label": "early development phase", "shape": "dot", "size": 1}, {"group": 13, "id": "availability", "label": "availability", "shape": "dot", "size": 1}, {"group": 16, "id": "venglustat", "label": "venglustat", "shape": "dot", "size": 6}, {"group": 23, "id": "gba1-related parkinson\u0027s disease", "label": "gba1-related parkinson\u0027s disease", "shape": "dot", "size": 26}, {"group": 16, "id": "sanofi", "label": "sanofi", "shape": "dot", "size": 1}, {"group": 16, "id": "placebo", "label": "placebo", "shape": "dot", "size": 1}, {"group": 16, "id": "substrate", "label": "substrate", "shape": "dot", "size": 2}, {"group": 16, "id": "therapeutic potential", "label": "therapeutic potential", "shape": "dot", "size": 1}, {"group": 13, "id": "international trust", "label": "international trust", "shape": "dot", "size": 1}, {"group": 13, "id": "ambroxol hydrochloride", "label": "ambroxol hydrochloride", "shape": "dot", "size": 14}, {"group": 13, "id": "expectorant", "label": "expectorant", "shape": "dot", "size": 2}, {"group": 13, "id": "mucolytic agent", "label": "mucolytic agent", "shape": "dot", "size": 3}, {"group": 13, "id": "cough suppressant", "label": "cough suppressant", "shape": "dot", "size": 2}, {"group": 13, "id": "over-the-counter (otc) dosage", "label": "over-the-counter (otc) dosage", "shape": "dot", "size": 3}, {"group": 19, "id": "pharmaceutical compound", "label": "pharmaceutical compound", "shape": "dot", "size": 10}, {"group": 23, "id": "pharmacological chaperone", "label": "pharmacological chaperone", "shape": "dot", "size": 5}, {"group": 5, "id": "evaluation process", "label": "evaluation process", "shape": "dot", "size": 1}, {"group": 13, "id": "recommended dosage", "label": "recommended dosage", "shape": "dot", "size": 2}, {"group": 13, "id": "good responder", "label": "good responder", "shape": "dot", "size": 1}, {"group": 13, "id": "dosing schedule", "label": "dosing schedule", "shape": "dot", "size": 1}, {"group": 19, "id": "pharmaceutical", "label": "pharmaceutical", "shape": "dot", "size": 10}, {"group": 23, "id": "pharmacological chaperones", "label": "pharmacological chaperones", "shape": "dot", "size": 4}, {"group": 10, "id": "genetic testing", "label": "genetic testing", "shape": "dot", "size": 9}, {"group": 3, "id": "glucocerebrosidase (gcase) activity", "label": "glucocerebrosidase (gcase) activity", "shape": "dot", "size": 9}, {"group": 3, "id": "alpha-synuclein levels", "label": "alpha-synuclein levels", "shape": "dot", "size": 5}, {"group": 11, "id": "therapeutic intervention", "label": "therapeutic intervention", "shape": "dot", "size": 14}, {"group": 5, "id": "placebo-controlled study", "label": "placebo-controlled study", "shape": "dot", "size": 1}, {"group": 1, "id": "disease-modifying agent", "label": "disease-modifying agent", "shape": "dot", "size": 2}, {"group": 5, "id": "therapeutic modalities", "label": "therapeutic modalities", "shape": "dot", "size": 1}, {"group": 13, "id": "repurposed pharmaceutical", "label": "repurposed pharmaceutical", "shape": "dot", "size": 1}, {"group": 13, "id": "chronic lung disease (cld) diagnosis", "label": "chronic lung disease (cld) diagnosis", "shape": "dot", "size": 2}, {"group": 13, "id": "korean inds", "label": "korean inds", "shape": "dot", "size": 1}, {"group": 13, "id": "dramatic improvement", "label": "dramatic improvement", "shape": "dot", "size": 1}, {"group": 4, "id": "safety profile", "label": "safety profile", "shape": "dot", "size": 5}, {"group": 6, "id": "antibiotics (abx)", "label": "antibiotics (abx)", "shape": "dot", "size": 25}, {"group": 13, "id": "therapeutic use", "label": "therapeutic use", "shape": "dot", "size": 1}, {"group": 5, "id": "aneed study", "label": "aneed study", "shape": "dot", "size": 1}, {"group": 5, "id": "double-blind", "label": "double-blind", "shape": "dot", "size": 1}, {"group": 5, "id": "parallel group design", "label": "parallel group design", "shape": "dot", "size": 1}, {"group": 11, "id": "placebo-controlled", "label": "placebo-controlled", "shape": "dot", "size": 2}, {"group": 5, "id": "randomized", "label": "randomized", "shape": "dot", "size": 1}, {"group": 5, "id": "placebo-controlled design", "label": "placebo-controlled design", "shape": "dot", "size": 1}, {"group": 5, "id": "diverse patient population", "label": "diverse patient population", "shape": "dot", "size": 1}, {"group": 5, "id": "targeted mechanism", "label": "targeted mechanism", "shape": "dot", "size": 1}, {"group": 18, "id": "pharmaceutical compounds", "label": "pharmaceutical compounds", "shape": "dot", "size": 4}, {"group": 5, "id": "active pharmaceutical ingredient", "label": "active pharmaceutical ingredient", "shape": "dot", "size": 1}, {"group": 12, "id": "clinical outcomes", "label": "clinical outcomes", "shape": "dot", "size": 5}, {"group": 1, "id": "cognitive impairment", "label": "cognitive impairment", "shape": "dot", "size": 5}, {"group": 5, "id": "motor function", "label": "motor function", "shape": "dot", "size": 1}, {"group": 5, "id": "multicenter", "label": "multicenter", "shape": "dot", "size": 1}, {"group": 5, "id": "multicenter phase iii", "label": "multicenter phase iii", "shape": "dot", "size": 3}, {"group": 5, "id": "registration identifiers", "label": "registration identifiers", "shape": "dot", "size": 3}, {"group": 21, "id": "safety assessment", "label": "safety assessment", "shape": "dot", "size": 5}, {"group": 5, "id": "study duration", "label": "study duration", "shape": "dot", "size": 8}, {"group": 5, "id": "double-blind study", "label": "double-blind study", "shape": "dot", "size": 1}, {"group": 11, "id": "gba-associated parkinson\u0027s disease (gba-pd)", "label": "gba-associated parkinson\u0027s disease (gba-pd)", "shape": "dot", "size": 15}, {"group": 5, "id": "outcomes", "label": "outcomes", "shape": "dot", "size": 2}, {"group": 18, "id": "parkinson\u0027s disease", "label": "parkinson\u0027s disease", "shape": "dot", "size": 31}, {"group": 5, "id": "placebo formulation", "label": "placebo formulation", "shape": "dot", "size": 1}, {"group": 5, "id": "randomized study", "label": "randomized study", "shape": "dot", "size": 1}, {"group": 5, "id": "multinational multicenter study", "label": "multinational multicenter study", "shape": "dot", "size": 1}, {"group": 7, "id": "high-dose ambroxol", "label": "high-dose ambroxol", "shape": "dot", "size": 13}, {"group": 5, "id": "human subjects", "label": "human subjects", "shape": "dot", "size": 2}, {"group": 5, "id": "novel pharmacological agents", "label": "novel pharmacological agents", "shape": "dot", "size": 2}, {"group": 5, "id": "study methodologies", "label": "study methodologies", "shape": "dot", "size": 1}, {"group": 5, "id": "gba1-pd", "label": "gba1-pd", "shape": "dot", "size": 1}, {"group": 5, "id": "haploinsufficiency hypothesis", "label": "haploinsufficiency hypothesis", "shape": "dot", "size": 1}, {"group": 5, "id": "healthy volunteers", "label": "healthy volunteers", "shape": "dot", "size": 2}, {"group": 13, "id": "korean national health insurance database (nhid)", "label": "korean national health insurance database (nhid)", "shape": "dot", "size": 2}, {"group": 13, "id": "chronic lung disease (cld)", "label": "chronic lung disease (cld)", "shape": "dot", "size": 3}, {"group": 13, "id": "off-label applications", "label": "off-label applications", "shape": "dot", "size": 1}, {"group": 13, "id": "150 mg/day", "label": "150 mg/day", "shape": "dot", "size": 2}, {"group": 13, "id": "standard dosage", "label": "standard dosage", "shape": "dot", "size": 2}, {"group": 11, "id": "neurodegenerative disease (ngd)", "label": "neurodegenerative disease (ngd)", "shape": "dot", "size": 2}, {"group": 6, "id": "study participants", "label": "study participants", "shape": "dot", "size": 8}, {"group": 1, "id": "dementia", "label": "dementia", "shape": "dot", "size": 3}, {"group": 3, "id": "therapeutic agent", "label": "therapeutic agent", "shape": "dot", "size": 3}, {"group": 13, "id": "mucus hypersecretion", "label": "mucus hypersecretion", "shape": "dot", "size": 1}, {"group": 13, "id": "global markets", "label": "global markets", "shape": "dot", "size": 1}, {"group": 13, "id": "effectiveness", "label": "effectiveness", "shape": "dot", "size": 1}, {"group": 13, "id": "non-gba carriers", "label": "non-gba carriers", "shape": "dot", "size": 1}, {"group": 11, "id": "gaucher disease (gd)", "label": "gaucher disease (gd)", "shape": "dot", "size": 18}, {"group": 11, "id": "parkinson\u0027s disease (pd)", "label": "parkinson\u0027s disease (pd)", "shape": "dot", "size": 29}, {"group": 20, "id": "treatment", "label": "treatment", "shape": "dot", "size": 7}, {"group": 13, "id": "cost-effectiveness", "label": "cost-effectiveness", "shape": "dot", "size": 1}, {"group": 13, "id": "non-gba1-related parkinson\u0027s disease", "label": "non-gba1-related parkinson\u0027s disease", "shape": "dot", "size": 1}, {"group": 13, "id": "toxicology assessment", "label": "toxicology assessment", "shape": "dot", "size": 2}, {"group": 11, "id": "cumulative incidence of parkinson\u0027s disease (pd)", "label": "cumulative incidence of parkinson\u0027s disease (pd)", "shape": "dot", "size": 2}, {"group": 13, "id": "japanese inds", "label": "japanese inds", "shape": "dot", "size": 1}, {"group": 13, "id": "neonatal gaucher disease (ngd)", "label": "neonatal gaucher disease (ngd)", "shape": "dot", "size": 1}, {"group": 13, "id": "usual dosage", "label": "usual dosage", "shape": "dot", "size": 1}, {"group": 13, "id": "standard dose", "label": "standard dose", "shape": "dot", "size": 1}, {"group": 14, "id": "nonusers", "label": "nonusers", "shape": "dot", "size": 2}, {"group": 15, "id": "adverse events (aes)", "label": "adverse events (aes)", "shape": "dot", "size": 13}, {"group": 13, "id": "approved dose range", "label": "approved dose range", "shape": "dot", "size": 1}, {"group": 18, "id": "chronic respiratory disease", "label": "chronic respiratory disease", "shape": "dot", "size": 2}, {"group": 13, "id": "gaucher disease type 1 (gba1-pd)", "label": "gaucher disease type 1 (gba1-pd)", "shape": "dot", "size": 1}, {"group": 13, "id": "high doses", "label": "high doses", "shape": "dot", "size": 1}, {"group": 8, "id": "myoclonic epilepsy", "label": "myoclonic epilepsy", "shape": "dot", "size": 4}, {"group": 24, "id": "niemann-pick disease type c (ngd)", "label": "niemann-pick disease type c (ngd)", "shape": "dot", "size": 4}, {"group": 13, "id": "glucocerebrosidase-specific pharmacological chaperone", "label": "glucocerebrosidase-specific pharmacological chaperone", "shape": "dot", "size": 1}, {"group": 18, "id": "over-the-counter (otc) medication", "label": "over-the-counter (otc) medication", "shape": "dot", "size": 4}, {"group": 7, "id": "neuronopathic gaucher disease", "label": "neuronopathic gaucher disease", "shape": "dot", "size": 6}, {"group": 13, "id": "new england journal of medicine", "label": "new england journal of medicine", "shape": "dot", "size": 1}, {"group": 7, "id": "efficacy", "label": "efficacy", "shape": "dot", "size": 4}, {"group": 13, "id": "respiratory disorders", "label": "respiratory disorders", "shape": "dot", "size": 1}, {"group": 13, "id": "mean dosage", "label": "mean dosage", "shape": "dot", "size": 1}, {"group": 13, "id": "australia", "label": "australia", "shape": "dot", "size": 2}, {"group": 13, "id": "idiopathic parkinson\u0027s disease (idiopathic pd)", "label": "idiopathic parkinson\u0027s disease (idiopathic pd)", "shape": "dot", "size": 1}, {"group": 13, "id": "treating physician", "label": "treating physician", "shape": "dot", "size": 1}, {"group": 13, "id": "higher doses", "label": "higher doses", "shape": "dot", "size": 1}, {"group": 13, "id": "high-dose", "label": "high-dose", "shape": "dot", "size": 1}, {"group": 13, "id": "eight patients", "label": "eight patients", "shape": "dot", "size": 2}, {"group": 13, "id": "in vitro testing", "label": "in vitro testing", "shape": "dot", "size": 1}, {"group": 13, "id": "pharmacological agent", "label": "pharmacological agent", "shape": "dot", "size": 1}, {"group": 15, "id": "disease-specific treatment", "label": "disease-specific treatment", "shape": "dot", "size": 2}, {"group": 13, "id": "maximum dosage", "label": "maximum dosage", "shape": "dot", "size": 1}, {"group": 13, "id": "therapeutic application", "label": "therapeutic application", "shape": "dot", "size": 1}, {"group": 13, "id": "over-the-counter cough medication", "label": "over-the-counter cough medication", "shape": "dot", "size": 1}, {"group": 13, "id": "clinical registries", "label": "clinical registries", "shape": "dot", "size": 2}, {"group": 13, "id": "therapeutic effectiveness", "label": "therapeutic effectiveness", "shape": "dot", "size": 1}, {"group": 13, "id": "therapeutic indications", "label": "therapeutic indications", "shape": "dot", "size": 1}]);
+                  edges = new vis.DataSet([{"from": "pharmaceutical companies", "title": "lead", "to": "clinical trial", "width": 1}, {"from": "clinical practice", "title": "is permitted in", "to": "dosage", "width": 1}, {"from": "clinical practice", "title": "involves", "to": "ambroxol", "width": 1}, {"from": "british inds", "title": "tested for efficacy on", "to": "ambroxol", "width": 1}, {"from": "mutant gcase", "title": "is targeted by", "to": "ambroxol", "width": 1}, {"from": "current clinical trials", "title": "involve", "to": "ambroxol", "width": 1}, {"from": "drug development", "title": "is part of", "to": "clinical trial", "width": 1}, {"from": "enzyme replacement therapy (ert)", "title": "are untreated with,are treated with,received", "to": "patients", "width": 1}, {"from": "enzyme replacement therapy (ert)", "title": "is studied for safety", "to": "ambroxol", "width": 1}, {"from": "enzyme replacement therapy (ert)", "title": "has duration", "to": "treatment duration", "width": 1}, {"from": "enzyme replacement therapy (ert)", "title": "is a treatment for", "to": "gaucher disease type 1 (gd1)", "width": 1}, {"from": "biotech company", "title": "unable to fund", "to": "clinical trial", "width": 1}, {"from": "risk of parkinson\u0027s disease (pd)", "title": "is associated with", "to": "ambroxol", "width": 1}, {"from": "risk of parkinson\u0027s disease (pd)", "title": "is higher in", "to": "chronic liver disease (cld) patients", "width": 1}, {"from": "clinical participants", "title": "completed", "to": "clinical trial", "width": 1}, {"from": "treatment efficacy", "title": "did not show", "to": "clinical trial", "width": 1}, {"from": "treatment efficacy", "title": "may influence", "to": "high-dose administration", "width": 1}, {"from": "gcase activity", "title": "may increase", "to": "4 mm concentration", "width": 1}, {"from": "gcase activity", "title": "does not increase", "to": "5 mm concentration", "width": 1}, {"from": "gcase activity", "title": "is affected by", "to": "ambroxol", "width": 1}, {"from": "medical prescription", "title": "does not require", "to": "ambroxol", "width": 1}, {"from": "early development phase", "title": "are in", "to": "clinical trial", "width": 1}, {"from": "availability", "title": "is widely", "to": "ambroxol", "width": 1}, {"from": "venglustat", "title": "is subject of,was tested in", "to": "clinical trial", "width": 1}, {"from": "venglustat", "title": "related to", "to": "gba1-related parkinson\u0027s disease", "width": 1}, {"from": "venglustat", "title": "invested in,stopped trial of", "to": "sanofi", "width": 1}, {"from": "venglustat", "title": "compared to", "to": "placebo", "width": 1}, {"from": "venglustat", "title": "is a type of", "to": "substrate", "width": 1}, {"from": "venglustat", "title": "has great", "to": "therapeutic potential", "width": 1}, {"from": "international trust", "title": "aims to upgrade", "to": "ambroxol", "width": 1}, {"from": "ambroxol hydrochloride", "title": "are lacking for", "to": "clinical trial", "width": 1}, {"from": "ambroxol hydrochloride", "title": "is used as", "to": "expectorant", "width": 1}, {"from": "ambroxol hydrochloride", "title": "is a type of,is classified as", "to": "mucolytic agent", "width": 1}, {"from": "ambroxol hydrochloride", "title": "is used as,functions as", "to": "cough suppressant", "width": 1}, {"from": "ambroxol hydrochloride", "title": "requires higher than", "to": "over-the-counter (otc) dosage", "width": 1}, {"from": "ambroxol hydrochloride", "title": "is a type of", "to": "pharmaceutical compound", "width": 1}, {"from": "ambroxol hydrochloride", "title": "serves as", "to": "pharmacological chaperone", "width": 1}, {"from": "evaluation process", "title": "involves", "to": "clinical trial", "width": 1}, {"from": "recommended dosage", "title": "is prescribed at", "to": "ambroxol", "width": 1}, {"from": "good responder", "title": "is treated with", "to": "ambroxol", "width": 1}, {"from": "dosing schedule", "title": "is part of", "to": "ambroxol", "width": 1}, {"from": "pharmaceutical", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "gba1-related parkinson\u0027s disease", "title": "conducts research on", "to": "clinical trial", "width": 1}, {"from": "gba1-related parkinson\u0027s disease", "title": "is treated by", "to": "ambroxol", "width": 1}, {"from": "gba1-related parkinson\u0027s disease", "title": "is a condition treated by", "to": "pharmacological chaperone", "width": 1}, {"from": "gba1-related parkinson\u0027s disease", "title": "are used to treat", "to": "pharmacological chaperones", "width": 1}, {"from": "gba1-related parkinson\u0027s disease", "title": "is relevant for", "to": "genetic testing", "width": 1}, {"from": "glucocerebrosidase (gcase) activity", "title": "increases", "to": "ambroxol", "width": 1}, {"from": "glucocerebrosidase (gcase) activity", "title": "are affected by", "to": "alpha-synuclein levels", "width": 1}, {"from": "glucocerebrosidase (gcase) activity", "title": "should aim to correct", "to": "therapeutic intervention", "width": 1}, {"from": "placebo-controlled study", "title": "is a type of", "to": "clinical trial", "width": 1}, {"from": "disease-modifying agent", "title": "is suggested to be a", "to": "ambroxol", "width": 1}, {"from": "therapeutic modalities", "title": "test", "to": "clinical trial", "width": 1}, {"from": "mucolytic agent", "title": "is", "to": "ambroxol", "width": 1}, {"from": "repurposed pharmaceutical", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "chronic lung disease (cld) diagnosis", "title": "prescribed after", "to": "ambroxol", "width": 1}, {"from": "korean inds", "title": "tested for efficacy on", "to": "ambroxol", "width": 1}, {"from": "dramatic improvement", "title": "causes", "to": "ambroxol", "width": 1}, {"from": "safety profile", "title": "evaluates", "to": "antibiotics (abx)", "width": 1}, {"from": "safety profile", "title": "has", "to": "ambroxol", "width": 1}, {"from": "therapeutic use", "title": "is associated with", "to": "ambroxol", "width": 1}, {"from": "clinical trial", "title": "is an", "to": "aneed study", "width": 1}, {"from": "clinical trial", "title": "is part of", "to": "antibiotics (abx)", "width": 1}, {"from": "clinical trial", "title": "is type of", "to": "double-blind", "width": 1}, {"from": "clinical trial", "title": "is a design type of", "to": "parallel group design", "width": 1}, {"from": "clinical trial", "title": "participated in", "to": "patients", "width": 1}, {"from": "clinical trial", "title": "is type of", "to": "placebo-controlled", "width": 1}, {"from": "clinical trial", "title": "is a characteristic of", "to": "randomized", "width": 1}, {"from": "clinical trial", "title": "are not needed for,evaluate,are ongoing for", "to": "ambroxol", "width": 1}, {"from": "clinical trial", "title": "may involve", "to": "placebo-controlled design", "width": 1}, {"from": "clinical trial", "title": "involves", "to": "diverse patient population", "width": 1}, {"from": "clinical trial", "title": "focuses on", "to": "targeted mechanism", "width": 1}, {"from": "clinical trial", "title": "assessed in", "to": "pharmaceutical compounds", "width": 1}, {"from": "clinical trial", "title": "is used in", "to": "active pharmaceutical ingredient", "width": 1}, {"from": "clinical trial", "title": "evaluates", "to": "clinical outcomes", "width": 1}, {"from": "clinical trial", "title": "measures evolution of", "to": "cognitive impairment", "width": 1}, {"from": "clinical trial", "title": "compares with cognitive impairment", "to": "motor function", "width": 1}, {"from": "clinical trial", "title": "is a", "to": "multicenter", "width": 1}, {"from": "clinical trial", "title": "is a type of", "to": "multicenter phase iii", "width": 1}, {"from": "clinical trial", "title": "has", "to": "registration identifiers", "width": 1}, {"from": "clinical trial", "title": "assesses", "to": "safety assessment", "width": 1}, {"from": "clinical trial", "title": "is a limitation of", "to": "study duration", "width": 1}, {"from": "clinical trial", "title": "is a type of", "to": "double-blind study", "width": 1}, {"from": "clinical trial", "title": "is a type of", "to": "gba-associated parkinson\u0027s disease (gba-pd)", "width": 1}, {"from": "clinical trial", "title": "are evaluated in", "to": "outcomes", "width": 1}, {"from": "clinical trial", "title": "is related to", "to": "parkinson\u0027s disease", "width": 1}, {"from": "clinical trial", "title": "is used in", "to": "placebo formulation", "width": 1}, {"from": "clinical trial", "title": "is a type of", "to": "randomized study", "width": 1}, {"from": "clinical trial", "title": "is type of", "to": "multinational multicenter study", "width": 1}, {"from": "clinical trial", "title": "involves", "to": "high-dose ambroxol", "width": 1}, {"from": "clinical trial", "title": "involve", "to": "human subjects", "width": 1}, {"from": "clinical trial", "title": "requires", "to": "genetic testing", "width": 1}, {"from": "clinical trial", "title": "involves", "to": "novel pharmacological agents", "width": 1}, {"from": "clinical trial", "title": "have different", "to": "study methodologies", "width": 1}, {"from": "clinical trial", "title": "are related to", "to": "gba1-pd", "width": 1}, {"from": "clinical trial", "title": "is basis for", "to": "haploinsufficiency hypothesis", "width": 1}, {"from": "clinical trial", "title": "participate in", "to": "healthy volunteers", "width": 1}, {"from": "korean national health insurance database (nhid)", "title": "is used to investigate", "to": "ambroxol", "width": 1}, {"from": "korean national health insurance database (nhid)", "title": "contains data on", "to": "chronic lung disease (cld)", "width": 1}, {"from": "pharmacological chaperones", "title": "includes", "to": "ambroxol", "width": 1}, {"from": "pharmacological chaperones", "title": "is an example of", "to": "high-dose ambroxol", "width": 1}, {"from": "off-label applications", "title": "considered for", "to": "ambroxol", "width": 1}, {"from": "expectorant", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "150 mg/day", "title": "is the dosage of", "to": "ambroxol", "width": 1}, {"from": "150 mg/day", "title": "is typical for", "to": "standard dosage", "width": 1}, {"from": "neurodegenerative disease (ngd)", "title": "is used for", "to": "ambroxol", "width": 1}, {"from": "neurodegenerative disease (ngd)", "title": "are conditions related to", "to": "gba-associated parkinson\u0027s disease (gba-pd)", "width": 1}, {"from": "study participants", "title": "took", "to": "ambroxol", "width": 1}, {"from": "4 mm concentration", "title": "is at concentration", "to": "ambroxol", "width": 1}, {"from": "dementia", "title": "is used in treatment for", "to": "ambroxol", "width": 1}, {"from": "therapeutic agent", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "mucus hypersecretion", "title": "associated with", "to": "ambroxol", "width": 1}, {"from": "global markets", "title": "faces barriers in", "to": "ambroxol", "width": 1}, {"from": "effectiveness", "title": "is questioned", "to": "ambroxol", "width": 1}, {"from": "non-gba carriers", "title": "is used in treatment for", "to": "ambroxol", "width": 1}, {"from": "standard dosage", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "gaucher disease (gd)", "title": "are conditions related to", "to": "parkinson\u0027s disease (pd)", "width": 1}, {"from": "gaucher disease (gd)", "title": "can have", "to": "patients", "width": 1}, {"from": "gaucher disease (gd)", "title": "is used for treating", "to": "ambroxol", "width": 1}, {"from": "gaucher disease (gd)", "title": "is for", "to": "treatment", "width": 1}, {"from": "gaucher disease (gd)", "title": "is related to", "to": "gba-associated parkinson\u0027s disease (gba-pd)", "width": 1}, {"from": "gaucher disease (gd)", "title": "is developed for", "to": "pharmaceutical compound", "width": 1}, {"from": "gaucher disease (gd)", "title": "should not be copied from", "to": "therapeutic intervention", "width": 1}, {"from": "cost-effectiveness", "title": "is relatively", "to": "ambroxol", "width": 1}, {"from": "non-gba1-related parkinson\u0027s disease", "title": "hypothesized to be effective in", "to": "ambroxol", "width": 1}, {"from": "toxicology assessment", "title": "is required for", "to": "ambroxol", "width": 1}, {"from": "cumulative incidence of parkinson\u0027s disease (pd)", "title": "is higher in", "to": "parkinson\u0027s disease (pd)", "width": 1}, {"from": "cumulative incidence of parkinson\u0027s disease (pd)", "title": "is associated with", "to": "ambroxol", "width": 1}, {"from": "japanese inds", "title": "tested for efficacy on", "to": "ambroxol", "width": 1}, {"from": "neonatal gaucher disease (ngd)", "title": "is used for treatment in", "to": "ambroxol", "width": 1}, {"from": "usual dosage", "title": "is a standard measurement of", "to": "ambroxol", "width": 1}, {"from": "cough suppressant", "title": "is classified as", "to": "ambroxol", "width": 1}, {"from": "standard dose", "title": "does not produce", "to": "ambroxol", "width": 1}, {"from": "chronic liver disease (cld) patients", "title": "involves", "to": "patients", "width": 1}, {"from": "chronic liver disease (cld) patients", "title": "prescribed to", "to": "ambroxol", "width": 1}, {"from": "nonusers", "title": "compared to", "to": "ambroxol", "width": 1}, {"from": "study duration", "title": "is tolerable during", "to": "treatment", "width": 1}, {"from": "study duration", "title": "lasts at least", "to": "multicenter phase iii", "width": 1}, {"from": "treatment", "title": "seek", "to": "patients", "width": 1}, {"from": "treatment", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "adverse events (aes)", "title": "is associated with", "to": "ambroxol", "width": 1}, {"from": "approved dose range", "title": "is the range within which Ambroxol is administered", "to": "ambroxol", "width": 1}, {"from": "parkinson\u0027s disease", "title": "is associated with risk of,is associated with", "to": "ambroxol", "width": 1}, {"from": "parkinson\u0027s disease", "title": "risk factor for", "to": "chronic lung disease (cld)", "width": 1}, {"from": "parkinson\u0027s disease", "title": "can co-occur with", "to": "chronic respiratory disease", "width": 1}, {"from": "parkinson\u0027s disease", "title": "is for", "to": "therapeutic intervention", "width": 1}, {"from": "gaucher disease type 1 (gba1-pd)", "title": "is used for", "to": "ambroxol", "width": 1}, {"from": "parkinson\u0027s disease (pd)", "title": "is used for", "to": "ambroxol", "width": 1}, {"from": "parkinson\u0027s disease (pd)", "title": "diagnosed with", "to": "gaucher disease type 1 (gd1)", "width": 1}, {"from": "parkinson\u0027s disease (pd)", "title": "are", "to": "therapeutic intervention", "width": 1}, {"from": "gba-associated parkinson\u0027s disease (gba-pd)", "title": "includes", "to": "patients", "width": 1}, {"from": "gba-associated parkinson\u0027s disease (gba-pd)", "title": "is used for treatment in", "to": "ambroxol", "width": 1}, {"from": "gba-associated parkinson\u0027s disease (gba-pd)", "title": "received ambroxol as single therapy", "to": "gaucher disease type 1 (gd1)", "width": 1}, {"from": "high doses", "title": "is administered at", "to": "ambroxol", "width": 1}, {"from": "myoclonic epilepsy", "title": "is ameliorated by", "to": "ambroxol", "width": 1}, {"from": "niemann-pick disease type c (ngd)", "title": "is treated by", "to": "ambroxol", "width": 1}, {"from": "glucocerebrosidase-specific pharmacological chaperone", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "patients", "title": "are treated with", "to": "antibiotics (abx)", "width": 1}, {"from": "patients", "title": "are reported in", "to": "clinical outcomes", "width": 1}, {"from": "patients", "title": "use,are treated with", "to": "ambroxol", "width": 1}, {"from": "patients", "title": "affects", "to": "gaucher disease type 1 (gd1)", "width": 1}, {"from": "patients", "title": "undergo", "to": "treatment duration", "width": 1}, {"from": "high-dose administration", "title": "is administered in", "to": "ambroxol", "width": 1}, {"from": "over-the-counter (otc) medication", "title": "are related to", "to": "ambroxol", "width": 1}, {"from": "chronic respiratory disease", "title": "is treated with", "to": "ambroxol", "width": 1}, {"from": "over-the-counter (otc) dosage", "title": "is administered at", "to": "ambroxol", "width": 1}, {"from": "alpha-synuclein levels", "title": "decreases", "to": "ambroxol", "width": 1}, {"from": "therapeutic intervention", "title": "is a type of", "to": "placebo-controlled", "width": 1}, {"from": "therapeutic intervention", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "therapeutic intervention", "title": "requires", "to": "neuronopathic gaucher disease", "width": 1}, {"from": "new england journal of medicine", "title": "does not mention", "to": "ambroxol", "width": 1}, {"from": "efficacy", "title": "has uncertainties regarding", "to": "antibiotics (abx)", "width": 1}, {"from": "efficacy", "title": "is related to", "to": "ambroxol", "width": 1}, {"from": "respiratory disorders", "title": "treats", "to": "ambroxol", "width": 1}, {"from": "mean dosage", "title": "has a", "to": "ambroxol", "width": 1}, {"from": "neuronopathic gaucher disease", "title": "is suggested as an augmentative pharmacological agent for", "to": "ambroxol", "width": 1}, {"from": "australia", "title": "tested in", "to": "ambroxol", "width": 1}, {"from": "dosage", "title": "administered at", "to": "antibiotics (abx)", "width": 1}, {"from": "dosage", "title": "is measured in", "to": "ambroxol", "width": 1}, {"from": "idiopathic parkinson\u0027s disease (idiopathic pd)", "title": "is treated by", "to": "ambroxol", "width": 1}, {"from": "pharmacological chaperone", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "treating physician", "title": "is prescribed by", "to": "ambroxol", "width": 1}, {"from": "higher doses", "title": "is administered in", "to": "ambroxol", "width": 1}, {"from": "high-dose", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "antibiotics (abx)", "title": "is for", "to": "treatment duration", "width": 1}, {"from": "chronic lung disease (cld)", "title": "is relevant to", "to": "ambroxol", "width": 1}, {"from": "eight patients", "title": "stopped taking", "to": "ambroxol", "width": 1}, {"from": "in vitro testing", "title": "skips", "to": "ambroxol", "width": 1}, {"from": "treatment duration", "title": "is measured in", "to": "ambroxol", "width": 1}, {"from": "pharmacological agent", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "5 mm concentration", "title": "is at concentration", "to": "ambroxol", "width": 1}, {"from": "human subjects", "title": "is administered to", "to": "ambroxol", "width": 1}, {"from": "gaucher disease type 1 (gd1)", "title": "is used in treatment for,is used for treatment in", "to": "ambroxol", "width": 1}, {"from": "disease-specific treatment", "title": "is a type of", "to": "ambroxol", "width": 1}, {"from": "maximum dosage", "title": "has a specified", "to": "ambroxol", "width": 1}, {"from": "ambroxol", "title": "is a type of", "to": "therapeutic application", "width": 1}, {"from": "ambroxol", "title": "is a type of", "to": "over-the-counter cough medication", "width": 1}, {"from": "ambroxol", "title": "disallowed entry of", "to": "clinical registries", "width": 1}, {"from": "ambroxol", "title": "is", "to": "pharmaceutical compound", "width": 1}, {"from": "ambroxol", "title": "may vary based on", "to": "therapeutic effectiveness", "width": 1}, {"from": "ambroxol", "title": "is used for", "to": "therapeutic indications", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

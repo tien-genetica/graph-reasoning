@@ -1,0 +1,1350 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d4" for="edge" attr.name="width" attr.type="long"/>
+<key id="d3" for="edge" attr.name="title" attr.type="string"/>
+<key id="d2" for="node" attr.name="size" attr.type="long"/>
+<key id="d1" for="node" attr.name="color" attr.type="string"/>
+<key id="d0" for="node" attr.name="group" attr.type="long"/>
+<graph edgedefault="undirected"><node id="high doses">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="abx compound">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">7</data>
+</node>
+<node id="lysosomal alpha-synuclein clearance">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic effectiveness">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="chronic lung disease (cld) diagnosis">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="gaucher disease type 1 (gba1-pd)">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="adverse events (aes)">
+  <data key="d0">14</data>
+  <data key="d1">#7c57db</data>
+  <data key="d2">13</data>
+</node>
+<node id="high-dose">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="human subjects">
+  <data key="d0">5</data>
+  <data key="d1">#9a57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="disease-specific treatment">
+  <data key="d0">14</data>
+  <data key="d1">#7c57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="usual dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="150 mg/day">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="synucleinopathies">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">3</data>
+</node>
+<node id="efficacy">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">5</data>
+</node>
+<node id="toxicology assessment">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="treatment">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">9</data>
+</node>
+<node id="screening methods">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">1</data>
+</node>
+<node id="enzyme replacement therapy (ert)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">14</data>
+</node>
+<node id="motor disabilities">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="higher doses">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="proteasome inhibitors">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">3</data>
+</node>
+<node id="dosing schedule">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="korean inds">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="british inds">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="in vitro testing">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="human cells">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">1</data>
+</node>
+<node id="antibiotic abx">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">2</data>
+</node>
+<node id="4 mm concentration">
+  <data key="d0">2</data>
+  <data key="d1">#5f57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="cumulative incidence of parkinson's disease (pd)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">2</data>
+</node>
+<node id="disease-modifying agent">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">2</data>
+</node>
+<node id="medical prescription">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="neonatal gaucher disease (ngd)">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="safety profile">
+  <data key="d0">4</data>
+  <data key="d1">#c5db57</data>
+  <data key="d2">5</data>
+</node>
+<node id="dementia">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">3</data>
+</node>
+<node id="high-dose administration">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">2</data>
+</node>
+<node id="effects">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">2</data>
+</node>
+<node id="treatment rationale">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="pharmacological chaperones">
+  <data key="d0">10</data>
+  <data key="d1">#b757db</data>
+  <data key="d2">4</data>
+</node>
+<node id="proteostasis regulators">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">4</data>
+</node>
+<node id="ambroxol">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">98</data>
+</node>
+<node id="therapeutic agent">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">4</data>
+</node>
+<node id="clinical practice">
+  <data key="d0">6</data>
+  <data key="d1">#57c5db</data>
+  <data key="d2">2</data>
+</node>
+<node id="glucocerebrosidase-specific pharmacological chaperone">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="glucocerebrosidase (gcase) activity">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">9</data>
+</node>
+<node id="treatment duration">
+  <data key="d0">22</data>
+  <data key="d1">#dbb757</data>
+  <data key="d2">7</data>
+</node>
+<node id="neuronopathic gaucher disease">
+  <data key="d0">18</data>
+  <data key="d1">#576cdb</data>
+  <data key="d2">7</data>
+</node>
+<node id="chronic lung disease (cld)">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">3</data>
+</node>
+<node id="myoclonic epilepsy">
+  <data key="d0">8</data>
+  <data key="d1">#57db9a</data>
+  <data key="d2">4</data>
+</node>
+<node id="dementia with lewy bodies (dlb)">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">7</data>
+</node>
+<node id="pharmacological agent">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="non-gba carriers">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="pharmacological chaperone">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">5</data>
+</node>
+<node id="neurodegenerative disease (ngd)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">2</data>
+</node>
+<node id="therapeutic indications">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic use">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="mechanism of action">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">2</data>
+</node>
+<node id="over-the-counter cough medication">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="abx">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">17</data>
+</node>
+<node id="mucus hypersecretion">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic intervention">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">19</data>
+</node>
+<node id="eight patients">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="parkinson's disease (pd)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">30</data>
+</node>
+<node id="clinical trial">
+  <data key="d0">5</data>
+  <data key="d1">#9a57db</data>
+  <data key="d2">48</data>
+</node>
+<node id="maximum dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="dramatic improvement">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="toxic alpha-synuclein (as) species">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">4</data>
+</node>
+<node id="therapeutic application">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="international trust">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="dosage">
+  <data key="d0">6</data>
+  <data key="d1">#57c5db</data>
+  <data key="d2">9</data>
+</node>
+<node id="cough suppressant">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="approved dose range">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="nonmotor disabilities">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="idiopathic parkinson's disease (idiopathic pd)">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="cognitive impairment">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">5</data>
+</node>
+<node id="standard dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="gba1-related parkinson's disease">
+  <data key="d0">10</data>
+  <data key="d1">#b757db</data>
+  <data key="d2">28</data>
+</node>
+<node id="clinical registries">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="effectiveness">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="niemann-pick disease type c (ngd)">
+  <data key="d0">24</data>
+  <data key="d1">#dbd557</data>
+  <data key="d2">4</data>
+</node>
+<node id="mutant gcase">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="availability">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="alpha-synuclein levels">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">5</data>
+</node>
+<node id="good responder">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="treating physician">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="non-gba1-related parkinson's disease">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="chronic respiratory disease">
+  <data key="d0">16</data>
+  <data key="d1">#db7c57</data>
+  <data key="d2">2</data>
+</node>
+<node id="patients">
+  <data key="d0">11</data>
+  <data key="d1">#d557db</data>
+  <data key="d2">62</data>
+</node>
+<node id="potent compounds">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">3</data>
+</node>
+<node id="korean national health insurance database (nhid)">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="chaperone-mediated autophagy (cma)">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">3</data>
+</node>
+<node id="japanese inds">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="gaucher disease type 1 (gd1)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">7</data>
+</node>
+<node id="off-label applications">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="over-the-counter (otc) dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">3</data>
+</node>
+<node id="australia">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="study participants">
+  <data key="d0">6</data>
+  <data key="d1">#57c5db</data>
+  <data key="d2">8</data>
+</node>
+<node id="expectorant">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="pharmaceutical">
+  <data key="d0">19</data>
+  <data key="d1">#db578a</data>
+  <data key="d2">10</data>
+</node>
+<node id="multicenter clinical trial">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="rationale for treatment">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="gaucher disease (gd)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">19</data>
+</node>
+<node id="pladienolide b">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">4</data>
+</node>
+<node id="current clinical trials">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="risk of parkinson's disease (pd)">
+  <data key="d0">13</data>
+  <data key="d1">#db57a7</data>
+  <data key="d2">5</data>
+</node>
+<node id="global markets">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="preclinical trials">
+  <data key="d0">1</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="respiratory disorders">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="nonusers">
+  <data key="d0">13</data>
+  <data key="d1">#db57a7</data>
+  <data key="d2">2</data>
+</node>
+<node id="parkinson's disease">
+  <data key="d0">16</data>
+  <data key="d1">#db7c57</data>
+  <data key="d2">33</data>
+</node>
+<node id="over-the-counter (otc) medication">
+  <data key="d0">15</data>
+  <data key="d1">#8adb57</data>
+  <data key="d2">4</data>
+</node>
+<node id="recommended dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">2</data>
+</node>
+<node id="gsk-3 inhibitors">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">3</data>
+</node>
+<node id="gcase activity">
+  <data key="d0">2</data>
+  <data key="d1">#5f57db</data>
+  <data key="d2">20</data>
+</node>
+<node id="cerebrospinal fluid (csf)">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">4</data>
+</node>
+<node id="gba-associated parkinson's disease (gba-pd)">
+  <data key="d0">7</data>
+  <data key="d1">#db9a57</data>
+  <data key="d2">15</data>
+</node>
+<node id="pharmaceutical compound">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">10</data>
+</node>
+<node id="chronic liver disease (cld) patients">
+  <data key="d0">13</data>
+  <data key="d1">#db57a7</data>
+  <data key="d2">7</data>
+</node>
+<node id="trans-isrib">
+  <data key="d0">9</data>
+  <data key="d1">#57dbd5</data>
+  <data key="d2">3</data>
+</node>
+<node id="mucolytic agent">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">3</data>
+</node>
+<node id="abx concentration">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">2</data>
+</node>
+<node id="cost-effectiveness">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="in vitro and in vivo data">
+  <data key="d0">3</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">1</data>
+</node>
+<node id="repurposed pharmaceutical">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="5 mm concentration">
+  <data key="d0">2</data>
+  <data key="d1">#5f57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="new england journal of medicine">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="standard dose">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<node id="mean dosage">
+  <data key="d0">12</data>
+  <data key="d1">#578adb</data>
+  <data key="d2">1</data>
+</node>
+<edge source="high doses" target="ambroxol">
+  <data key="d3">is administered at</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx compound" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">enhances</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="lysosomal alpha-synuclein clearance" target="abx">
+  <data key="d3">enhances</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="therapeutic effectiveness" target="ambroxol">
+  <data key="d3">may vary based on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="chronic lung disease (cld) diagnosis" target="ambroxol">
+  <data key="d3">prescribed after</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gaucher disease type 1 (gba1-pd)" target="ambroxol">
+  <data key="d3">is used for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="adverse events (aes)" target="ambroxol">
+  <data key="d3">is associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="high-dose" target="ambroxol">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="human subjects" target="clinical trial">
+  <data key="d3">involve</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="human subjects" target="ambroxol">
+  <data key="d3">is administered to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="disease-specific treatment" target="ambroxol">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="usual dosage" target="ambroxol">
+  <data key="d3">is a standard measurement of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="150 mg/day" target="ambroxol">
+  <data key="d3">is the dosage of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="150 mg/day" target="standard dosage">
+  <data key="d3">is typical for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="synucleinopathies" target="abx">
+  <data key="d3">is tested in models of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="synucleinopathies" target="dementia with lewy bodies (dlb)">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="efficacy" target="ambroxol">
+  <data key="d3">is related to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="efficacy" target="therapeutic intervention">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="toxicology assessment" target="ambroxol">
+  <data key="d3">is required for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment" target="parkinson's disease (pd)">
+  <data key="d3">requires a</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment" target="patients">
+  <data key="d3">seek</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment" target="ambroxol">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment" target="gaucher disease (gd)">
+  <data key="d3">requires a</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment" target="therapeutic intervention">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="screening methods" target="potent compounds">
+  <data key="d3">are identified by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="enzyme replacement therapy (ert)" target="patients">
+  <data key="d3">are untreated with,are treated with,received</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="enzyme replacement therapy (ert)" target="ambroxol">
+  <data key="d3">is studied for safety</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="enzyme replacement therapy (ert)" target="treatment duration">
+  <data key="d3">has duration</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="enzyme replacement therapy (ert)" target="gaucher disease type 1 (gd1)">
+  <data key="d3">is a treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="motor disabilities" target="abx">
+  <data key="d3">affects</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="higher doses" target="ambroxol">
+  <data key="d3">is administered in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="proteasome inhibitors" target="trans-isrib">
+  <data key="d3">is a specific example of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="dosing schedule" target="ambroxol">
+  <data key="d3">is part of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="korean inds" target="ambroxol">
+  <data key="d3">tested for efficacy on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="british inds" target="ambroxol">
+  <data key="d3">tested for efficacy on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="in vitro testing" target="ambroxol">
+  <data key="d3">skips</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="human cells" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">is affected by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="antibiotic abx" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">is affected by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="4 mm concentration" target="gcase activity">
+  <data key="d3">may increase</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="4 mm concentration" target="ambroxol">
+  <data key="d3">is at concentration</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="cumulative incidence of parkinson's disease (pd)" target="parkinson's disease (pd)">
+  <data key="d3">is higher in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="cumulative incidence of parkinson's disease (pd)" target="ambroxol">
+  <data key="d3">is associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="disease-modifying agent" target="abx">
+  <data key="d3">is used as</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="disease-modifying agent" target="ambroxol">
+  <data key="d3">is suggested to be a</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="medical prescription" target="ambroxol">
+  <data key="d3">does not require</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="neonatal gaucher disease (ngd)" target="ambroxol">
+  <data key="d3">is used for treatment in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="safety profile" target="ambroxol">
+  <data key="d3">has</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="dementia" target="dementia with lewy bodies (dlb)">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="dementia" target="ambroxol">
+  <data key="d3">is used in treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="high-dose administration" target="ambroxol">
+  <data key="d3">is administered in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="effects" target="abx">
+  <data key="d3">show</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment rationale" target="abx">
+  <data key="d3">is established by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="pharmacological chaperones" target="ambroxol">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="pharmacological chaperones" target="gba1-related parkinson's disease">
+  <data key="d3">are used to treat</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="proteostasis regulators" target="pladienolide b">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="proteostasis regulators" target="trans-isrib">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="gcase activity">
+  <data key="d3">is affected by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="parkinson's disease (pd)">
+  <data key="d3">is used for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="patients">
+  <data key="d3">use,are treated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">increases</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="clinical trial">
+  <data key="d3">are not needed for,evaluate,are ongoing for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="study participants">
+  <data key="d3">took</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="dosage">
+  <data key="d3">is measured in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="5 mm concentration">
+  <data key="d3">is at concentration</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="alpha-synuclein levels">
+  <data key="d3">decreases</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="chronic lung disease (cld)">
+  <data key="d3">is relevant to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="chronic respiratory disease">
+  <data key="d3">is treated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="effectiveness">
+  <data key="d3">is questioned</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="expectorant">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="nonusers">
+  <data key="d3">compared to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="parkinson's disease">
+  <data key="d3">is associated with risk of,is associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="risk of parkinson's disease (pd)">
+  <data key="d3">is associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="pharmaceutical">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="recommended dosage">
+  <data key="d3">is prescribed at</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="standard dosage">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="standard dose">
+  <data key="d3">does not produce</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="therapeutic agent">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="therapeutic application">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="approved dose range">
+  <data key="d3">is the range within which Ambroxol is administered</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="chronic liver disease (cld) patients">
+  <data key="d3">prescribed to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="clinical practice">
+  <data key="d3">involves</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="korean national health insurance database (nhid)">
+  <data key="d3">is used to investigate</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="neuronopathic gaucher disease">
+  <data key="d3">is suggested as an augmentative pharmacological agent for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="pharmacological agent">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="availability">
+  <data key="d3">is widely</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="cost-effectiveness">
+  <data key="d3">is relatively</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="dramatic improvement">
+  <data key="d3">causes</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="gaucher disease (gd)">
+  <data key="d3">is used for treating</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="gaucher disease type 1 (gd1)">
+  <data key="d3">is used in treatment for,is used for treatment in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">is used for treatment in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="global markets">
+  <data key="d3">faces barriers in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="maximum dosage">
+  <data key="d3">has a specified</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="niemann-pick disease type c (ngd)">
+  <data key="d3">is treated by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="non-gba carriers">
+  <data key="d3">is used in treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="off-label applications">
+  <data key="d3">considered for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="over-the-counter (otc) dosage">
+  <data key="d3">is administered at</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="over-the-counter (otc) medication">
+  <data key="d3">are related to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="over-the-counter cough medication">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="pharmacological chaperone">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="therapeutic intervention">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="therapeutic use">
+  <data key="d3">is associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="treating physician">
+  <data key="d3">is prescribed by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="clinical registries">
+  <data key="d3">disallowed entry of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="eight patients">
+  <data key="d3">stopped taking</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="good responder">
+  <data key="d3">is treated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="japanese inds">
+  <data key="d3">tested for efficacy on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="mutant gcase">
+  <data key="d3">is targeted by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="myoclonic epilepsy">
+  <data key="d3">is ameliorated by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="treatment duration">
+  <data key="d3">is measured in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="mucolytic agent">
+  <data key="d3">is</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="mucus hypersecretion">
+  <data key="d3">associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="pharmaceutical compound">
+  <data key="d3">is</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="respiratory disorders">
+  <data key="d3">treats</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="australia">
+  <data key="d3">tested in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="cough suppressant">
+  <data key="d3">is classified as</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="gba1-related parkinson's disease">
+  <data key="d3">is treated by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="glucocerebrosidase-specific pharmacological chaperone">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="international trust">
+  <data key="d3">aims to upgrade</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="mean dosage">
+  <data key="d3">has a</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="neurodegenerative disease (ngd)">
+  <data key="d3">is used for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="non-gba1-related parkinson's disease">
+  <data key="d3">hypothesized to be effective in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="repurposed pharmaceutical">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="therapeutic indications">
+  <data key="d3">is used for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="current clinical trials">
+  <data key="d3">involve</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="idiopathic parkinson's disease (idiopathic pd)">
+  <data key="d3">is treated by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="ambroxol" target="new england journal of medicine">
+  <data key="d3">does not mention</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical practice" target="dosage">
+  <data key="d3">is permitted in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="abx">
+  <data key="d3">enhances effect on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="alpha-synuclein levels">
+  <data key="d3">are affected by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="abx concentration">
+  <data key="d3">correlates with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="in vitro and in vivo data">
+  <data key="d3">show significant increases in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="therapeutic intervention">
+  <data key="d3">should aim to correct</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="treatment duration" target="patients">
+  <data key="d3">undergo</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="neuronopathic gaucher disease" target="therapeutic intervention">
+  <data key="d3">requires</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="neuronopathic gaucher disease" target="gba1-related parkinson's disease">
+  <data key="d3">is a disease associated with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="chronic lung disease (cld)" target="parkinson's disease">
+  <data key="d3">risk factor for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="chronic lung disease (cld)" target="korean national health insurance database (nhid)">
+  <data key="d3">contains data on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="abx">
+  <data key="d3">is a modifying treatment in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="patients">
+  <data key="d3">have</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="pharmacological chaperone" target="gba1-related parkinson's disease">
+  <data key="d3">is a condition treated by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="neurodegenerative disease (ngd)" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">are conditions related to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="mechanism of action" target="abx">
+  <data key="d3">has unique mechanism on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="mechanism of action" target="pladienolide b">
+  <data key="d3">has a novel</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="cerebrospinal fluid (csf)">
+  <data key="d3">penetrates into</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="toxic alpha-synuclein (as) species">
+  <data key="d3">reduces concentration of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="chaperone-mediated autophagy (cma)">
+  <data key="d3">is a potential treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="preclinical trials">
+  <data key="d3">show promising effects of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="rationale for treatment">
+  <data key="d3">is based on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="cognitive impairment">
+  <data key="d3">affects</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="nonmotor disabilities">
+  <data key="d3">affects</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="abx" target="multicenter clinical trial">
+  <data key="d3">tests</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="therapeutic intervention" target="parkinson's disease (pd)">
+  <data key="d3">is a viable treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="therapeutic intervention" target="patients">
+  <data key="d3">provides for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="therapeutic intervention" target="parkinson's disease">
+  <data key="d3">is for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="therapeutic intervention" target="gaucher disease (gd)">
+  <data key="d3">is a viable treatment for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="gaucher disease type 1 (gd1)">
+  <data key="d3">diagnosed with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="gaucher disease (gd)">
+  <data key="d3">are conditions addressed by</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical trial" target="patients">
+  <data key="d3">participated in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical trial" target="cognitive impairment">
+  <data key="d3">measures evolution of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical trial" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical trial" target="parkinson's disease">
+  <data key="d3">is related to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="clinical trial" target="gba1-related parkinson's disease">
+  <data key="d3">conducts research on</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="alpha-synuclein levels" target="cerebrospinal fluid (csf)">
+  <data key="d3">analyzed in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="chronic respiratory disease" target="parkinson's disease">
+  <data key="d3">can co-occur with</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="patients" target="chronic liver disease (cld) patients">
+  <data key="d3">involves</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="patients" target="gaucher disease type 1 (gd1)">
+  <data key="d3">affects</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="patients" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">includes</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="patients" target="gaucher disease (gd)">
+  <data key="d3">can have</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="potent compounds" target="pladienolide b">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="potent compounds" target="trans-isrib">
+  <data key="d3">is a type of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gaucher disease type 1 (gd1)" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">received ambroxol as single therapy</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gaucher disease (gd)" target="gba-associated parkinson's disease (gba-pd)">
+  <data key="d3">is related to</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gaucher disease (gd)" target="pharmaceutical compound">
+  <data key="d3">is developed for</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="pladienolide b" target="gsk-3 inhibitors">
+  <data key="d3">is a specific example of</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="risk of parkinson's disease (pd)" target="chronic liver disease (cld) patients">
+  <data key="d3">is higher in</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gcase activity" target="5 mm concentration">
+  <data key="d3">does not increase</data>
+  <data key="d4">1</data>
+</edge>
+<edge source="gcase activity" target="abx concentration">
+  <data key="d3">associated with</data>
+  <data key="d4">1</data>
+</edge>
+</graph></graphml>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="ambroxol"/>
+<node id="clinical trial"/>
+<node id="venglustat"/>
+<node id="placebo"/>
+<node id="tfeb"/>
+<edge source="ambroxol" target="clinical trial">
+  <data key="d0">are not
+needed for,evaluate,are
+ongoing for</data>
+</edge>
+<edge source="clinical trial" target="venglustat">
+  <data key="d0">is subject
+of,was tested
+in</data>
+</edge>
+<edge source="venglustat" target="placebo">
+  <data key="d0">compared to</data>
+</edge>
+<edge source="placebo" target="tfeb">
+  <data key="d0"></data>
+</edge>
+</graph></graphml>

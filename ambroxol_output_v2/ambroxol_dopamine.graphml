@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="ambroxol"/>
+<node id="treatment"/>
+<node id="induced pluripotent stem cells (ipscs)"/>
+<node id="dopaminergic neurons"/>
+<node id="dopamine"/>
+<node id="dopamine receptor"/>
+<edge source="ambroxol" target="treatment">
+  <data key="d0">is a
+type of</data>
+</edge>
+<edge source="treatment" target="induced pluripotent stem cells (ipscs)">
+  <data key="d0">are affected
+by</data>
+</edge>
+<edge source="induced pluripotent stem cells (ipscs)" target="dopaminergic neurons">
+  <data key="d0">are a
+type of</data>
+</edge>
+<edge source="dopaminergic neurons" target="dopamine">
+  <data key="d0">produce</data>
+</edge>
+<edge source="dopamine" target="dopamine receptor">
+  <data key="d0"></data>
+</edge>
+</graph></graphml>

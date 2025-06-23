@@ -1,0 +1,1802 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d4" for="edge" attr.name="width" attr.type="double"/>
+<key id="d3" for="edge" attr.name="title" attr.type="string"/>
+<key id="d2" for="node" attr.name="size" attr.type="long"/>
+<key id="d1" for="node" attr.name="color" attr.type="string"/>
+<key id="d0" for="node" attr.name="group" attr.type="long"/>
+<graph edgedefault="undirected"><node id="716 compounds">
+  <data key="d0">4</data>
+  <data key="d1">#57bedb</data>
+  <data key="d2">2</data>
+</node>
+<node id="ambroxol">
+  <data key="d0">5</data>
+  <data key="d1">#57dbb1</data>
+  <data key="d2">1</data>
+</node>
+<node id="assay pipeline">
+  <data key="d0">6</data>
+  <data key="d1">#57dbbf</data>
+  <data key="d2">2</data>
+</node>
+<node id="bioactive compounds">
+  <data key="d0">8</data>
+  <data key="d1">#ac57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="biological modulators">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="cag promoter">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="cell-based assay platform">
+  <data key="d0">11</data>
+  <data key="d1">#dbd257</data>
+  <data key="d2">1</data>
+</node>
+<node id="cell-based assays">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">4</data>
+</node>
+<node id="cellular systems">
+  <data key="d0">13</data>
+  <data key="d1">#57dbce</data>
+  <data key="d2">2</data>
+</node>
+<node id="combination therapy">
+  <data key="d0">19</data>
+  <data key="d1">#db6d57</data>
+  <data key="d2">1</data>
+</node>
+<node id="combinatorial matrix screening">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="compound identification">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="compound libraries">
+  <data key="d0">8</data>
+  <data key="d1">#ac57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="compound ncgc326">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">4</data>
+</node>
+<node id="data analysis">
+  <data key="d0">22</data>
+  <data key="d1">#db7c57</data>
+  <data key="d2">1</data>
+</node>
+<node id="discovery and optimization">
+  <data key="d0">23</data>
+  <data key="d1">#db9957</data>
+  <data key="d2">1</data>
+</node>
+<node id="droplet digital pcr (ddpcr) method">
+  <data key="d0">25</data>
+  <data key="d1">#6357db</data>
+  <data key="d2">1</data>
+</node>
+<node id="drug discovery pipeline">
+  <data key="d0">28</data>
+  <data key="d1">#b9db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="experimental procedures">
+  <data key="d0">25</data>
+  <data key="d1">#6357db</data>
+  <data key="d2">1</data>
+</node>
+<node id="experimental techniques">
+  <data key="d0">15</data>
+  <data key="d1">#d6db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="final hit compounds">
+  <data key="d0">8</data>
+  <data key="d1">#ac57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="gaucher disease">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">5</data>
+</node>
+<node id="gaucher disease (gd)">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">4</data>
+</node>
+<node id="gaucher disease cell model">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">2</data>
+</node>
+<node id="gba1">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 gene">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">5</data>
+</node>
+<node id="gba1 knockout h4">
+  <data key="d0">35</data>
+  <data key="d1">#5792db</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 knockout h4 cell line">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 knockout h4 clone">
+  <data key="d0">36</data>
+  <data key="d1">#db5789</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 molecular target">
+  <data key="d0">37</data>
+  <data key="d1">#5775db</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1-knockout h4 cells">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">6</data>
+</node>
+<node id="gcase activity">
+  <data key="d0">34</data>
+  <data key="d1">#62db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase activity deficiencies">
+  <data key="d0">40</data>
+  <data key="d1">#8057db</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase enhancers">
+  <data key="d0">41</data>
+  <data key="d1">#db57b4</data>
+  <data key="d2">3</data>
+</node>
+<node id="gcase enzyme">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="gcase maturation">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="gcase trafficking">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">5</data>
+</node>
+<node id="gcase-l444p variant">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">4</data>
+</node>
+<node id="glucer accumulation">
+  <data key="d0">43</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">1</data>
+</node>
+<node id="glucocerebrosidase">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">4</data>
+</node>
+<node id="glucocerebrosidase (gcase)">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">2</data>
+</node>
+<node id="glucocerebrosidase modulators">
+  <data key="d0">6</data>
+  <data key="d1">#57dbbf</data>
+  <data key="d2">2</data>
+</node>
+<node id="gsk-3 inhibitors">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="hgcase-1/23">
+  <data key="d0">44</data>
+  <data key="d1">#db5797</data>
+  <data key="d2">2</data>
+</node>
+<node id="hibit peptide reporter tag">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">2</data>
+</node>
+<node id="hibit reporter">
+  <data key="d0">3</data>
+  <data key="d1">#db57c2</data>
+  <data key="d2">2</data>
+</node>
+<node id="hibit tag">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit-gba1 transgene">
+  <data key="d0">46</data>
+  <data key="d1">#dbb557</data>
+  <data key="d2">2</data>
+</node>
+<node id="hibit-gba1-wt protein">
+  <data key="d0">25</data>
+  <data key="d1">#6357db</data>
+  <data key="d2">2</data>
+</node>
+<node id="hibit-gcase h4 cell lines">
+  <data key="d0">1</data>
+  <data key="d1">#db575d</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit-gcase-l444p">
+  <data key="d0">47</data>
+  <data key="d1">#8f57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit-gcase-l444p assay">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">4</data>
+</node>
+<node id="hibit-gcase-l444p variant">
+  <data key="d0">24</data>
+  <data key="d1">#ba57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit-tagged gcase">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">3</data>
+</node>
+<node id="hibit-tagged gcase expression">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="high levels of untagged gcase">
+  <data key="d0">18</data>
+  <data key="d1">#9cdb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="high-throughput assays">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="high-throughput screening (hts)">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="hit compounds">
+  <data key="d0">4</data>
+  <data key="d1">#57bedb</data>
+  <data key="d2">2</data>
+</node>
+<node id="human glucocerebrosidase (gcase)">
+  <data key="d0">45</data>
+  <data key="d1">#5758db</data>
+  <data key="d2">1</data>
+</node>
+<node id="immunofluorescence assay">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="integrated approach">
+  <data key="d0">48</data>
+  <data key="d1">#5767db</data>
+  <data key="d2">1</data>
+</node>
+<node id="integrative gene transfer method">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="intron">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="l444p variant of gcase">
+  <data key="d0">49</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">1</data>
+</node>
+<node id="lead optimization">
+  <data key="d0">50</data>
+  <data key="d1">#db577a</data>
+  <data key="d2">1</data>
+</node>
+<node id="lysofix-gba">
+  <data key="d0">33</data>
+  <data key="d1">#57dba2</data>
+  <data key="d2">1</data>
+</node>
+<node id="lysosomal activity">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="lysosomal translocation">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="material properties">
+  <data key="d0">29</data>
+  <data key="d1">#70db57</data>
+  <data key="d2">4</data>
+</node>
+<node id="materials science">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">8</data>
+</node>
+<node id="mechanical testing">
+  <data key="d0">52</data>
+  <data key="d1">#57db77</data>
+  <data key="d2">1</data>
+</node>
+<node id="moderate expression">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="molecular identification">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="molecular targets">
+  <data key="d0">38</data>
+  <data key="d1">#7fdb57</data>
+  <data key="d2">2</data>
+</node>
+<node id="monoclonal human gcase antibody">
+  <data key="d0">44</data>
+  <data key="d1">#db5797</data>
+  <data key="d2">1</data>
+</node>
+<node id="mutations">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="n-terminal hibit tag">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="n-terminal region">
+  <data key="d0">45</data>
+  <data key="d1">#5758db</data>
+  <data key="d2">1</data>
+</node>
+<node id="ncats bioactive compounds">
+  <data key="d0">16</data>
+  <data key="d1">#57a1db</data>
+  <data key="d2">1</data>
+</node>
+<node id="ncgc326">
+  <data key="d0">53</data>
+  <data key="d1">#57afdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="neuronopathic gaucher disease">
+  <data key="d0">39</data>
+  <data key="d1">#dbc457</data>
+  <data key="d2">1</data>
+</node>
+<node id="novel chemical entities">
+  <data key="d0">41</data>
+  <data key="d1">#db57b4</data>
+  <data key="d2">1</data>
+</node>
+<node id="output set">
+  <data key="d0">6</data>
+  <data key="d1">#57dbbf</data>
+  <data key="d2">1</data>
+</node>
+<node id="panobinostat">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="parkinson's disease (pd)">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">3</data>
+</node>
+<node id="pharmacological agents">
+  <data key="d0">20</data>
+  <data key="d1">#d757db</data>
+  <data key="d2">1</data>
+</node>
+<node id="pharmacological validation">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">3</data>
+</node>
+<node id="physiologically relevant">
+  <data key="d0">41</data>
+  <data key="d1">#db57b4</data>
+  <data key="d2">1</data>
+</node>
+<node id="physiologically relevant assays">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="pladienolide b">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">4</data>
+</node>
+<node id="potent compounds">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="potential therapeutics">
+  <data key="d0">6</data>
+  <data key="d1">#57dbbf</data>
+  <data key="d2">2</data>
+</node>
+<node id="primary screening">
+  <data key="d0">2</data>
+  <data key="d1">#57db85</data>
+  <data key="d2">1</data>
+</node>
+<node id="primary screening assay">
+  <data key="d0">4</data>
+  <data key="d1">#57bedb</data>
+  <data key="d2">1</data>
+</node>
+<node id="proteasome inhibitors">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="protein stabilization">
+  <data key="d0">13</data>
+  <data key="d1">#57dbce</data>
+  <data key="d2">1</data>
+</node>
+<node id="quantitative assays">
+  <data key="d0">21</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="reporter protein">
+  <data key="d0">51</data>
+  <data key="d1">#dba757</data>
+  <data key="d2">1</data>
+</node>
+<node id="results">
+  <data key="d0">32</data>
+  <data key="d1">#db5f57</data>
+  <data key="d2">1</data>
+</node>
+<node id="robust cell-based assays">
+  <data key="d0">23</data>
+  <data key="d1">#db9957</data>
+  <data key="d2">1</data>
+</node>
+<node id="screening hits">
+  <data key="d0">55</data>
+  <data key="d1">#7257db</data>
+  <data key="d2">2</data>
+</node>
+<node id="screening process">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="small molecules">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">5</data>
+</node>
+<node id="small-molecule gcase enhancers">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="small-molecule stabilizers">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="synthesis methods">
+  <data key="d0">29</data>
+  <data key="d1">#70db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="talen gene editing">
+  <data key="d0">46</data>
+  <data key="d1">#dbb557</data>
+  <data key="d2">1</data>
+</node>
+<node id="target atlas">
+  <data key="d0">38</data>
+  <data key="d1">#7fdb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic intervention">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">7</data>
+</node>
+<node id="therapeutic target">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="thermal analysis">
+  <data key="d0">54</data>
+  <data key="d1">#57db5a</data>
+  <data key="d2">1</data>
+</node>
+<node id="titration-based quantitative high-throughput screening">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">1</data>
+</node>
+<node id="trans-isrib">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">3</data>
+</node>
+<node id="transcription activator-like effector nucleases (talens)">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">2</data>
+</node>
+<node id="transgene">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">8</data>
+</node>
+<node id="transgene cassette">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">3</data>
+</node>
+<node id="translational assays">
+  <data key="d0">27</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">1</data>
+</node>
+<node id="ultrahigh-throughput screening format">
+  <data key="d0">1</data>
+  <data key="d1">#db575d</data>
+  <data key="d2">2</data>
+</node>
+<node id="untagged gcase">
+  <data key="d0">31</data>
+  <data key="d1">#c7db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="viability">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="pharmacological chaperones">
+  <data key="d0">5</data>
+  <data key="d1">#57dbb1</data>
+  <data key="d2">1</data>
+</node>
+<node id="preclinical discovery">
+  <data key="d0">6</data>
+  <data key="d1">#57dbbf</data>
+  <data key="d2">1</data>
+</node>
+<node id="mechanisms of action">
+  <data key="d0">8</data>
+  <data key="d1">#ac57db</data>
+  <data key="d2">2</data>
+</node>
+<node id="cellular regulation">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="quantitative high-throughput screening (qhts)">
+  <data key="d0">11</data>
+  <data key="d1">#dbd257</data>
+  <data key="d2">1</data>
+</node>
+<node id="high-throughput screening">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="target biology">
+  <data key="d0">13</data>
+  <data key="d1">#57dbce</data>
+  <data key="d2">1</data>
+</node>
+<node id="synergistic effects">
+  <data key="d0">19</data>
+  <data key="d1">#db6d57</data>
+  <data key="d2">1</data>
+</node>
+<node id="synergistic interactions">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="glucosylsphingosine accumulation">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="proteostasis regulators">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">4</data>
+</node>
+<node id="statistical methods">
+  <data key="d0">22</data>
+  <data key="d1">#db7c57</data>
+  <data key="d2">1</data>
+</node>
+<node id="lead compounds">
+  <data key="d0">23</data>
+  <data key="d1">#db9957</data>
+  <data key="d2">2</data>
+</node>
+<node id="multilevel approach">
+  <data key="d0">28</data>
+  <data key="d1">#b9db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="characterization methods">
+  <data key="d0">15</data>
+  <data key="d1">#d6db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="epigenetic mechanisms">
+  <data key="d0">8</data>
+  <data key="d1">#ac57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="monogenic disorder">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="related disorders">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="treatment">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">3</data>
+</node>
+<node id="lead discovery">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">3</data>
+</node>
+<node id="biallelic loss-of-function mutations">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1-related parkinson's disease (gba1-pd)">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="parkinson's disease">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">2</data>
+</node>
+<node id="human neuroglioma cell line">
+  <data key="d0">35</data>
+  <data key="d1">#5792db</data>
+  <data key="d2">1</data>
+</node>
+<node id="single copy">
+  <data key="d0">36</data>
+  <data key="d1">#db5789</data>
+  <data key="d2">1</data>
+</node>
+<node id="scientific knowledge">
+  <data key="d0">37</data>
+  <data key="d1">#5775db</data>
+  <data key="d2">1</data>
+</node>
+<node id="lysosomal localization">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">2</data>
+</node>
+<node id="protein misfolding">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="trafficking obstruction">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="functional lysosomal activity">
+  <data key="d0">34</data>
+  <data key="d1">#62db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="related diseases">
+  <data key="d0">40</data>
+  <data key="d1">#8057db</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic agents">
+  <data key="d0">41</data>
+  <data key="d1">#db57b4</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase function">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="overexpression">
+  <data key="d0">42</data>
+  <data key="d1">#57ccdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="enzyme levels">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="protein levels">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="h4 cell model">
+  <data key="d0">43</data>
+  <data key="d1">#db576c</data>
+  <data key="d2">1</data>
+</node>
+<node id="therapeutic applications">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">2</data>
+</node>
+<node id="monoclonal antibody">
+  <data key="d0">44</data>
+  <data key="d1">#db5797</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase variants">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="11-amino acid peptide tag">
+  <data key="d0">3</data>
+  <data key="d1">#db57c2</data>
+  <data key="d2">1</data>
+</node>
+<node id="luminescence-based high-throughput screening (qhts)">
+  <data key="d0">3</data>
+  <data key="d1">#db57c2</data>
+  <data key="d2">1</data>
+</node>
+<node id="intragenic safe-harbor locus">
+  <data key="d0">46</data>
+  <data key="d1">#dbb557</data>
+  <data key="d2">1</data>
+</node>
+<node id="stabilizers">
+  <data key="d0">47</data>
+  <data key="d1">#8f57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="drug development">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">1</data>
+</node>
+<node id="protein complexes (pcs)">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">1</data>
+</node>
+<node id="protein residues (prs)">
+  <data key="d0">26</data>
+  <data key="d1">#db57a6</data>
+  <data key="d2">1</data>
+</node>
+<node id="dose-dependent response">
+  <data key="d0">24</data>
+  <data key="d1">#ba57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="endogenous gcase">
+  <data key="d0">30</data>
+  <data key="d1">#db57d1</data>
+  <data key="d2">1</data>
+</node>
+<node id="clear lysosomal localization">
+  <data key="d0">18</data>
+  <data key="d1">#9cdb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="140 confirmed hits">
+  <data key="d0">4</data>
+  <data key="d1">#57bedb</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit">
+  <data key="d0">45</data>
+  <data key="d1">#5758db</data>
+  <data key="d2">2</data>
+</node>
+<node id="rational drug development">
+  <data key="d0">48</data>
+  <data key="d1">#5767db</data>
+  <data key="d2">1</data>
+</node>
+<node id="citrate lyase beta-like (clybl) gene">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">2</data>
+</node>
+<node id="pathogenic variant">
+  <data key="d0">49</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">1</data>
+</node>
+<node id="structure–activity relationships">
+  <data key="d0">50</data>
+  <data key="d1">#db577a</data>
+  <data key="d2">1</data>
+</node>
+<node id="fluorescence-quenched substrates">
+  <data key="d0">33</data>
+  <data key="d1">#57dba2</data>
+  <data key="d2">1</data>
+</node>
+<node id="electrical properties">
+  <data key="d0">29</data>
+  <data key="d1">#70db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="mechanical properties">
+  <data key="d0">29</data>
+  <data key="d1">#70db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="thermal properties">
+  <data key="d0">29</data>
+  <data key="d1">#70db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="ceramics">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="composite materials">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="conclusion">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="material characterization">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="materials engineering">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="metallurgy">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="nanomaterials">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="polymer science">
+  <data key="d0">14</data>
+  <data key="d1">#db8a57</data>
+  <data key="d2">1</data>
+</node>
+<node id="material strength">
+  <data key="d0">52</data>
+  <data key="d1">#57db77</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 pathway">
+  <data key="d0">38</data>
+  <data key="d1">#7fdb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="chemical libraries">
+  <data key="d0">16</data>
+  <data key="d1">#57a1db</data>
+  <data key="d2">1</data>
+</node>
+<node id="noninhibitory chaperones">
+  <data key="d0">53</data>
+  <data key="d1">#57afdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="pharmacological compound (pc)">
+  <data key="d0">53</data>
+  <data key="d1">#57afdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1-related parkinson's disease">
+  <data key="d0">39</data>
+  <data key="d1">#dbc457</data>
+  <data key="d2">1</data>
+</node>
+<node id="combinations">
+  <data key="d0">20</data>
+  <data key="d1">#d757db</data>
+  <data key="d2">1</data>
+</node>
+<node id="medicinal chemistry optimization">
+  <data key="d0">12</data>
+  <data key="d1">#9d57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="mechanism of action">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="screening methods">
+  <data key="d0">9</data>
+  <data key="d1">#57dbdb</data>
+  <data key="d2">1</data>
+</node>
+<node id="10,779 compounds">
+  <data key="d0">2</data>
+  <data key="d1">#57db85</data>
+  <data key="d2">1</data>
+</node>
+<node id="correctors of protein misfolding">
+  <data key="d0">21</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="localization">
+  <data key="d0">51</data>
+  <data key="d1">#dba757</data>
+  <data key="d2">1</data>
+</node>
+<node id="findings">
+  <data key="d0">32</data>
+  <data key="d1">#db5f57</data>
+  <data key="d2">1</data>
+</node>
+<node id="subsequent investigation">
+  <data key="d0">55</data>
+  <data key="d1">#7257db</data>
+  <data key="d2">1</data>
+</node>
+<node id="validation assays">
+  <data key="d0">55</data>
+  <data key="d1">#7257db</data>
+  <data key="d2">1</data>
+</node>
+<node id="development process">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="efficacy">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="patients">
+  <data key="d0">7</data>
+  <data key="d1">#57db68</data>
+  <data key="d2">1</data>
+</node>
+<node id="phase transitions">
+  <data key="d0">54</data>
+  <data key="d1">#57db5a</data>
+  <data key="d2">1</data>
+</node>
+<node id="gene editing">
+  <data key="d0">17</data>
+  <data key="d1">#aadb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="gba1 signal peptide">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="global gene expression">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="glycine/serine linker">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="hibit peptide tag">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="local gene expression">
+  <data key="d0">10</data>
+  <data key="d1">#8ddb57</data>
+  <data key="d2">1</data>
+</node>
+<node id="drug discovery">
+  <data key="d0">27</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">1</data>
+</node>
+<node id="1,536-well plate">
+  <data key="d0">1</data>
+  <data key="d1">#db575d</data>
+  <data key="d2">1</data>
+</node>
+<node id="endoplasmic reticulum accumulation">
+  <data key="d0">31</data>
+  <data key="d1">#c7db57</data>
+  <data key="d2">1</data>
+</node>
+<edge source="716 compounds" target="hit compounds">
+  <data key="d3">represents</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="716 compounds" target="primary screening assay">
+  <data key="d3">identified</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol" target="pharmacological chaperones">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="assay pipeline" target="preclinical discovery">
+  <data key="d3">is used for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="assay pipeline" target="glucocerebrosidase modulators">
+  <data key="d3">is the focus of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="bioactive compounds" target="mechanisms of action">
+  <data key="d3">have</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="bioactive compounds" target="compound libraries">
+  <data key="d3">are enriched with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="biological modulators" target="cellular regulation">
+  <data key="d3">are involved in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="biological modulators" target="gsk-3 inhibitors">
+  <data key="d3">are types of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="biological modulators" target="proteasome inhibitors">
+  <data key="d3">are types of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cag promoter" target="transgene">
+  <data key="d3">drives sustained expression of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cell-based assay platform" target="quantitative high-throughput screening (qhts)">
+  <data key="d3">provides</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cell-based assays" target="high-throughput screening">
+  <data key="d3">are amenable to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cell-based assays" target="high-throughput screening (hts)">
+  <data key="d3">is amenable to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cell-based assays" target="high-throughput assays">
+  <data key="d3">are a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cell-based assays" target="small-molecule gcase enhancers">
+  <data key="d3">is a challenge for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cellular systems" target="target biology">
+  <data key="d3">maintains</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cellular systems" target="protein stabilization">
+  <data key="d3">enables quantitation in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="combination therapy" target="synergistic effects">
+  <data key="d3">demonstrates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="combinatorial matrix screening" target="synergistic interactions">
+  <data key="d3">is a method to identify</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound identification" target="pharmacological validation">
+  <data key="d3">is followed by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound identification" target="high-throughput screening (hts)">
+  <data key="d3">drives</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound ncgc326" target="glucosylsphingosine accumulation">
+  <data key="d3">reverses</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound ncgc326" target="proteostasis regulators">
+  <data key="d3">enhances levels of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound ncgc326" target="gcase enzyme">
+  <data key="d3">is targeted by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="compound ncgc326" target="lysosomal translocation">
+  <data key="d3">is associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="data analysis" target="statistical methods">
+  <data key="d3">Data analysis often employs statistical methods to interpret results.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="discovery and optimization" target="lead compounds">
+  <data key="d3">is limited by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="droplet digital pcr (ddpcr) method" target="hibit-gba1-wt protein">
+  <data key="d3">was identified via</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="drug discovery pipeline" target="multilevel approach">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="experimental procedures" target="hibit-gba1-wt protein">
+  <data key="d3">was used for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="experimental techniques" target="characterization methods">
+  <data key="d3">Experimental techniques are used to characterize materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="final hit compounds" target="epigenetic mechanisms">
+  <data key="d3">includes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="final hit compounds" target="mechanisms of action">
+  <data key="d3">represented several</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease" target="glucocerebrosidase">
+  <data key="d3">is caused by deficiency of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease" target="monogenic disorder">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease" target="related disorders">
+  <data key="d3">is related to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease" target="glucocerebrosidase (gcase)">
+  <data key="d3">is implicated in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease" target="mutations">
+  <data key="d3">cause</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease (gd)" target="parkinson's disease (pd)">
+  <data key="d3">are conditions addressed by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease (gd)" target="therapeutic intervention">
+  <data key="d3">is a viable treatment for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease (gd)" target="treatment">
+  <data key="d3">requires a</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease (gd)" target="gba1 gene">
+  <data key="d3">is a target for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease cell model" target="lead discovery">
+  <data key="d3">is amenable to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gaucher disease cell model" target="gba1-knockout h4 cells">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1" target="transgene">
+  <data key="d3">is expressed from</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 gene" target="biallelic loss-of-function mutations">
+  <data key="d3">is affected by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 gene" target="gba1-related parkinson's disease (gba1-pd)">
+  <data key="d3">is related to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 gene" target="parkinson's disease">
+  <data key="d3">is a genetic risk factor for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 gene" target="glucocerebrosidase">
+  <data key="d3">is encoded by gene</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 knockout h4" target="human neuroglioma cell line">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 knockout h4 cell line" target="transgene cassette">
+  <data key="d3">receives integration of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 knockout h4 clone" target="single copy">
+  <data key="d3">contains</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba1 molecular target" target="scientific knowledge">
+  <data key="d3">informs the design of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="hibit peptide reporter tag">
+  <data key="d3">is labeled with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="lysosomal localization">
+  <data key="d3">is associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="protein misfolding">
+  <data key="d3">causes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="trafficking obstruction">
+  <data key="d3">causes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="immunofluorescence assay">
+  <data key="d3">visualizes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase" target="therapeutic target">
+  <data key="d3">is</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase activity" target="functional lysosomal activity">
+  <data key="d3">is measured by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase activity deficiencies" target="related diseases">
+  <data key="d3">associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase enhancers" target="therapeutic agents">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase enhancers" target="novel chemical entities">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase enhancers" target="physiologically relevant">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase enzyme" target="small molecules">
+  <data key="d3">target</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase maturation" target="gcase function">
+  <data key="d3">affects</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase maturation" target="gcase trafficking">
+  <data key="d3">affects</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase maturation" target="n-terminal hibit tag">
+  <data key="d3">has negligible influence on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase trafficking" target="overexpression">
+  <data key="d3">is perturbed by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase trafficking" target="hibit tag">
+  <data key="d3">does not interfere with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase trafficking" target="hibit-tagged gcase expression">
+  <data key="d3">addresses</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase trafficking" target="n-terminal hibit tag">
+  <data key="d3">has negligible influence on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase-l444p variant" target="enzyme levels">
+  <data key="d3">enhanced by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase-l444p variant" target="protein levels">
+  <data key="d3">are enhanced by,affects</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="gcase-l444p variant" target="synergistic interactions">
+  <data key="d3">involves</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase-l444p variant" target="small molecules">
+  <data key="d3">increase levels of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="glucer accumulation" target="h4 cell model">
+  <data key="d3">is reversed in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="glucocerebrosidase" target="small molecules">
+  <data key="d3">are relevant to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="glucocerebrosidase" target="small-molecule stabilizers">
+  <data key="d3">are developed for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="glucocerebrosidase (gcase)" target="parkinson's disease">
+  <data key="d3">is implicated in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="glucocerebrosidase modulators" target="potential therapeutics">
+  <data key="d3">may include</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gsk-3 inhibitors" target="therapeutic applications">
+  <data key="d3">are used in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gsk-3 inhibitors" target="pladienolide b">
+  <data key="d3">is a specific example of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hgcase-1/23" target="monoclonal antibody">
+  <data key="d3">is used in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hgcase-1/23" target="monoclonal human gcase antibody">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit peptide reporter tag" target="gcase variants">
+  <data key="d3">preserves trafficking and function of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit reporter" target="11-amino acid peptide tag">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit reporter" target="luminescence-based high-throughput screening (qhts)">
+  <data key="d3">is suitable for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gba1 transgene" target="intragenic safe-harbor locus">
+  <data key="d3">is integrated into</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gba1 transgene" target="talen gene editing">
+  <data key="d3">allows stable integration of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase h4 cell lines" target="ultrahigh-throughput screening format">
+  <data key="d3">tested in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p" target="stabilizers">
+  <data key="d3">is stabilized by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p assay" target="drug development">
+  <data key="d3">utility for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p assay" target="lead discovery">
+  <data key="d3">utility for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p assay" target="protein complexes (pcs)">
+  <data key="d3">detects</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p assay" target="protein residues (prs)">
+  <data key="d3">detects</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-gcase-l444p variant" target="dose-dependent response">
+  <data key="d3">shows</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-tagged gcase" target="endogenous gcase">
+  <data key="d3">is comparable to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-tagged gcase" target="lysosomal localization">
+  <data key="d3">shows</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hibit-tagged gcase" target="moderate expression">
+  <data key="d3">results in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="high levels of untagged gcase" target="clear lysosomal localization">
+  <data key="d3">indicates lack of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="hit compounds" target="140 confirmed hits">
+  <data key="d3">includes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="human glucocerebrosidase (gcase)" target="hibit">
+  <data key="d3">is tagged with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="integrated approach" target="rational drug development">
+  <data key="d3">enables</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="integrative gene transfer method" target="transgene">
+  <data key="d3">allows efficient knock-in of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="intron" target="citrate lyase beta-like (clybl) gene">
+  <data key="d3">is a location within</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="l444p variant of gcase" target="pathogenic variant">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="lead optimization" target="structure–activity relationships">
+  <data key="d3">is achieved via</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="lysofix-gba" target="fluorescence-quenched substrates">
+  <data key="d3">captures</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="lysosomal activity" target="lysosomal translocation">
+  <data key="d3">is associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="lysosomal activity" target="small molecules">
+  <data key="d3">is enhanced by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="material properties" target="electrical properties">
+  <data key="d3">Electrical properties define how materials conduct electricity and are part of the broader category of material properties.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="material properties" target="mechanical properties">
+  <data key="d3">Mechanical properties are a subset of material properties that describe how materials respond to forces.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="material properties" target="thermal properties">
+  <data key="d3">Thermal properties are another subset of material properties that indicate how materials conduct heat.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="material properties" target="synthesis methods">
+  <data key="d3">Synthesis methods influence the properties of the resulting materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="materials science" target="ceramics">
+  <data key="d3">Ceramics is a branch of materials science that deals with the study of inorganic, non-metallic materials.,Ceramics are a category of materials studied within materials science, focusing on inorganic, non-metallic solids.</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="materials science" target="composite materials">
+  <data key="d3">Composite Materials are made from two or more constituent materials with significantly different physical or chemical properties.,Composite materials are made from two or more constituent materials with significantly different physical or chemical properties.</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="materials science" target="conclusion">
+  <data key="d3">The conclusion summarizes findings and implications derived from research in materials science.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="materials science" target="material characterization">
+  <data key="d3">Material characterization is a key process in materials science for understanding the properties and structure of materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="materials science" target="materials engineering">
+  <data key="d3">Materials engineering applies principles of materials science to design and develop new materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="materials science" target="metallurgy">
+  <data key="d3">Metallurgy is a subfield of materials science focused on the properties and applications of metals.,Metallurgy is a branch of materials science that deals with the physical and chemical behavior of metallic elements.</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="materials science" target="nanomaterials">
+  <data key="d3">Nanomaterials are materials with structural components smaller than 100 nanometers, studied within materials science.,Nanomaterials are a subfield of materials science focusing on materials with structures at the nanoscale.</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="materials science" target="polymer science">
+  <data key="d3">Polymer Science is a subfield of materials science that studies the synthesis, characterization, and applications of polymers.,Polymer science is a field within materials science that studies the properties and applications of polymers.</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="mechanical testing" target="material strength">
+  <data key="d3">Mechanical testing assesses the strength of materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="molecular identification" target="pharmacological validation">
+  <data key="d3">leads to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="molecular identification" target="physiologically relevant assays">
+  <data key="d3">facilitates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="molecular targets" target="gba1 pathway">
+  <data key="d3">regulate</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="molecular targets" target="target atlas">
+  <data key="d3">provides</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="n-terminal hibit tag" target="gcase function">
+  <data key="d3">has negligible influence on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="n-terminal region" target="hibit">
+  <data key="d3">is location of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ncats bioactive compounds" target="chemical libraries">
+  <data key="d3">is a source of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ncgc326" target="noninhibitory chaperones">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ncgc326" target="pharmacological compound (pc)">
+  <data key="d3">is an improved derivative of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="neuronopathic gaucher disease" target="gba1-related parkinson's disease">
+  <data key="d3">is a disease associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="output set" target="potential therapeutics">
+  <data key="d3">produced a</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="panobinostat" target="proteostasis regulators">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="therapeutic intervention">
+  <data key="d3">is a viable treatment for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="treatment">
+  <data key="d3">requires a</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="pharmacological agents" target="combinations">
+  <data key="d3">interact synergistically with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="pharmacological validation" target="medicinal chemistry optimization">
+  <data key="d3">supports,is part of</data>
+  <data key="d4">2.0</data>
+</edge>
+<edge source="pladienolide b" target="mechanism of action">
+  <data key="d3">has a novel</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="pladienolide b" target="potent compounds">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="pladienolide b" target="proteostasis regulators">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="potent compounds" target="screening methods">
+  <data key="d3">are identified by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="potent compounds" target="trans-isrib">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="primary screening" target="10,779 compounds">
+  <data key="d3">involves</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="proteasome inhibitors" target="therapeutic applications">
+  <data key="d3">are used in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="proteasome inhibitors" target="trans-isrib">
+  <data key="d3">is a specific example of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="quantitative assays" target="correctors of protein misfolding">
+  <data key="d3">identify</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="reporter protein" target="localization">
+  <data key="d3">is subject to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="results" target="findings">
+  <data key="d3">Results are often referred to as findings in the context of materials science research.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="robust cell-based assays" target="lead compounds">
+  <data key="d3">facilitate discovery of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="screening hits" target="subsequent investigation">
+  <data key="d3">should be prioritized for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="screening hits" target="validation assays">
+  <data key="d3">validated in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="screening process" target="small molecules">
+  <data key="d3">identified</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="therapeutic intervention" target="development process">
+  <data key="d3">is part of the process of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="therapeutic intervention" target="efficacy">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="therapeutic intervention" target="patients">
+  <data key="d3">provides for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="therapeutic intervention" target="treatment">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="therapeutic intervention" target="viability">
+  <data key="d3">describes the quality of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="thermal analysis" target="phase transitions">
+  <data key="d3">Thermal analysis techniques are used to study phase transitions in materials.</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="titration-based quantitative high-throughput screening" target="lead discovery">
+  <data key="d3">is a method for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="trans-isrib" target="proteostasis regulators">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transcription activator-like effector nucleases (talens)" target="gene editing">
+  <data key="d3">is a method of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transcription activator-like effector nucleases (talens)" target="transgene cassette">
+  <data key="d3">is used to integrate</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene" target="gba1 signal peptide">
+  <data key="d3">contains</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene" target="global gene expression">
+  <data key="d3">has minimal impact on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene" target="glycine/serine linker">
+  <data key="d3">contains upstream of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene" target="hibit peptide tag">
+  <data key="d3">contains</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene" target="local gene expression">
+  <data key="d3">has minimal impact on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="transgene cassette" target="citrate lyase beta-like (clybl) gene">
+  <data key="d3">is integrated into</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="translational assays" target="drug discovery">
+  <data key="d3">accelerate</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ultrahigh-throughput screening format" target="1,536-well plate">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="untagged gcase" target="endoplasmic reticulum accumulation">
+  <data key="d3">leads to</data>
+  <data key="d4">1.0</data>
+</edge>
+</graph></graphml>

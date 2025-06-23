@@ -1,0 +1,84 @@
+,node_1,node_2,edge,chunk_id
+0,antibiotic abx,clinical trial,is part of,85e95b22143c4820b04e37c16c0f604d
+1,antibiotic abx,safety profile,evaluates,85e95b22143c4820b04e37c16c0f604d
+2,antibiotic abx,tolerability profile,evaluates,85e95b22143c4820b04e37c16c0f604d
+3,antibiotic abx,efficacy profile,evaluates,85e95b22143c4820b04e37c16c0f604d
+4,antibiotic abx,synucleinopathies,is used for treating,85e95b22143c4820b04e37c16c0f604d
+5,dementia with lewy bodies (dlb),synucleinopathies,is a type of,85e95b22143c4820b04e37c16c0f604d
+6,clinical outcome measures,treatment efficacy,measures,85e95b22143c4820b04e37c16c0f604d
+7,digital cerebrospinal fluid (csf) biomarkers,treatment efficacy,measures,85e95b22143c4820b04e37c16c0f604d
+8,traditional cerebrospinal fluid (csf) biomarkers,treatment efficacy,measures,85e95b22143c4820b04e37c16c0f604d
+9,antibiotic abx,patients with dlb,is tested on,85e95b22143c4820b04e37c16c0f604d
+10,antiparkinsonian medications,dosage,are prescribed in,a55eeeea608f450d9345da5c3d3ca956
+11,dementia medications,dosage,are prescribed in,a55eeeea608f450d9345da5c3d3ca956
+12,informed consent capacity,participant,is required from,a55eeeea608f450d9345da5c3d3ca956
+13,caregiver,participant,has contact with,a55eeeea608f450d9345da5c3d3ca956
+14,caregiver,frequency of contact,contacts,a55eeeea608f450d9345da5c3d3ca956
+15,exclusion criteria,psychiatric disorders,includes,a55eeeea608f450d9345da5c3d3ca956
+16,exclusion criteria,medical conditions,includes,a55eeeea608f450d9345da5c3d3ca956
+17,exclusion criteria,surgical conditions,includes,a55eeeea608f450d9345da5c3d3ca956
+18,major cardiovascular events,initial visit,occurred prior to,a55eeeea608f450d9345da5c3d3ca956
+19,advanced malignancy,exclusion criteria,is part of,a55eeeea608f450d9345da5c3d3ca956
+20,sensitivity to antibiotics,exclusion criteria,is part of,a55eeeea608f450d9345da5c3d3ca956
+21,aneed study,clinical trial,is an,e85e7c453a154750ac5fceda136f3519
+22,abx,mechanism of action,has unique mechanism on,e85e7c453a154750ac5fceda136f3519
+23,abx,lysosomal alpha-synuclein clearance,enhances,e85e7c453a154750ac5fceda136f3519
+24,abx,dementia with lewy bodies (dlb),is a modifying treatment in,e85e7c453a154750ac5fceda136f3519
+25,rationale for treatment,abx,is based on,e85e7c453a154750ac5fceda136f3519
+26,gcase activity,alpha-synuclein metabolism,is associated with,e85e7c453a154750ac5fceda136f3519
+27,chaperone-mediated autophagy (cma),pathological alpha-synuclein,may reduce,e85e7c453a154750ac5fceda136f3519
+28,preclinical evidence,clinical evidence,supports,e85e7c453a154750ac5fceda136f3519
+29,abx,treatment rationale,is established by,e85e7c453a154750ac5fceda136f3519
+30,cma,enhancement of clearance,may lead to,e85e7c453a154750ac5fceda136f3519
+31,degradation pathways,ambroxol (abx),may affect,be3044184cfa41b3879a826ed83df54b
+32,ambroxol (abx),dementia with lewy bodies (dlb),is a modifying drug for,be3044184cfa41b3879a826ed83df54b
+33,ambroxol in new and early dementia with lewy bodies (aneed),clinical study,is a,be3044184cfa41b3879a826ed83df54b
+34,aneed,tolerability,investigates,be3044184cfa41b3879a826ed83df54b
+35,aneed,safety,investigates,be3044184cfa41b3879a826ed83df54b
+36,aneed,effects,investigates,be3044184cfa41b3879a826ed83df54b
+37,patients,dementia with lewy bodies (dlb),have,be3044184cfa41b3879a826ed83df54b
+38,ambroxol (abx),patients,is administered to,be3044184cfa41b3879a826ed83df54b
+39,dementia with lewy bodies (dlb),dementia,is a type of,be3044184cfa41b3879a826ed83df54b
+40,ambroxol (abx),modifying drug,is a type of,be3044184cfa41b3879a826ed83df54b
+41,gba gene mutations,parkinson's disease (pd),are associated with a higher incidence in,38d7ac2f9f054974a2e35123ee3bd298
+42,gba gene mutations,dementia with lewy bodies (dlb),are more prevalent in,38d7ac2f9f054974a2e35123ee3bd298
+43,genome-wide association study (gwas),gba gene mutations,confirms correlation with,38d7ac2f9f054974a2e35123ee3bd298
+44,gcase enzyme activity,ambroxol (abx),may increase,38d7ac2f9f054974a2e35123ee3bd298
+45,gcase enzyme levels,ambroxol (abx),may increase,38d7ac2f9f054974a2e35123ee3bd298
+46,alpha-synuclein autophagy-lysosome degradation pathways,gcase enzyme activity,enhanced by,38d7ac2f9f054974a2e35123ee3bd298
+47,parkinson's disease (pd),risk of developing,is higher for carriers of,38d7ac2f9f054974a2e35123ee3bd298
+48,gba gene mutations,risk of developing pd,increases the,38d7ac2f9f054974a2e35123ee3bd298
+49,dementia with lewy bodies (dlb),gba gene mutations,show higher incidence of,38d7ac2f9f054974a2e35123ee3bd298
+50,in vivo experiments,gcase enzyme activity,demonstrate effects on,38d7ac2f9f054974a2e35123ee3bd298
+51,multicenter clinical trial,phase iia,is a type of,82b3c1fa81d54c2293caa92ec7492023
+52,double-blind,clinical trial,is a characteristic of,82b3c1fa81d54c2293caa92ec7492023
+53,randomized,clinical trial,is a characteristic of,82b3c1fa81d54c2293caa92ec7492023
+54,placebo-controlled,clinical trial,is a characteristic of,82b3c1fa81d54c2293caa92ec7492023
+55,parallel group design,clinical trial,is a design type of,82b3c1fa81d54c2293caa92ec7492023
+56,inclusion criteria,study participants,applies to,82b3c1fa81d54c2293caa92ec7492023
+57,dementia with lewy bodies (dlb),diagnosis,is a type of,82b3c1fa81d54c2293caa92ec7492023
+58,mild cognitive impairment due to dlb (mci-dlb),diagnosis,is a type of,82b3c1fa81d54c2293caa92ec7492023
+59,mckeith criteria,diagnosis,establishes,82b3c1fa81d54c2293caa92ec7492023
+60,mini-mental state examination (mmse) score,screening,is a measure in,82b3c1fa81d54c2293caa92ec7492023
+61,antiparkinsonian drugs,study participants,are used by,82b3c1fa81d54c2293caa92ec7492023
+62,dementia medications,study participants,are used by,82b3c1fa81d54c2293caa92ec7492023
+63,dementia with lewy bodies,disease-modifying pharmacological treatment,has no available,cec2628c48074cbeb55c4d106ee14d64
+64,dementia with lewy bodies,alpha-synuclein,is characterized by,cec2628c48074cbeb55c4d106ee14d64
+65,alpha-synuclein,pathological deposition,causes,cec2628c48074cbeb55c4d106ee14d64
+66,reduced alpha-synuclein clearance,endolysosomal pathways,is caused by failure in,cec2628c48074cbeb55c4d106ee14d64
+67,reduced alpha-synuclein clearance,autophagic pathways,is caused by failure in,cec2628c48074cbeb55c4d106ee14d64
+68,glucocerebrosidase,gcase dysfunction,is related to,cec2628c48074cbeb55c4d106ee14d64
+69,gcase dysfunction,gba gene mutations,is caused by,cec2628c48074cbeb55c4d106ee14d64
+70,population studies,gba mutations,demonstrate higher incidence of,cec2628c48074cbeb55c4d106ee14d64
+71,gba mutations,dementia with lewy bodies,are associated with,cec2628c48074cbeb55c4d106ee14d64
+72,alpha-synuclein,dementia with lewy bodies,is a hallmark of,cec2628c48074cbeb55c4d106ee14d64
+73,chaperone-mediated autophagy (cma),pathological alpha-synuclein (as) depositions,may reduce,0e6a5fb74e774691be7718baddcdf40d
+74,abx,synucleinopathies,is tested in models of,0e6a5fb74e774691be7718baddcdf40d
+75,abx,toxic alpha-synuclein (as) species,reduces concentration of,0e6a5fb74e774691be7718baddcdf40d
+76,abx,cerebrospinal fluid (csf),penetrates into,0e6a5fb74e774691be7718baddcdf40d
+77,abx,glucocerebrosidase (gcase) activity,enhances effect on,0e6a5fb74e774691be7718baddcdf40d
+78,human cells,glucocerebrosidase (gcase) activity,is affected by,0e6a5fb74e774691be7718baddcdf40d
+79,preclinical trials,abx,show promising effects of,0e6a5fb74e774691be7718baddcdf40d
+80,abx,effects,show,0e6a5fb74e774691be7718baddcdf40d
+81,toxic alpha-synuclein (as) species,pathological alpha-synuclein (as) depositions,is related to,0e6a5fb74e774691be7718baddcdf40d
+82,chaperone-mediated autophagy (cma),abx,is a potential treatment for,0e6a5fb74e774691be7718baddcdf40d

@@ -1,0 +1,936 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 900px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="716 compounds">716 compounds</option>
+                                
+                                    <option value="hit compounds">hit compounds</option>
+                                
+                                    <option value="primary screening assay">primary screening assay</option>
+                                
+                                    <option value="ambroxol">ambroxol</option>
+                                
+                                    <option value="pharmacological chaperones">pharmacological chaperones</option>
+                                
+                                    <option value="assay pipeline">assay pipeline</option>
+                                
+                                    <option value="preclinical discovery">preclinical discovery</option>
+                                
+                                    <option value="glucocerebrosidase modulators">glucocerebrosidase modulators</option>
+                                
+                                    <option value="bioactive compounds">bioactive compounds</option>
+                                
+                                    <option value="mechanisms of action">mechanisms of action</option>
+                                
+                                    <option value="compound libraries">compound libraries</option>
+                                
+                                    <option value="biological modulators">biological modulators</option>
+                                
+                                    <option value="cellular regulation">cellular regulation</option>
+                                
+                                    <option value="gsk-3 inhibitors">gsk-3 inhibitors</option>
+                                
+                                    <option value="proteasome inhibitors">proteasome inhibitors</option>
+                                
+                                    <option value="cag promoter">cag promoter</option>
+                                
+                                    <option value="transgene">transgene</option>
+                                
+                                    <option value="cell-based assay platform">cell-based assay platform</option>
+                                
+                                    <option value="quantitative high-throughput screening (qhts)">quantitative high-throughput screening (qhts)</option>
+                                
+                                    <option value="cell-based assays">cell-based assays</option>
+                                
+                                    <option value="high-throughput screening">high-throughput screening</option>
+                                
+                                    <option value="high-throughput screening (hts)">high-throughput screening (hts)</option>
+                                
+                                    <option value="high-throughput assays">high-throughput assays</option>
+                                
+                                    <option value="small-molecule gcase enhancers">small-molecule gcase enhancers</option>
+                                
+                                    <option value="cellular systems">cellular systems</option>
+                                
+                                    <option value="target biology">target biology</option>
+                                
+                                    <option value="protein stabilization">protein stabilization</option>
+                                
+                                    <option value="combination therapy">combination therapy</option>
+                                
+                                    <option value="synergistic effects">synergistic effects</option>
+                                
+                                    <option value="combinatorial matrix screening">combinatorial matrix screening</option>
+                                
+                                    <option value="synergistic interactions">synergistic interactions</option>
+                                
+                                    <option value="compound identification">compound identification</option>
+                                
+                                    <option value="pharmacological validation">pharmacological validation</option>
+                                
+                                    <option value="compound ncgc326">compound ncgc326</option>
+                                
+                                    <option value="glucosylsphingosine accumulation">glucosylsphingosine accumulation</option>
+                                
+                                    <option value="proteostasis regulators">proteostasis regulators</option>
+                                
+                                    <option value="gcase enzyme">gcase enzyme</option>
+                                
+                                    <option value="lysosomal translocation">lysosomal translocation</option>
+                                
+                                    <option value="data analysis">data analysis</option>
+                                
+                                    <option value="statistical methods">statistical methods</option>
+                                
+                                    <option value="discovery and optimization">discovery and optimization</option>
+                                
+                                    <option value="lead compounds">lead compounds</option>
+                                
+                                    <option value="droplet digital pcr (ddpcr) method">droplet digital pcr (ddpcr) method</option>
+                                
+                                    <option value="hibit-gba1-wt protein">hibit-gba1-wt protein</option>
+                                
+                                    <option value="drug discovery pipeline">drug discovery pipeline</option>
+                                
+                                    <option value="multilevel approach">multilevel approach</option>
+                                
+                                    <option value="experimental procedures">experimental procedures</option>
+                                
+                                    <option value="experimental techniques">experimental techniques</option>
+                                
+                                    <option value="characterization methods">characterization methods</option>
+                                
+                                    <option value="final hit compounds">final hit compounds</option>
+                                
+                                    <option value="epigenetic mechanisms">epigenetic mechanisms</option>
+                                
+                                    <option value="gaucher disease">gaucher disease</option>
+                                
+                                    <option value="glucocerebrosidase">glucocerebrosidase</option>
+                                
+                                    <option value="monogenic disorder">monogenic disorder</option>
+                                
+                                    <option value="related disorders">related disorders</option>
+                                
+                                    <option value="glucocerebrosidase (gcase)">glucocerebrosidase (gcase)</option>
+                                
+                                    <option value="mutations">mutations</option>
+                                
+                                    <option value="gaucher disease (gd)">gaucher disease (gd)</option>
+                                
+                                    <option value="parkinson's disease (pd)">parkinson's disease (pd)</option>
+                                
+                                    <option value="therapeutic intervention">therapeutic intervention</option>
+                                
+                                    <option value="treatment">treatment</option>
+                                
+                                    <option value="gba1 gene">gba1 gene</option>
+                                
+                                    <option value="gaucher disease cell model">gaucher disease cell model</option>
+                                
+                                    <option value="lead discovery">lead discovery</option>
+                                
+                                    <option value="gba1-knockout h4 cells">gba1-knockout h4 cells</option>
+                                
+                                    <option value="gba1">gba1</option>
+                                
+                                    <option value="biallelic loss-of-function mutations">biallelic loss-of-function mutations</option>
+                                
+                                    <option value="gba1-related parkinson's disease (gba1-pd)">gba1-related parkinson's disease (gba1-pd)</option>
+                                
+                                    <option value="parkinson's disease">parkinson's disease</option>
+                                
+                                    <option value="gba1 knockout h4">gba1 knockout h4</option>
+                                
+                                    <option value="human neuroglioma cell line">human neuroglioma cell line</option>
+                                
+                                    <option value="gba1 knockout h4 cell line">gba1 knockout h4 cell line</option>
+                                
+                                    <option value="transgene cassette">transgene cassette</option>
+                                
+                                    <option value="gba1 knockout h4 clone">gba1 knockout h4 clone</option>
+                                
+                                    <option value="single copy">single copy</option>
+                                
+                                    <option value="gba1 molecular target">gba1 molecular target</option>
+                                
+                                    <option value="scientific knowledge">scientific knowledge</option>
+                                
+                                    <option value="gcase">gcase</option>
+                                
+                                    <option value="hibit peptide reporter tag">hibit peptide reporter tag</option>
+                                
+                                    <option value="lysosomal localization">lysosomal localization</option>
+                                
+                                    <option value="protein misfolding">protein misfolding</option>
+                                
+                                    <option value="trafficking obstruction">trafficking obstruction</option>
+                                
+                                    <option value="immunofluorescence assay">immunofluorescence assay</option>
+                                
+                                    <option value="therapeutic target">therapeutic target</option>
+                                
+                                    <option value="gcase activity">gcase activity</option>
+                                
+                                    <option value="functional lysosomal activity">functional lysosomal activity</option>
+                                
+                                    <option value="gcase activity deficiencies">gcase activity deficiencies</option>
+                                
+                                    <option value="related diseases">related diseases</option>
+                                
+                                    <option value="gcase enhancers">gcase enhancers</option>
+                                
+                                    <option value="therapeutic agents">therapeutic agents</option>
+                                
+                                    <option value="novel chemical entities">novel chemical entities</option>
+                                
+                                    <option value="physiologically relevant">physiologically relevant</option>
+                                
+                                    <option value="small molecules">small molecules</option>
+                                
+                                    <option value="gcase maturation">gcase maturation</option>
+                                
+                                    <option value="gcase function">gcase function</option>
+                                
+                                    <option value="gcase trafficking">gcase trafficking</option>
+                                
+                                    <option value="n-terminal hibit tag">n-terminal hibit tag</option>
+                                
+                                    <option value="overexpression">overexpression</option>
+                                
+                                    <option value="hibit tag">hibit tag</option>
+                                
+                                    <option value="hibit-tagged gcase expression">hibit-tagged gcase expression</option>
+                                
+                                    <option value="gcase-l444p variant">gcase-l444p variant</option>
+                                
+                                    <option value="enzyme levels">enzyme levels</option>
+                                
+                                    <option value="protein levels">protein levels</option>
+                                
+                                    <option value="glucer accumulation">glucer accumulation</option>
+                                
+                                    <option value="h4 cell model">h4 cell model</option>
+                                
+                                    <option value="small-molecule stabilizers">small-molecule stabilizers</option>
+                                
+                                    <option value="potential therapeutics">potential therapeutics</option>
+                                
+                                    <option value="therapeutic applications">therapeutic applications</option>
+                                
+                                    <option value="pladienolide b">pladienolide b</option>
+                                
+                                    <option value="hgcase-1/23">hgcase-1/23</option>
+                                
+                                    <option value="monoclonal antibody">monoclonal antibody</option>
+                                
+                                    <option value="monoclonal human gcase antibody">monoclonal human gcase antibody</option>
+                                
+                                    <option value="gcase variants">gcase variants</option>
+                                
+                                    <option value="hibit reporter">hibit reporter</option>
+                                
+                                    <option value="11-amino acid peptide tag">11-amino acid peptide tag</option>
+                                
+                                    <option value="luminescence-based high-throughput screening (qhts)">luminescence-based high-throughput screening (qhts)</option>
+                                
+                                    <option value="hibit-gba1 transgene">hibit-gba1 transgene</option>
+                                
+                                    <option value="intragenic safe-harbor locus">intragenic safe-harbor locus</option>
+                                
+                                    <option value="talen gene editing">talen gene editing</option>
+                                
+                                    <option value="hibit-gcase h4 cell lines">hibit-gcase h4 cell lines</option>
+                                
+                                    <option value="ultrahigh-throughput screening format">ultrahigh-throughput screening format</option>
+                                
+                                    <option value="hibit-gcase-l444p">hibit-gcase-l444p</option>
+                                
+                                    <option value="stabilizers">stabilizers</option>
+                                
+                                    <option value="hibit-gcase-l444p assay">hibit-gcase-l444p assay</option>
+                                
+                                    <option value="drug development">drug development</option>
+                                
+                                    <option value="protein complexes (pcs)">protein complexes (pcs)</option>
+                                
+                                    <option value="protein residues (prs)">protein residues (prs)</option>
+                                
+                                    <option value="hibit-gcase-l444p variant">hibit-gcase-l444p variant</option>
+                                
+                                    <option value="dose-dependent response">dose-dependent response</option>
+                                
+                                    <option value="hibit-tagged gcase">hibit-tagged gcase</option>
+                                
+                                    <option value="endogenous gcase">endogenous gcase</option>
+                                
+                                    <option value="moderate expression">moderate expression</option>
+                                
+                                    <option value="high levels of untagged gcase">high levels of untagged gcase</option>
+                                
+                                    <option value="clear lysosomal localization">clear lysosomal localization</option>
+                                
+                                    <option value="140 confirmed hits">140 confirmed hits</option>
+                                
+                                    <option value="human glucocerebrosidase (gcase)">human glucocerebrosidase (gcase)</option>
+                                
+                                    <option value="hibit">hibit</option>
+                                
+                                    <option value="integrated approach">integrated approach</option>
+                                
+                                    <option value="rational drug development">rational drug development</option>
+                                
+                                    <option value="integrative gene transfer method">integrative gene transfer method</option>
+                                
+                                    <option value="intron">intron</option>
+                                
+                                    <option value="citrate lyase beta-like (clybl) gene">citrate lyase beta-like (clybl) gene</option>
+                                
+                                    <option value="l444p variant of gcase">l444p variant of gcase</option>
+                                
+                                    <option value="pathogenic variant">pathogenic variant</option>
+                                
+                                    <option value="lead optimization">lead optimization</option>
+                                
+                                    <option value="structure–activity relationships">structure–activity relationships</option>
+                                
+                                    <option value="lysofix-gba">lysofix-gba</option>
+                                
+                                    <option value="fluorescence-quenched substrates">fluorescence-quenched substrates</option>
+                                
+                                    <option value="lysosomal activity">lysosomal activity</option>
+                                
+                                    <option value="material properties">material properties</option>
+                                
+                                    <option value="electrical properties">electrical properties</option>
+                                
+                                    <option value="mechanical properties">mechanical properties</option>
+                                
+                                    <option value="thermal properties">thermal properties</option>
+                                
+                                    <option value="synthesis methods">synthesis methods</option>
+                                
+                                    <option value="materials science">materials science</option>
+                                
+                                    <option value="ceramics">ceramics</option>
+                                
+                                    <option value="composite materials">composite materials</option>
+                                
+                                    <option value="conclusion">conclusion</option>
+                                
+                                    <option value="material characterization">material characterization</option>
+                                
+                                    <option value="materials engineering">materials engineering</option>
+                                
+                                    <option value="metallurgy">metallurgy</option>
+                                
+                                    <option value="nanomaterials">nanomaterials</option>
+                                
+                                    <option value="polymer science">polymer science</option>
+                                
+                                    <option value="mechanical testing">mechanical testing</option>
+                                
+                                    <option value="material strength">material strength</option>
+                                
+                                    <option value="molecular identification">molecular identification</option>
+                                
+                                    <option value="physiologically relevant assays">physiologically relevant assays</option>
+                                
+                                    <option value="molecular targets">molecular targets</option>
+                                
+                                    <option value="gba1 pathway">gba1 pathway</option>
+                                
+                                    <option value="target atlas">target atlas</option>
+                                
+                                    <option value="n-terminal region">n-terminal region</option>
+                                
+                                    <option value="ncats bioactive compounds">ncats bioactive compounds</option>
+                                
+                                    <option value="chemical libraries">chemical libraries</option>
+                                
+                                    <option value="ncgc326">ncgc326</option>
+                                
+                                    <option value="noninhibitory chaperones">noninhibitory chaperones</option>
+                                
+                                    <option value="pharmacological compound (pc)">pharmacological compound (pc)</option>
+                                
+                                    <option value="neuronopathic gaucher disease">neuronopathic gaucher disease</option>
+                                
+                                    <option value="gba1-related parkinson's disease">gba1-related parkinson's disease</option>
+                                
+                                    <option value="output set">output set</option>
+                                
+                                    <option value="panobinostat">panobinostat</option>
+                                
+                                    <option value="pharmacological agents">pharmacological agents</option>
+                                
+                                    <option value="combinations">combinations</option>
+                                
+                                    <option value="medicinal chemistry optimization">medicinal chemistry optimization</option>
+                                
+                                    <option value="mechanism of action">mechanism of action</option>
+                                
+                                    <option value="potent compounds">potent compounds</option>
+                                
+                                    <option value="screening methods">screening methods</option>
+                                
+                                    <option value="trans-isrib">trans-isrib</option>
+                                
+                                    <option value="primary screening">primary screening</option>
+                                
+                                    <option value="10,779 compounds">10,779 compounds</option>
+                                
+                                    <option value="quantitative assays">quantitative assays</option>
+                                
+                                    <option value="correctors of protein misfolding">correctors of protein misfolding</option>
+                                
+                                    <option value="reporter protein">reporter protein</option>
+                                
+                                    <option value="localization">localization</option>
+                                
+                                    <option value="results">results</option>
+                                
+                                    <option value="findings">findings</option>
+                                
+                                    <option value="robust cell-based assays">robust cell-based assays</option>
+                                
+                                    <option value="screening hits">screening hits</option>
+                                
+                                    <option value="subsequent investigation">subsequent investigation</option>
+                                
+                                    <option value="validation assays">validation assays</option>
+                                
+                                    <option value="screening process">screening process</option>
+                                
+                                    <option value="development process">development process</option>
+                                
+                                    <option value="efficacy">efficacy</option>
+                                
+                                    <option value="patients">patients</option>
+                                
+                                    <option value="viability">viability</option>
+                                
+                                    <option value="thermal analysis">thermal analysis</option>
+                                
+                                    <option value="phase transitions">phase transitions</option>
+                                
+                                    <option value="titration-based quantitative high-throughput screening">titration-based quantitative high-throughput screening</option>
+                                
+                                    <option value="transcription activator-like effector nucleases (talens)">transcription activator-like effector nucleases (talens)</option>
+                                
+                                    <option value="gene editing">gene editing</option>
+                                
+                                    <option value="gba1 signal peptide">gba1 signal peptide</option>
+                                
+                                    <option value="global gene expression">global gene expression</option>
+                                
+                                    <option value="glycine/serine linker">glycine/serine linker</option>
+                                
+                                    <option value="hibit peptide tag">hibit peptide tag</option>
+                                
+                                    <option value="local gene expression">local gene expression</option>
+                                
+                                    <option value="translational assays">translational assays</option>
+                                
+                                    <option value="drug discovery">drug discovery</option>
+                                
+                                    <option value="1,536-well plate">1,536-well plate</option>
+                                
+                                    <option value="untagged gcase">untagged gcase</option>
+                                
+                                    <option value="endoplasmic reticulum accumulation">endoplasmic reticulum accumulation</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": 4, "id": "716 compounds", "label": "716 compounds", "shape": "dot", "size": 2}, {"group": 4, "id": "hit compounds", "label": "hit compounds", "shape": "dot", "size": 2}, {"group": 4, "id": "primary screening assay", "label": "primary screening assay", "shape": "dot", "size": 1}, {"group": 5, "id": "ambroxol", "label": "ambroxol", "shape": "dot", "size": 1}, {"group": 5, "id": "pharmacological chaperones", "label": "pharmacological chaperones", "shape": "dot", "size": 1}, {"group": 6, "id": "assay pipeline", "label": "assay pipeline", "shape": "dot", "size": 2}, {"group": 6, "id": "preclinical discovery", "label": "preclinical discovery", "shape": "dot", "size": 1}, {"group": 6, "id": "glucocerebrosidase modulators", "label": "glucocerebrosidase modulators", "shape": "dot", "size": 2}, {"group": 8, "id": "bioactive compounds", "label": "bioactive compounds", "shape": "dot", "size": 2}, {"group": 8, "id": "mechanisms of action", "label": "mechanisms of action", "shape": "dot", "size": 2}, {"group": 8, "id": "compound libraries", "label": "compound libraries", "shape": "dot", "size": 1}, {"group": 9, "id": "biological modulators", "label": "biological modulators", "shape": "dot", "size": 3}, {"group": 9, "id": "cellular regulation", "label": "cellular regulation", "shape": "dot", "size": 1}, {"group": 9, "id": "gsk-3 inhibitors", "label": "gsk-3 inhibitors", "shape": "dot", "size": 3}, {"group": 9, "id": "proteasome inhibitors", "label": "proteasome inhibitors", "shape": "dot", "size": 3}, {"group": 10, "id": "cag promoter", "label": "cag promoter", "shape": "dot", "size": 1}, {"group": 10, "id": "transgene", "label": "transgene", "shape": "dot", "size": 8}, {"group": 11, "id": "cell-based assay platform", "label": "cell-based assay platform", "shape": "dot", "size": 1}, {"group": 11, "id": "quantitative high-throughput screening (qhts)", "label": "quantitative high-throughput screening (qhts)", "shape": "dot", "size": 1}, {"group": 12, "id": "cell-based assays", "label": "cell-based assays", "shape": "dot", "size": 4}, {"group": 12, "id": "high-throughput screening", "label": "high-throughput screening", "shape": "dot", "size": 1}, {"group": 12, "id": "high-throughput screening (hts)", "label": "high-throughput screening (hts)", "shape": "dot", "size": 2}, {"group": 12, "id": "high-throughput assays", "label": "high-throughput assays", "shape": "dot", "size": 1}, {"group": 12, "id": "small-molecule gcase enhancers", "label": "small-molecule gcase enhancers", "shape": "dot", "size": 1}, {"group": 13, "id": "cellular systems", "label": "cellular systems", "shape": "dot", "size": 2}, {"group": 13, "id": "target biology", "label": "target biology", "shape": "dot", "size": 1}, {"group": 13, "id": "protein stabilization", "label": "protein stabilization", "shape": "dot", "size": 1}, {"group": 19, "id": "combination therapy", "label": "combination therapy", "shape": "dot", "size": 1}, {"group": 19, "id": "synergistic effects", "label": "synergistic effects", "shape": "dot", "size": 1}, {"group": 9, "id": "combinatorial matrix screening", "label": "combinatorial matrix screening", "shape": "dot", "size": 1}, {"group": 9, "id": "synergistic interactions", "label": "synergistic interactions", "shape": "dot", "size": 2}, {"group": 12, "id": "compound identification", "label": "compound identification", "shape": "dot", "size": 2}, {"group": 12, "id": "pharmacological validation", "label": "pharmacological validation", "shape": "dot", "size": 3}, {"group": 9, "id": "compound ncgc326", "label": "compound ncgc326", "shape": "dot", "size": 4}, {"group": 9, "id": "glucosylsphingosine accumulation", "label": "glucosylsphingosine accumulation", "shape": "dot", "size": 1}, {"group": 9, "id": "proteostasis regulators", "label": "proteostasis regulators", "shape": "dot", "size": 4}, {"group": 9, "id": "gcase enzyme", "label": "gcase enzyme", "shape": "dot", "size": 2}, {"group": 9, "id": "lysosomal translocation", "label": "lysosomal translocation", "shape": "dot", "size": 2}, {"group": 22, "id": "data analysis", "label": "data analysis", "shape": "dot", "size": 1}, {"group": 22, "id": "statistical methods", "label": "statistical methods", "shape": "dot", "size": 1}, {"group": 23, "id": "discovery and optimization", "label": "discovery and optimization", "shape": "dot", "size": 1}, {"group": 23, "id": "lead compounds", "label": "lead compounds", "shape": "dot", "size": 2}, {"group": 25, "id": "droplet digital pcr (ddpcr) method", "label": "droplet digital pcr (ddpcr) method", "shape": "dot", "size": 1}, {"group": 25, "id": "hibit-gba1-wt protein", "label": "hibit-gba1-wt protein", "shape": "dot", "size": 2}, {"group": 28, "id": "drug discovery pipeline", "label": "drug discovery pipeline", "shape": "dot", "size": 1}, {"group": 28, "id": "multilevel approach", "label": "multilevel approach", "shape": "dot", "size": 1}, {"group": 25, "id": "experimental procedures", "label": "experimental procedures", "shape": "dot", "size": 1}, {"group": 15, "id": "experimental techniques", "label": "experimental techniques", "shape": "dot", "size": 1}, {"group": 15, "id": "characterization methods", "label": "characterization methods", "shape": "dot", "size": 1}, {"group": 8, "id": "final hit compounds", "label": "final hit compounds", "shape": "dot", "size": 2}, {"group": 8, "id": "epigenetic mechanisms", "label": "epigenetic mechanisms", "shape": "dot", "size": 1}, {"group": 7, "id": "gaucher disease", "label": "gaucher disease", "shape": "dot", "size": 5}, {"group": 7, "id": "glucocerebrosidase", "label": "glucocerebrosidase", "shape": "dot", "size": 4}, {"group": 7, "id": "monogenic disorder", "label": "monogenic disorder", "shape": "dot", "size": 1}, {"group": 7, "id": "related disorders", "label": "related disorders", "shape": "dot", "size": 1}, {"group": 7, "id": "glucocerebrosidase (gcase)", "label": "glucocerebrosidase (gcase)", "shape": "dot", "size": 2}, {"group": 7, "id": "mutations", "label": "mutations", "shape": "dot", "size": 1}, {"group": 7, "id": "gaucher disease (gd)", "label": "gaucher disease (gd)", "shape": "dot", "size": 4}, {"group": 7, "id": "parkinson\u0027s disease (pd)", "label": "parkinson\u0027s disease (pd)", "shape": "dot", "size": 3}, {"group": 7, "id": "therapeutic intervention", "label": "therapeutic intervention", "shape": "dot", "size": 7}, {"group": 7, "id": "treatment", "label": "treatment", "shape": "dot", "size": 3}, {"group": 7, "id": "gba1 gene", "label": "gba1 gene", "shape": "dot", "size": 5}, {"group": 26, "id": "gaucher disease cell model", "label": "gaucher disease cell model", "shape": "dot", "size": 2}, {"group": 26, "id": "lead discovery", "label": "lead discovery", "shape": "dot", "size": 3}, {"group": 26, "id": "gba1-knockout h4 cells", "label": "gba1-knockout h4 cells", "shape": "dot", "size": 1}, {"group": 10, "id": "gba1", "label": "gba1", "shape": "dot", "size": 1}, {"group": 7, "id": "biallelic loss-of-function mutations", "label": "biallelic loss-of-function mutations", "shape": "dot", "size": 1}, {"group": 7, "id": "gba1-related parkinson\u0027s disease (gba1-pd)", "label": "gba1-related parkinson\u0027s disease (gba1-pd)", "shape": "dot", "size": 1}, {"group": 7, "id": "parkinson\u0027s disease", "label": "parkinson\u0027s disease", "shape": "dot", "size": 2}, {"group": 35, "id": "gba1 knockout h4", "label": "gba1 knockout h4", "shape": "dot", "size": 1}, {"group": 35, "id": "human neuroglioma cell line", "label": "human neuroglioma cell line", "shape": "dot", "size": 1}, {"group": 17, "id": "gba1 knockout h4 cell line", "label": "gba1 knockout h4 cell line", "shape": "dot", "size": 1}, {"group": 17, "id": "transgene cassette", "label": "transgene cassette", "shape": "dot", "size": 3}, {"group": 36, "id": "gba1 knockout h4 clone", "label": "gba1 knockout h4 clone", "shape": "dot", "size": 1}, {"group": 36, "id": "single copy", "label": "single copy", "shape": "dot", "size": 1}, {"group": 37, "id": "gba1 molecular target", "label": "gba1 molecular target", "shape": "dot", "size": 1}, {"group": 37, "id": "scientific knowledge", "label": "scientific knowledge", "shape": "dot", "size": 1}, {"group": 30, "id": "gcase", "label": "gcase", "shape": "dot", "size": 6}, {"group": 30, "id": "hibit peptide reporter tag", "label": "hibit peptide reporter tag", "shape": "dot", "size": 2}, {"group": 30, "id": "lysosomal localization", "label": "lysosomal localization", "shape": "dot", "size": 2}, {"group": 30, "id": "protein misfolding", "label": "protein misfolding", "shape": "dot", "size": 1}, {"group": 30, "id": "trafficking obstruction", "label": "trafficking obstruction", "shape": "dot", "size": 1}, {"group": 30, "id": "immunofluorescence assay", "label": "immunofluorescence assay", "shape": "dot", "size": 1}, {"group": 30, "id": "therapeutic target", "label": "therapeutic target", "shape": "dot", "size": 1}, {"group": 34, "id": "gcase activity", "label": "gcase activity", "shape": "dot", "size": 1}, {"group": 34, "id": "functional lysosomal activity", "label": "functional lysosomal activity", "shape": "dot", "size": 1}, {"group": 40, "id": "gcase activity deficiencies", "label": "gcase activity deficiencies", "shape": "dot", "size": 1}, {"group": 40, "id": "related diseases", "label": "related diseases", "shape": "dot", "size": 1}, {"group": 41, "id": "gcase enhancers", "label": "gcase enhancers", "shape": "dot", "size": 3}, {"group": 41, "id": "therapeutic agents", "label": "therapeutic agents", "shape": "dot", "size": 1}, {"group": 41, "id": "novel chemical entities", "label": "novel chemical entities", "shape": "dot", "size": 1}, {"group": 41, "id": "physiologically relevant", "label": "physiologically relevant", "shape": "dot", "size": 1}, {"group": 9, "id": "small molecules", "label": "small molecules", "shape": "dot", "size": 5}, {"group": 42, "id": "gcase maturation", "label": "gcase maturation", "shape": "dot", "size": 3}, {"group": 42, "id": "gcase function", "label": "gcase function", "shape": "dot", "size": 2}, {"group": 42, "id": "gcase trafficking", "label": "gcase trafficking", "shape": "dot", "size": 5}, {"group": 42, "id": "n-terminal hibit tag", "label": "n-terminal hibit tag", "shape": "dot", "size": 3}, {"group": 42, "id": "overexpression", "label": "overexpression", "shape": "dot", "size": 1}, {"group": 42, "id": "hibit tag", "label": "hibit tag", "shape": "dot", "size": 1}, {"group": 42, "id": "hibit-tagged gcase expression", "label": "hibit-tagged gcase expression", "shape": "dot", "size": 1}, {"group": 9, "id": "gcase-l444p variant", "label": "gcase-l444p variant", "shape": "dot", "size": 4}, {"group": 9, "id": "enzyme levels", "label": "enzyme levels", "shape": "dot", "size": 1}, {"group": 9, "id": "protein levels", "label": "protein levels", "shape": "dot", "size": 1}, {"group": 43, "id": "glucer accumulation", "label": "glucer accumulation", "shape": "dot", "size": 1}, {"group": 43, "id": "h4 cell model", "label": "h4 cell model", "shape": "dot", "size": 1}, {"group": 7, "id": "small-molecule stabilizers", "label": "small-molecule stabilizers", "shape": "dot", "size": 1}, {"group": 6, "id": "potential therapeutics", "label": "potential therapeutics", "shape": "dot", "size": 2}, {"group": 9, "id": "therapeutic applications", "label": "therapeutic applications", "shape": "dot", "size": 2}, {"group": 9, "id": "pladienolide b", "label": "pladienolide b", "shape": "dot", "size": 4}, {"group": 44, "id": "hgcase-1/23", "label": "hgcase-1/23", "shape": "dot", "size": 2}, {"group": 44, "id": "monoclonal antibody", "label": "monoclonal antibody", "shape": "dot", "size": 1}, {"group": 44, "id": "monoclonal human gcase antibody", "label": "monoclonal human gcase antibody", "shape": "dot", "size": 1}, {"group": 30, "id": "gcase variants", "label": "gcase variants", "shape": "dot", "size": 1}, {"group": 3, "id": "hibit reporter", "label": "hibit reporter", "shape": "dot", "size": 2}, {"group": 3, "id": "11-amino acid peptide tag", "label": "11-amino acid peptide tag", "shape": "dot", "size": 1}, {"group": 3, "id": "luminescence-based high-throughput screening (qhts)", "label": "luminescence-based high-throughput screening (qhts)", "shape": "dot", "size": 1}, {"group": 46, "id": "hibit-gba1 transgene", "label": "hibit-gba1 transgene", "shape": "dot", "size": 2}, {"group": 46, "id": "intragenic safe-harbor locus", "label": "intragenic safe-harbor locus", "shape": "dot", "size": 1}, {"group": 46, "id": "talen gene editing", "label": "talen gene editing", "shape": "dot", "size": 1}, {"group": 1, "id": "hibit-gcase h4 cell lines", "label": "hibit-gcase h4 cell lines", "shape": "dot", "size": 1}, {"group": 1, "id": "ultrahigh-throughput screening format", "label": "ultrahigh-throughput screening format", "shape": "dot", "size": 2}, {"group": 47, "id": "hibit-gcase-l444p", "label": "hibit-gcase-l444p", "shape": "dot", "size": 1}, {"group": 47, "id": "stabilizers", "label": "stabilizers", "shape": "dot", "size": 1}, {"group": 26, "id": "hibit-gcase-l444p assay", "label": "hibit-gcase-l444p assay", "shape": "dot", "size": 4}, {"group": 26, "id": "drug development", "label": "drug development", "shape": "dot", "size": 1}, {"group": 26, "id": "protein complexes (pcs)", "label": "protein complexes (pcs)", "shape": "dot", "size": 1}, {"group": 26, "id": "protein residues (prs)", "label": "protein residues (prs)", "shape": "dot", "size": 1}, {"group": 24, "id": "hibit-gcase-l444p variant", "label": "hibit-gcase-l444p variant", "shape": "dot", "size": 1}, {"group": 24, "id": "dose-dependent response", "label": "dose-dependent response", "shape": "dot", "size": 1}, {"group": 30, "id": "hibit-tagged gcase", "label": "hibit-tagged gcase", "shape": "dot", "size": 3}, {"group": 30, "id": "endogenous gcase", "label": "endogenous gcase", "shape": "dot", "size": 1}, {"group": 30, "id": "moderate expression", "label": "moderate expression", "shape": "dot", "size": 1}, {"group": 18, "id": "high levels of untagged gcase", "label": "high levels of untagged gcase", "shape": "dot", "size": 1}, {"group": 18, "id": "clear lysosomal localization", "label": "clear lysosomal localization", "shape": "dot", "size": 1}, {"group": 4, "id": "140 confirmed hits", "label": "140 confirmed hits", "shape": "dot", "size": 1}, {"group": 45, "id": "human glucocerebrosidase (gcase)", "label": "human glucocerebrosidase (gcase)", "shape": "dot", "size": 1}, {"group": 45, "id": "hibit", "label": "hibit", "shape": "dot", "size": 2}, {"group": 48, "id": "integrated approach", "label": "integrated approach", "shape": "dot", "size": 1}, {"group": 48, "id": "rational drug development", "label": "rational drug development", "shape": "dot", "size": 1}, {"group": 10, "id": "integrative gene transfer method", "label": "integrative gene transfer method", "shape": "dot", "size": 1}, {"group": 17, "id": "intron", "label": "intron", "shape": "dot", "size": 1}, {"group": 17, "id": "citrate lyase beta-like (clybl) gene", "label": "citrate lyase beta-like (clybl) gene", "shape": "dot", "size": 2}, {"group": 49, "id": "l444p variant of gcase", "label": "l444p variant of gcase", "shape": "dot", "size": 1}, {"group": 49, "id": "pathogenic variant", "label": "pathogenic variant", "shape": "dot", "size": 1}, {"group": 50, "id": "lead optimization", "label": "lead optimization", "shape": "dot", "size": 1}, {"group": 50, "id": "structure\u2013activity relationships", "label": "structure\u2013activity relationships", "shape": "dot", "size": 1}, {"group": 33, "id": "lysofix-gba", "label": "lysofix-gba", "shape": "dot", "size": 1}, {"group": 33, "id": "fluorescence-quenched substrates", "label": "fluorescence-quenched substrates", "shape": "dot", "size": 1}, {"group": 9, "id": "lysosomal activity", "label": "lysosomal activity", "shape": "dot", "size": 2}, {"group": 29, "id": "material properties", "label": "material properties", "shape": "dot", "size": 4}, {"group": 29, "id": "electrical properties", "label": "electrical properties", "shape": "dot", "size": 1}, {"group": 29, "id": "mechanical properties", "label": "mechanical properties", "shape": "dot", "size": 1}, {"group": 29, "id": "thermal properties", "label": "thermal properties", "shape": "dot", "size": 1}, {"group": 29, "id": "synthesis methods", "label": "synthesis methods", "shape": "dot", "size": 1}, {"group": 14, "id": "materials science", "label": "materials science", "shape": "dot", "size": 8}, {"group": 14, "id": "ceramics", "label": "ceramics", "shape": "dot", "size": 1}, {"group": 14, "id": "composite materials", "label": "composite materials", "shape": "dot", "size": 1}, {"group": 14, "id": "conclusion", "label": "conclusion", "shape": "dot", "size": 1}, {"group": 14, "id": "material characterization", "label": "material characterization", "shape": "dot", "size": 1}, {"group": 14, "id": "materials engineering", "label": "materials engineering", "shape": "dot", "size": 1}, {"group": 14, "id": "metallurgy", "label": "metallurgy", "shape": "dot", "size": 1}, {"group": 14, "id": "nanomaterials", "label": "nanomaterials", "shape": "dot", "size": 1}, {"group": 14, "id": "polymer science", "label": "polymer science", "shape": "dot", "size": 1}, {"group": 52, "id": "mechanical testing", "label": "mechanical testing", "shape": "dot", "size": 1}, {"group": 52, "id": "material strength", "label": "material strength", "shape": "dot", "size": 1}, {"group": 12, "id": "molecular identification", "label": "molecular identification", "shape": "dot", "size": 2}, {"group": 12, "id": "physiologically relevant assays", "label": "physiologically relevant assays", "shape": "dot", "size": 1}, {"group": 38, "id": "molecular targets", "label": "molecular targets", "shape": "dot", "size": 2}, {"group": 38, "id": "gba1 pathway", "label": "gba1 pathway", "shape": "dot", "size": 1}, {"group": 38, "id": "target atlas", "label": "target atlas", "shape": "dot", "size": 1}, {"group": 45, "id": "n-terminal region", "label": "n-terminal region", "shape": "dot", "size": 1}, {"group": 16, "id": "ncats bioactive compounds", "label": "ncats bioactive compounds", "shape": "dot", "size": 1}, {"group": 16, "id": "chemical libraries", "label": "chemical libraries", "shape": "dot", "size": 1}, {"group": 53, "id": "ncgc326", "label": "ncgc326", "shape": "dot", "size": 2}, {"group": 53, "id": "noninhibitory chaperones", "label": "noninhibitory chaperones", "shape": "dot", "size": 1}, {"group": 53, "id": "pharmacological compound (pc)", "label": "pharmacological compound (pc)", "shape": "dot", "size": 1}, {"group": 39, "id": "neuronopathic gaucher disease", "label": "neuronopathic gaucher disease", "shape": "dot", "size": 1}, {"group": 39, "id": "gba1-related parkinson\u0027s disease", "label": "gba1-related parkinson\u0027s disease", "shape": "dot", "size": 1}, {"group": 6, "id": "output set", "label": "output set", "shape": "dot", "size": 1}, {"group": 9, "id": "panobinostat", "label": "panobinostat", "shape": "dot", "size": 1}, {"group": 20, "id": "pharmacological agents", "label": "pharmacological agents", "shape": "dot", "size": 1}, {"group": 20, "id": "combinations", "label": "combinations", "shape": "dot", "size": 1}, {"group": 12, "id": "medicinal chemistry optimization", "label": "medicinal chemistry optimization", "shape": "dot", "size": 1}, {"group": 9, "id": "mechanism of action", "label": "mechanism of action", "shape": "dot", "size": 1}, {"group": 9, "id": "potent compounds", "label": "potent compounds", "shape": "dot", "size": 3}, {"group": 9, "id": "screening methods", "label": "screening methods", "shape": "dot", "size": 1}, {"group": 9, "id": "trans-isrib", "label": "trans-isrib", "shape": "dot", "size": 3}, {"group": 2, "id": "primary screening", "label": "primary screening", "shape": "dot", "size": 1}, {"group": 2, "id": "10,779 compounds", "label": "10,779 compounds", "shape": "dot", "size": 1}, {"group": 21, "id": "quantitative assays", "label": "quantitative assays", "shape": "dot", "size": 1}, {"group": 21, "id": "correctors of protein misfolding", "label": "correctors of protein misfolding", "shape": "dot", "size": 1}, {"group": 51, "id": "reporter protein", "label": "reporter protein", "shape": "dot", "size": 1}, {"group": 51, "id": "localization", "label": "localization", "shape": "dot", "size": 1}, {"group": 32, "id": "results", "label": "results", "shape": "dot", "size": 1}, {"group": 32, "id": "findings", "label": "findings", "shape": "dot", "size": 1}, {"group": 23, "id": "robust cell-based assays", "label": "robust cell-based assays", "shape": "dot", "size": 1}, {"group": 55, "id": "screening hits", "label": "screening hits", "shape": "dot", "size": 2}, {"group": 55, "id": "subsequent investigation", "label": "subsequent investigation", "shape": "dot", "size": 1}, {"group": 55, "id": "validation assays", "label": "validation assays", "shape": "dot", "size": 1}, {"group": 9, "id": "screening process", "label": "screening process", "shape": "dot", "size": 1}, {"group": 7, "id": "development process", "label": "development process", "shape": "dot", "size": 1}, {"group": 7, "id": "efficacy", "label": "efficacy", "shape": "dot", "size": 1}, {"group": 7, "id": "patients", "label": "patients", "shape": "dot", "size": 1}, {"group": 7, "id": "viability", "label": "viability", "shape": "dot", "size": 1}, {"group": 54, "id": "thermal analysis", "label": "thermal analysis", "shape": "dot", "size": 1}, {"group": 54, "id": "phase transitions", "label": "phase transitions", "shape": "dot", "size": 1}, {"group": 26, "id": "titration-based quantitative high-throughput screening", "label": "titration-based quantitative high-throughput screening", "shape": "dot", "size": 1}, {"group": 17, "id": "transcription activator-like effector nucleases (talens)", "label": "transcription activator-like effector nucleases (talens)", "shape": "dot", "size": 2}, {"group": 17, "id": "gene editing", "label": "gene editing", "shape": "dot", "size": 1}, {"group": 10, "id": "gba1 signal peptide", "label": "gba1 signal peptide", "shape": "dot", "size": 1}, {"group": 10, "id": "global gene expression", "label": "global gene expression", "shape": "dot", "size": 1}, {"group": 10, "id": "glycine/serine linker", "label": "glycine/serine linker", "shape": "dot", "size": 1}, {"group": 10, "id": "hibit peptide tag", "label": "hibit peptide tag", "shape": "dot", "size": 1}, {"group": 10, "id": "local gene expression", "label": "local gene expression", "shape": "dot", "size": 1}, {"group": 27, "id": "translational assays", "label": "translational assays", "shape": "dot", "size": 1}, {"group": 27, "id": "drug discovery", "label": "drug discovery", "shape": "dot", "size": 1}, {"group": 1, "id": "1,536-well plate", "label": "1,536-well plate", "shape": "dot", "size": 1}, {"group": 31, "id": "untagged gcase", "label": "untagged gcase", "shape": "dot", "size": 1}, {"group": 31, "id": "endoplasmic reticulum accumulation", "label": "endoplasmic reticulum accumulation", "shape": "dot", "size": 1}]);
+                  edges = new vis.DataSet([{"from": "716 compounds", "title": "represents", "to": "hit compounds", "width": 1.0}, {"from": "716 compounds", "title": "identified", "to": "primary screening assay", "width": 1.0}, {"from": "ambroxol", "title": "is a type of", "to": "pharmacological chaperones", "width": 1.0}, {"from": "assay pipeline", "title": "is used for", "to": "preclinical discovery", "width": 1.0}, {"from": "assay pipeline", "title": "is the focus of", "to": "glucocerebrosidase modulators", "width": 1.0}, {"from": "bioactive compounds", "title": "have", "to": "mechanisms of action", "width": 1.0}, {"from": "bioactive compounds", "title": "are enriched with", "to": "compound libraries", "width": 1.0}, {"from": "biological modulators", "title": "are involved in", "to": "cellular regulation", "width": 1.0}, {"from": "biological modulators", "title": "are types of", "to": "gsk-3 inhibitors", "width": 1.0}, {"from": "biological modulators", "title": "are types of", "to": "proteasome inhibitors", "width": 1.0}, {"from": "cag promoter", "title": "drives sustained expression of", "to": "transgene", "width": 1.0}, {"from": "cell-based assay platform", "title": "provides", "to": "quantitative high-throughput screening (qhts)", "width": 1.0}, {"from": "cell-based assays", "title": "are amenable to", "to": "high-throughput screening", "width": 1.0}, {"from": "cell-based assays", "title": "is amenable to", "to": "high-throughput screening (hts)", "width": 1.0}, {"from": "cell-based assays", "title": "are a type of", "to": "high-throughput assays", "width": 1.0}, {"from": "cell-based assays", "title": "is a challenge for", "to": "small-molecule gcase enhancers", "width": 1.0}, {"from": "cellular systems", "title": "maintains", "to": "target biology", "width": 1.0}, {"from": "cellular systems", "title": "enables quantitation in", "to": "protein stabilization", "width": 1.0}, {"from": "combination therapy", "title": "demonstrates", "to": "synergistic effects", "width": 1.0}, {"from": "combinatorial matrix screening", "title": "is a method to identify", "to": "synergistic interactions", "width": 1.0}, {"from": "compound identification", "title": "is followed by", "to": "pharmacological validation", "width": 1.0}, {"from": "compound identification", "title": "drives", "to": "high-throughput screening (hts)", "width": 1.0}, {"from": "compound ncgc326", "title": "reverses", "to": "glucosylsphingosine accumulation", "width": 1.0}, {"from": "compound ncgc326", "title": "enhances levels of", "to": "proteostasis regulators", "width": 1.0}, {"from": "compound ncgc326", "title": "is targeted by", "to": "gcase enzyme", "width": 1.0}, {"from": "compound ncgc326", "title": "is associated with", "to": "lysosomal translocation", "width": 1.0}, {"from": "data analysis", "title": "Data analysis often employs statistical methods to interpret results.", "to": "statistical methods", "width": 1.0}, {"from": "discovery and optimization", "title": "is limited by", "to": "lead compounds", "width": 1.0}, {"from": "droplet digital pcr (ddpcr) method", "title": "was identified via", "to": "hibit-gba1-wt protein", "width": 1.0}, {"from": "drug discovery pipeline", "title": "is a type of", "to": "multilevel approach", "width": 1.0}, {"from": "experimental procedures", "title": "was used for", "to": "hibit-gba1-wt protein", "width": 1.0}, {"from": "experimental techniques", "title": "Experimental techniques are used to characterize materials.", "to": "characterization methods", "width": 1.0}, {"from": "final hit compounds", "title": "includes", "to": "epigenetic mechanisms", "width": 1.0}, {"from": "final hit compounds", "title": "represented several", "to": "mechanisms of action", "width": 1.0}, {"from": "gaucher disease", "title": "is caused by deficiency of", "to": "glucocerebrosidase", "width": 1.0}, {"from": "gaucher disease", "title": "is a type of", "to": "monogenic disorder", "width": 1.0}, {"from": "gaucher disease", "title": "is related to", "to": "related disorders", "width": 1.0}, {"from": "gaucher disease", "title": "is implicated in", "to": "glucocerebrosidase (gcase)", "width": 1.0}, {"from": "gaucher disease", "title": "cause", "to": "mutations", "width": 1.0}, {"from": "gaucher disease (gd)", "title": "are conditions addressed by", "to": "parkinson\u0027s disease (pd)", "width": 1.0}, {"from": "gaucher disease (gd)", "title": "is a viable treatment for", "to": "therapeutic intervention", "width": 1.0}, {"from": "gaucher disease (gd)", "title": "requires a", "to": "treatment", "width": 1.0}, {"from": "gaucher disease (gd)", "title": "is a target for", "to": "gba1 gene", "width": 1.0}, {"from": "gaucher disease cell model", "title": "is amenable to", "to": "lead discovery", "width": 1.0}, {"from": "gaucher disease cell model", "title": "is a type of", "to": "gba1-knockout h4 cells", "width": 1.0}, {"from": "gba1", "title": "is expressed from", "to": "transgene", "width": 1.0}, {"from": "gba1 gene", "title": "is affected by", "to": "biallelic loss-of-function mutations", "width": 1.0}, {"from": "gba1 gene", "title": "is related to", "to": "gba1-related parkinson\u0027s disease (gba1-pd)", "width": 1.0}, {"from": "gba1 gene", "title": "is a genetic risk factor for", "to": "parkinson\u0027s disease", "width": 1.0}, {"from": "gba1 gene", "title": "is encoded by gene", "to": "glucocerebrosidase", "width": 1.0}, {"from": "gba1 knockout h4", "title": "is a type of", "to": "human neuroglioma cell line", "width": 1.0}, {"from": "gba1 knockout h4 cell line", "title": "receives integration of", "to": "transgene cassette", "width": 1.0}, {"from": "gba1 knockout h4 clone", "title": "contains", "to": "single copy", "width": 1.0}, {"from": "gba1 molecular target", "title": "informs the design of", "to": "scientific knowledge", "width": 1.0}, {"from": "gcase", "title": "is labeled with", "to": "hibit peptide reporter tag", "width": 1.0}, {"from": "gcase", "title": "is associated with", "to": "lysosomal localization", "width": 1.0}, {"from": "gcase", "title": "causes", "to": "protein misfolding", "width": 1.0}, {"from": "gcase", "title": "causes", "to": "trafficking obstruction", "width": 1.0}, {"from": "gcase", "title": "visualizes", "to": "immunofluorescence assay", "width": 1.0}, {"from": "gcase", "title": "is", "to": "therapeutic target", "width": 1.0}, {"from": "gcase activity", "title": "is measured by", "to": "functional lysosomal activity", "width": 1.0}, {"from": "gcase activity deficiencies", "title": "associated with", "to": "related diseases", "width": 1.0}, {"from": "gcase enhancers", "title": "is a type of", "to": "therapeutic agents", "width": 1.0}, {"from": "gcase enhancers", "title": "is a type of", "to": "novel chemical entities", "width": 1.0}, {"from": "gcase enhancers", "title": "is a characteristic of", "to": "physiologically relevant", "width": 1.0}, {"from": "gcase enzyme", "title": "target", "to": "small molecules", "width": 1.0}, {"from": "gcase maturation", "title": "affects", "to": "gcase function", "width": 1.0}, {"from": "gcase maturation", "title": "affects", "to": "gcase trafficking", "width": 1.0}, {"from": "gcase maturation", "title": "has negligible influence on", "to": "n-terminal hibit tag", "width": 1.0}, {"from": "gcase trafficking", "title": "is perturbed by", "to": "overexpression", "width": 1.0}, {"from": "gcase trafficking", "title": "does not interfere with", "to": "hibit tag", "width": 1.0}, {"from": "gcase trafficking", "title": "addresses", "to": "hibit-tagged gcase expression", "width": 1.0}, {"from": "gcase trafficking", "title": "has negligible influence on", "to": "n-terminal hibit tag", "width": 1.0}, {"from": "gcase-l444p variant", "title": "enhanced by", "to": "enzyme levels", "width": 1.0}, {"from": "gcase-l444p variant", "title": "are enhanced by,affects", "to": "protein levels", "width": 2.0}, {"from": "gcase-l444p variant", "title": "involves", "to": "synergistic interactions", "width": 1.0}, {"from": "gcase-l444p variant", "title": "increase levels of", "to": "small molecules", "width": 1.0}, {"from": "glucer accumulation", "title": "is reversed in", "to": "h4 cell model", "width": 1.0}, {"from": "glucocerebrosidase", "title": "are relevant to", "to": "small molecules", "width": 1.0}, {"from": "glucocerebrosidase", "title": "are developed for", "to": "small-molecule stabilizers", "width": 1.0}, {"from": "glucocerebrosidase (gcase)", "title": "is implicated in", "to": "parkinson\u0027s disease", "width": 1.0}, {"from": "glucocerebrosidase modulators", "title": "may include", "to": "potential therapeutics", "width": 1.0}, {"from": "gsk-3 inhibitors", "title": "are used in", "to": "therapeutic applications", "width": 1.0}, {"from": "gsk-3 inhibitors", "title": "is a specific example of", "to": "pladienolide b", "width": 1.0}, {"from": "hgcase-1/23", "title": "is used in", "to": "monoclonal antibody", "width": 1.0}, {"from": "hgcase-1/23", "title": "is a type of", "to": "monoclonal human gcase antibody", "width": 1.0}, {"from": "hibit peptide reporter tag", "title": "preserves trafficking and function of", "to": "gcase variants", "width": 1.0}, {"from": "hibit reporter", "title": "is a type of", "to": "11-amino acid peptide tag", "width": 1.0}, {"from": "hibit reporter", "title": "is suitable for", "to": "luminescence-based high-throughput screening (qhts)", "width": 1.0}, {"from": "hibit-gba1 transgene", "title": "is integrated into", "to": "intragenic safe-harbor locus", "width": 1.0}, {"from": "hibit-gba1 transgene", "title": "allows stable integration of", "to": "talen gene editing", "width": 1.0}, {"from": "hibit-gcase h4 cell lines", "title": "tested in", "to": "ultrahigh-throughput screening format", "width": 1.0}, {"from": "hibit-gcase-l444p", "title": "is stabilized by", "to": "stabilizers", "width": 1.0}, {"from": "hibit-gcase-l444p assay", "title": "utility for", "to": "drug development", "width": 1.0}, {"from": "hibit-gcase-l444p assay", "title": "utility for", "to": "lead discovery", "width": 1.0}, {"from": "hibit-gcase-l444p assay", "title": "detects", "to": "protein complexes (pcs)", "width": 1.0}, {"from": "hibit-gcase-l444p assay", "title": "detects", "to": "protein residues (prs)", "width": 1.0}, {"from": "hibit-gcase-l444p variant", "title": "shows", "to": "dose-dependent response", "width": 1.0}, {"from": "hibit-tagged gcase", "title": "is comparable to", "to": "endogenous gcase", "width": 1.0}, {"from": "hibit-tagged gcase", "title": "shows", "to": "lysosomal localization", "width": 1.0}, {"from": "hibit-tagged gcase", "title": "results in", "to": "moderate expression", "width": 1.0}, {"from": "high levels of untagged gcase", "title": "indicates lack of", "to": "clear lysosomal localization", "width": 1.0}, {"from": "hit compounds", "title": "includes", "to": "140 confirmed hits", "width": 1.0}, {"from": "human glucocerebrosidase (gcase)", "title": "is tagged with", "to": "hibit", "width": 1.0}, {"from": "integrated approach", "title": "enables", "to": "rational drug development", "width": 1.0}, {"from": "integrative gene transfer method", "title": "allows efficient knock-in of", "to": "transgene", "width": 1.0}, {"from": "intron", "title": "is a location within", "to": "citrate lyase beta-like (clybl) gene", "width": 1.0}, {"from": "l444p variant of gcase", "title": "is a type of", "to": "pathogenic variant", "width": 1.0}, {"from": "lead optimization", "title": "is achieved via", "to": "structure\u2013activity relationships", "width": 1.0}, {"from": "lysofix-gba", "title": "captures", "to": "fluorescence-quenched substrates", "width": 1.0}, {"from": "lysosomal activity", "title": "is associated with", "to": "lysosomal translocation", "width": 1.0}, {"from": "lysosomal activity", "title": "is enhanced by", "to": "small molecules", "width": 1.0}, {"from": "material properties", "title": "Electrical properties define how materials conduct electricity and are part of the broader category of material properties.", "to": "electrical properties", "width": 1.0}, {"from": "material properties", "title": "Mechanical properties are a subset of material properties that describe how materials respond to forces.", "to": "mechanical properties", "width": 1.0}, {"from": "material properties", "title": "Thermal properties are another subset of material properties that indicate how materials conduct heat.", "to": "thermal properties", "width": 1.0}, {"from": "material properties", "title": "Synthesis methods influence the properties of the resulting materials.", "to": "synthesis methods", "width": 1.0}, {"from": "materials science", "title": "Ceramics is a branch of materials science that deals with the study of inorganic, non-metallic materials.,Ceramics are a category of materials studied within materials science, focusing on inorganic, non-metallic solids.", "to": "ceramics", "width": 2.0}, {"from": "materials science", "title": "Composite Materials are made from two or more constituent materials with significantly different physical or chemical properties.,Composite materials are made from two or more constituent materials with significantly different physical or chemical properties.", "to": "composite materials", "width": 2.0}, {"from": "materials science", "title": "The conclusion summarizes findings and implications derived from research in materials science.", "to": "conclusion", "width": 1.0}, {"from": "materials science", "title": "Material characterization is a key process in materials science for understanding the properties and structure of materials.", "to": "material characterization", "width": 1.0}, {"from": "materials science", "title": "Materials engineering applies principles of materials science to design and develop new materials.", "to": "materials engineering", "width": 1.0}, {"from": "materials science", "title": "Metallurgy is a subfield of materials science focused on the properties and applications of metals.,Metallurgy is a branch of materials science that deals with the physical and chemical behavior of metallic elements.", "to": "metallurgy", "width": 2.0}, {"from": "materials science", "title": "Nanomaterials are materials with structural components smaller than 100 nanometers, studied within materials science.,Nanomaterials are a subfield of materials science focusing on materials with structures at the nanoscale.", "to": "nanomaterials", "width": 2.0}, {"from": "materials science", "title": "Polymer Science is a subfield of materials science that studies the synthesis, characterization, and applications of polymers.,Polymer science is a field within materials science that studies the properties and applications of polymers.", "to": "polymer science", "width": 2.0}, {"from": "mechanical testing", "title": "Mechanical testing assesses the strength of materials.", "to": "material strength", "width": 1.0}, {"from": "molecular identification", "title": "leads to", "to": "pharmacological validation", "width": 1.0}, {"from": "molecular identification", "title": "facilitates", "to": "physiologically relevant assays", "width": 1.0}, {"from": "molecular targets", "title": "regulate", "to": "gba1 pathway", "width": 1.0}, {"from": "molecular targets", "title": "provides", "to": "target atlas", "width": 1.0}, {"from": "n-terminal hibit tag", "title": "has negligible influence on", "to": "gcase function", "width": 1.0}, {"from": "n-terminal region", "title": "is location of", "to": "hibit", "width": 1.0}, {"from": "ncats bioactive compounds", "title": "is a source of", "to": "chemical libraries", "width": 1.0}, {"from": "ncgc326", "title": "is a type of", "to": "noninhibitory chaperones", "width": 1.0}, {"from": "ncgc326", "title": "is an improved derivative of", "to": "pharmacological compound (pc)", "width": 1.0}, {"from": "neuronopathic gaucher disease", "title": "is a disease associated with", "to": "gba1-related parkinson\u0027s disease", "width": 1.0}, {"from": "output set", "title": "produced a", "to": "potential therapeutics", "width": 1.0}, {"from": "panobinostat", "title": "is a type of", "to": "proteostasis regulators", "width": 1.0}, {"from": "parkinson\u0027s disease (pd)", "title": "is a viable treatment for", "to": "therapeutic intervention", "width": 1.0}, {"from": "parkinson\u0027s disease (pd)", "title": "requires a", "to": "treatment", "width": 1.0}, {"from": "pharmacological agents", "title": "interact synergistically with", "to": "combinations", "width": 1.0}, {"from": "pharmacological validation", "title": "supports,is part of", "to": "medicinal chemistry optimization", "width": 2.0}, {"from": "pladienolide b", "title": "has a novel", "to": "mechanism of action", "width": 1.0}, {"from": "pladienolide b", "title": "is a type of", "to": "potent compounds", "width": 1.0}, {"from": "pladienolide b", "title": "is a type of", "to": "proteostasis regulators", "width": 1.0}, {"from": "potent compounds", "title": "are identified by", "to": "screening methods", "width": 1.0}, {"from": "potent compounds", "title": "is a type of", "to": "trans-isrib", "width": 1.0}, {"from": "primary screening", "title": "involves", "to": "10,779 compounds", "width": 1.0}, {"from": "proteasome inhibitors", "title": "are used in", "to": "therapeutic applications", "width": 1.0}, {"from": "proteasome inhibitors", "title": "is a specific example of", "to": "trans-isrib", "width": 1.0}, {"from": "quantitative assays", "title": "identify", "to": "correctors of protein misfolding", "width": 1.0}, {"from": "reporter protein", "title": "is subject to", "to": "localization", "width": 1.0}, {"from": "results", "title": "Results are often referred to as findings in the context of materials science research.", "to": "findings", "width": 1.0}, {"from": "robust cell-based assays", "title": "facilitate discovery of", "to": "lead compounds", "width": 1.0}, {"from": "screening hits", "title": "should be prioritized for", "to": "subsequent investigation", "width": 1.0}, {"from": "screening hits", "title": "validated in", "to": "validation assays", "width": 1.0}, {"from": "screening process", "title": "identified", "to": "small molecules", "width": 1.0}, {"from": "therapeutic intervention", "title": "is part of the process of", "to": "development process", "width": 1.0}, {"from": "therapeutic intervention", "title": "is a characteristic of", "to": "efficacy", "width": 1.0}, {"from": "therapeutic intervention", "title": "provides for", "to": "patients", "width": 1.0}, {"from": "therapeutic intervention", "title": "is a type of", "to": "treatment", "width": 1.0}, {"from": "therapeutic intervention", "title": "describes the quality of", "to": "viability", "width": 1.0}, {"from": "thermal analysis", "title": "Thermal analysis techniques are used to study phase transitions in materials.", "to": "phase transitions", "width": 1.0}, {"from": "titration-based quantitative high-throughput screening", "title": "is a method for", "to": "lead discovery", "width": 1.0}, {"from": "trans-isrib", "title": "is a type of", "to": "proteostasis regulators", "width": 1.0}, {"from": "transcription activator-like effector nucleases (talens)", "title": "is a method of", "to": "gene editing", "width": 1.0}, {"from": "transcription activator-like effector nucleases (talens)", "title": "is used to integrate", "to": "transgene cassette", "width": 1.0}, {"from": "transgene", "title": "contains", "to": "gba1 signal peptide", "width": 1.0}, {"from": "transgene", "title": "has minimal impact on", "to": "global gene expression", "width": 1.0}, {"from": "transgene", "title": "contains upstream of", "to": "glycine/serine linker", "width": 1.0}, {"from": "transgene", "title": "contains", "to": "hibit peptide tag", "width": 1.0}, {"from": "transgene", "title": "has minimal impact on", "to": "local gene expression", "width": 1.0}, {"from": "transgene cassette", "title": "is integrated into", "to": "citrate lyase beta-like (clybl) gene", "width": 1.0}, {"from": "translational assays", "title": "accelerate", "to": "drug discovery", "width": 1.0}, {"from": "ultrahigh-throughput screening format", "title": "is a type of", "to": "1,536-well plate", "width": 1.0}, {"from": "untagged gcase", "title": "leads to", "to": "endoplasmic reticulum accumulation", "width": 1.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.015,
+            "damping": 0.4,
+            "gravitationalConstant": -31,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="ambroxol"/>
+<node id="parkinson's disease"/>
+<node id="glucocerebrosidase"/>
+<node id="gcase"/>
+<edge source="ambroxol" target="parkinson's disease">
+  <data key="d0">is associated
+with risk
+of,is associated
+with</data>
+</edge>
+<edge source="parkinson's disease" target="glucocerebrosidase">
+  <data key="d0">is influenced
+by</data>
+</edge>
+<edge source="glucocerebrosidase" target="gcase">
+  <data key="d0">is also
+known as</data>
+</edge>
+<edge source="gcase" target="gcase">
+  <data key="d0"></data>
+</edge>
+</graph></graphml>

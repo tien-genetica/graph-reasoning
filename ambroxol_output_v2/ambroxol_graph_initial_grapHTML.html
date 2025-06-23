@@ -1,0 +1,587 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="abx">abx</option>
+                                
+                                    <option value="cerebrospinal fluid (csf)">cerebrospinal fluid (csf)</option>
+                                
+                                    <option value="dementia with lewy bodies (dlb)">dementia with lewy bodies (dlb)</option>
+                                
+                                    <option value="effects">effects</option>
+                                
+                                    <option value="glucocerebrosidase (gcase) activity">glucocerebrosidase (gcase) activity</option>
+                                
+                                    <option value="lysosomal alpha-synuclein clearance">lysosomal alpha-synuclein clearance</option>
+                                
+                                    <option value="mechanism of action">mechanism of action</option>
+                                
+                                    <option value="synucleinopathies">synucleinopathies</option>
+                                
+                                    <option value="toxic alpha-synuclein (as) species">toxic alpha-synuclein (as) species</option>
+                                
+                                    <option value="treatment rationale">treatment rationale</option>
+                                
+                                    <option value="chaperone-mediated autophagy (cma)">chaperone-mediated autophagy (cma)</option>
+                                
+                                    <option value="preclinical trials">preclinical trials</option>
+                                
+                                    <option value="rationale for treatment">rationale for treatment</option>
+                                
+                                    <option value="advanced malignancy">advanced malignancy</option>
+                                
+                                    <option value="exclusion criteria">exclusion criteria</option>
+                                
+                                    <option value="alpha-synuclein">alpha-synuclein</option>
+                                
+                                    <option value="dementia with lewy bodies">dementia with lewy bodies</option>
+                                
+                                    <option value="pathological deposition">pathological deposition</option>
+                                
+                                    <option value="alpha-synuclein autophagy-lysosome degradation pathways">alpha-synuclein autophagy-lysosome degradation pathways</option>
+                                
+                                    <option value="gcase enzyme activity">gcase enzyme activity</option>
+                                
+                                    <option value="ambroxol (abx)">ambroxol (abx)</option>
+                                
+                                    <option value="modifying drug">modifying drug</option>
+                                
+                                    <option value="patients">patients</option>
+                                
+                                    <option value="degradation pathways">degradation pathways</option>
+                                
+                                    <option value="gcase enzyme levels">gcase enzyme levels</option>
+                                
+                                    <option value="ambroxol in new and early dementia with lewy bodies (aneed)">ambroxol in new and early dementia with lewy bodies (aneed)</option>
+                                
+                                    <option value="clinical study">clinical study</option>
+                                
+                                    <option value="aneed">aneed</option>
+                                
+                                    <option value="safety">safety</option>
+                                
+                                    <option value="tolerability">tolerability</option>
+                                
+                                    <option value="aneed study">aneed study</option>
+                                
+                                    <option value="clinical trial">clinical trial</option>
+                                
+                                    <option value="antibiotic abx">antibiotic abx</option>
+                                
+                                    <option value="efficacy profile">efficacy profile</option>
+                                
+                                    <option value="patients with dlb">patients with dlb</option>
+                                
+                                    <option value="safety profile">safety profile</option>
+                                
+                                    <option value="tolerability profile">tolerability profile</option>
+                                
+                                    <option value="antiparkinsonian drugs">antiparkinsonian drugs</option>
+                                
+                                    <option value="study participants">study participants</option>
+                                
+                                    <option value="antiparkinsonian medications">antiparkinsonian medications</option>
+                                
+                                    <option value="dosage">dosage</option>
+                                
+                                    <option value="caregiver">caregiver</option>
+                                
+                                    <option value="frequency of contact">frequency of contact</option>
+                                
+                                    <option value="participant">participant</option>
+                                
+                                    <option value="pathological alpha-synuclein">pathological alpha-synuclein</option>
+                                
+                                    <option value="pathological alpha-synuclein (as) depositions">pathological alpha-synuclein (as) depositions</option>
+                                
+                                    <option value="clinical outcome measures">clinical outcome measures</option>
+                                
+                                    <option value="treatment efficacy">treatment efficacy</option>
+                                
+                                    <option value="cma">cma</option>
+                                
+                                    <option value="enhancement of clearance">enhancement of clearance</option>
+                                
+                                    <option value="dementia medications">dementia medications</option>
+                                
+                                    <option value="disease-modifying pharmacological treatment">disease-modifying pharmacological treatment</option>
+                                
+                                    <option value="gba mutations">gba mutations</option>
+                                
+                                    <option value="dementia">dementia</option>
+                                
+                                    <option value="diagnosis">diagnosis</option>
+                                
+                                    <option value="gba gene mutations">gba gene mutations</option>
+                                
+                                    <option value="digital cerebrospinal fluid (csf) biomarkers">digital cerebrospinal fluid (csf) biomarkers</option>
+                                
+                                    <option value="double-blind">double-blind</option>
+                                
+                                    <option value="medical conditions">medical conditions</option>
+                                
+                                    <option value="psychiatric disorders">psychiatric disorders</option>
+                                
+                                    <option value="surgical conditions">surgical conditions</option>
+                                
+                                    <option value="sensitivity to antibiotics">sensitivity to antibiotics</option>
+                                
+                                    <option value="parkinson's disease (pd)">parkinson's disease (pd)</option>
+                                
+                                    <option value="risk of developing pd">risk of developing pd</option>
+                                
+                                    <option value="gcase dysfunction">gcase dysfunction</option>
+                                
+                                    <option value="genome-wide association study (gwas)">genome-wide association study (gwas)</option>
+                                
+                                    <option value="population studies">population studies</option>
+                                
+                                    <option value="gcase activity">gcase activity</option>
+                                
+                                    <option value="alpha-synuclein metabolism">alpha-synuclein metabolism</option>
+                                
+                                    <option value="glucocerebrosidase">glucocerebrosidase</option>
+                                
+                                    <option value="in vivo experiments">in vivo experiments</option>
+                                
+                                    <option value="human cells">human cells</option>
+                                
+                                    <option value="inclusion criteria">inclusion criteria</option>
+                                
+                                    <option value="informed consent capacity">informed consent capacity</option>
+                                
+                                    <option value="major cardiovascular events">major cardiovascular events</option>
+                                
+                                    <option value="initial visit">initial visit</option>
+                                
+                                    <option value="mckeith criteria">mckeith criteria</option>
+                                
+                                    <option value="mild cognitive impairment due to dlb (mci-dlb)">mild cognitive impairment due to dlb (mci-dlb)</option>
+                                
+                                    <option value="mini-mental state examination (mmse) score">mini-mental state examination (mmse) score</option>
+                                
+                                    <option value="screening">screening</option>
+                                
+                                    <option value="multicenter clinical trial">multicenter clinical trial</option>
+                                
+                                    <option value="phase iia">phase iia</option>
+                                
+                                    <option value="parallel group design">parallel group design</option>
+                                
+                                    <option value="risk of developing">risk of developing</option>
+                                
+                                    <option value="placebo-controlled">placebo-controlled</option>
+                                
+                                    <option value="preclinical evidence">preclinical evidence</option>
+                                
+                                    <option value="clinical evidence">clinical evidence</option>
+                                
+                                    <option value="randomized">randomized</option>
+                                
+                                    <option value="reduced alpha-synuclein clearance">reduced alpha-synuclein clearance</option>
+                                
+                                    <option value="autophagic pathways">autophagic pathways</option>
+                                
+                                    <option value="endolysosomal pathways">endolysosomal pathways</option>
+                                
+                                    <option value="traditional cerebrospinal fluid (csf) biomarkers">traditional cerebrospinal fluid (csf) biomarkers</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": 1, "id": "abx", "label": "abx", "shape": "dot", "size": 12}, {"group": 1, "id": "cerebrospinal fluid (csf)", "label": "cerebrospinal fluid (csf)", "shape": "dot", "size": 1}, {"group": 1, "id": "dementia with lewy bodies (dlb)", "label": "dementia with lewy bodies (dlb)", "shape": "dot", "size": 7}, {"group": 1, "id": "effects", "label": "effects", "shape": "dot", "size": 2}, {"group": 1, "id": "glucocerebrosidase (gcase) activity", "label": "glucocerebrosidase (gcase) activity", "shape": "dot", "size": 2}, {"group": 1, "id": "lysosomal alpha-synuclein clearance", "label": "lysosomal alpha-synuclein clearance", "shape": "dot", "size": 1}, {"group": 1, "id": "mechanism of action", "label": "mechanism of action", "shape": "dot", "size": 1}, {"group": 1, "id": "synucleinopathies", "label": "synucleinopathies", "shape": "dot", "size": 3}, {"group": 1, "id": "toxic alpha-synuclein (as) species", "label": "toxic alpha-synuclein (as) species", "shape": "dot", "size": 2}, {"group": 1, "id": "treatment rationale", "label": "treatment rationale", "shape": "dot", "size": 1}, {"group": 1, "id": "chaperone-mediated autophagy (cma)", "label": "chaperone-mediated autophagy (cma)", "shape": "dot", "size": 3}, {"group": 1, "id": "preclinical trials", "label": "preclinical trials", "shape": "dot", "size": 1}, {"group": 1, "id": "rationale for treatment", "label": "rationale for treatment", "shape": "dot", "size": 1}, {"group": 2, "id": "advanced malignancy", "label": "advanced malignancy", "shape": "dot", "size": 1}, {"group": 2, "id": "exclusion criteria", "label": "exclusion criteria", "shape": "dot", "size": 5}, {"group": 3, "id": "alpha-synuclein", "label": "alpha-synuclein", "shape": "dot", "size": 2}, {"group": 3, "id": "dementia with lewy bodies", "label": "dementia with lewy bodies", "shape": "dot", "size": 3}, {"group": 3, "id": "pathological deposition", "label": "pathological deposition", "shape": "dot", "size": 1}, {"group": 1, "id": "alpha-synuclein autophagy-lysosome degradation pathways", "label": "alpha-synuclein autophagy-lysosome degradation pathways", "shape": "dot", "size": 1}, {"group": 1, "id": "gcase enzyme activity", "label": "gcase enzyme activity", "shape": "dot", "size": 3}, {"group": 1, "id": "ambroxol (abx)", "label": "ambroxol (abx)", "shape": "dot", "size": 6}, {"group": 1, "id": "modifying drug", "label": "modifying drug", "shape": "dot", "size": 1}, {"group": 1, "id": "patients", "label": "patients", "shape": "dot", "size": 2}, {"group": 1, "id": "degradation pathways", "label": "degradation pathways", "shape": "dot", "size": 1}, {"group": 1, "id": "gcase enzyme levels", "label": "gcase enzyme levels", "shape": "dot", "size": 1}, {"group": 5, "id": "ambroxol in new and early dementia with lewy bodies (aneed)", "label": "ambroxol in new and early dementia with lewy bodies (aneed)", "shape": "dot", "size": 1}, {"group": 5, "id": "clinical study", "label": "clinical study", "shape": "dot", "size": 1}, {"group": 1, "id": "aneed", "label": "aneed", "shape": "dot", "size": 3}, {"group": 1, "id": "safety", "label": "safety", "shape": "dot", "size": 1}, {"group": 1, "id": "tolerability", "label": "tolerability", "shape": "dot", "size": 1}, {"group": 6, "id": "aneed study", "label": "aneed study", "shape": "dot", "size": 1}, {"group": 6, "id": "clinical trial", "label": "clinical trial", "shape": "dot", "size": 6}, {"group": 6, "id": "antibiotic abx", "label": "antibiotic abx", "shape": "dot", "size": 6}, {"group": 6, "id": "efficacy profile", "label": "efficacy profile", "shape": "dot", "size": 1}, {"group": 6, "id": "patients with dlb", "label": "patients with dlb", "shape": "dot", "size": 1}, {"group": 6, "id": "safety profile", "label": "safety profile", "shape": "dot", "size": 1}, {"group": 6, "id": "tolerability profile", "label": "tolerability profile", "shape": "dot", "size": 1}, {"group": 7, "id": "antiparkinsonian drugs", "label": "antiparkinsonian drugs", "shape": "dot", "size": 1}, {"group": 7, "id": "study participants", "label": "study participants", "shape": "dot", "size": 3}, {"group": 7, "id": "antiparkinsonian medications", "label": "antiparkinsonian medications", "shape": "dot", "size": 1}, {"group": 7, "id": "dosage", "label": "dosage", "shape": "dot", "size": 2}, {"group": 9, "id": "caregiver", "label": "caregiver", "shape": "dot", "size": 2}, {"group": 9, "id": "frequency of contact", "label": "frequency of contact", "shape": "dot", "size": 1}, {"group": 9, "id": "participant", "label": "participant", "shape": "dot", "size": 2}, {"group": 1, "id": "pathological alpha-synuclein", "label": "pathological alpha-synuclein", "shape": "dot", "size": 1}, {"group": 1, "id": "pathological alpha-synuclein (as) depositions", "label": "pathological alpha-synuclein (as) depositions", "shape": "dot", "size": 2}, {"group": 11, "id": "clinical outcome measures", "label": "clinical outcome measures", "shape": "dot", "size": 1}, {"group": 11, "id": "treatment efficacy", "label": "treatment efficacy", "shape": "dot", "size": 3}, {"group": 12, "id": "cma", "label": "cma", "shape": "dot", "size": 1}, {"group": 12, "id": "enhancement of clearance", "label": "enhancement of clearance", "shape": "dot", "size": 1}, {"group": 7, "id": "dementia medications", "label": "dementia medications", "shape": "dot", "size": 2}, {"group": 3, "id": "disease-modifying pharmacological treatment", "label": "disease-modifying pharmacological treatment", "shape": "dot", "size": 1}, {"group": 3, "id": "gba mutations", "label": "gba mutations", "shape": "dot", "size": 2}, {"group": 1, "id": "dementia", "label": "dementia", "shape": "dot", "size": 1}, {"group": 1, "id": "diagnosis", "label": "diagnosis", "shape": "dot", "size": 3}, {"group": 1, "id": "gba gene mutations", "label": "gba gene mutations", "shape": "dot", "size": 5}, {"group": 11, "id": "digital cerebrospinal fluid (csf) biomarkers", "label": "digital cerebrospinal fluid (csf) biomarkers", "shape": "dot", "size": 1}, {"group": 6, "id": "double-blind", "label": "double-blind", "shape": "dot", "size": 1}, {"group": 2, "id": "medical conditions", "label": "medical conditions", "shape": "dot", "size": 1}, {"group": 2, "id": "psychiatric disorders", "label": "psychiatric disorders", "shape": "dot", "size": 1}, {"group": 2, "id": "surgical conditions", "label": "surgical conditions", "shape": "dot", "size": 1}, {"group": 2, "id": "sensitivity to antibiotics", "label": "sensitivity to antibiotics", "shape": "dot", "size": 1}, {"group": 1, "id": "parkinson\u0027s disease (pd)", "label": "parkinson\u0027s disease (pd)", "shape": "dot", "size": 2}, {"group": 1, "id": "risk of developing pd", "label": "risk of developing pd", "shape": "dot", "size": 1}, {"group": 1, "id": "gcase dysfunction", "label": "gcase dysfunction", "shape": "dot", "size": 2}, {"group": 1, "id": "genome-wide association study (gwas)", "label": "genome-wide association study (gwas)", "shape": "dot", "size": 1}, {"group": 3, "id": "population studies", "label": "population studies", "shape": "dot", "size": 1}, {"group": 4, "id": "gcase activity", "label": "gcase activity", "shape": "dot", "size": 1}, {"group": 4, "id": "alpha-synuclein metabolism", "label": "alpha-synuclein metabolism", "shape": "dot", "size": 1}, {"group": 1, "id": "glucocerebrosidase", "label": "glucocerebrosidase", "shape": "dot", "size": 1}, {"group": 1, "id": "in vivo experiments", "label": "in vivo experiments", "shape": "dot", "size": 1}, {"group": 1, "id": "human cells", "label": "human cells", "shape": "dot", "size": 1}, {"group": 7, "id": "inclusion criteria", "label": "inclusion criteria", "shape": "dot", "size": 1}, {"group": 9, "id": "informed consent capacity", "label": "informed consent capacity", "shape": "dot", "size": 1}, {"group": 13, "id": "major cardiovascular events", "label": "major cardiovascular events", "shape": "dot", "size": 1}, {"group": 13, "id": "initial visit", "label": "initial visit", "shape": "dot", "size": 1}, {"group": 1, "id": "mckeith criteria", "label": "mckeith criteria", "shape": "dot", "size": 1}, {"group": 1, "id": "mild cognitive impairment due to dlb (mci-dlb)", "label": "mild cognitive impairment due to dlb (mci-dlb)", "shape": "dot", "size": 1}, {"group": 14, "id": "mini-mental state examination (mmse) score", "label": "mini-mental state examination (mmse) score", "shape": "dot", "size": 1}, {"group": 14, "id": "screening", "label": "screening", "shape": "dot", "size": 1}, {"group": 15, "id": "multicenter clinical trial", "label": "multicenter clinical trial", "shape": "dot", "size": 1}, {"group": 15, "id": "phase iia", "label": "phase iia", "shape": "dot", "size": 1}, {"group": 6, "id": "parallel group design", "label": "parallel group design", "shape": "dot", "size": 1}, {"group": 1, "id": "risk of developing", "label": "risk of developing", "shape": "dot", "size": 1}, {"group": 6, "id": "placebo-controlled", "label": "placebo-controlled", "shape": "dot", "size": 1}, {"group": 10, "id": "preclinical evidence", "label": "preclinical evidence", "shape": "dot", "size": 1}, {"group": 10, "id": "clinical evidence", "label": "clinical evidence", "shape": "dot", "size": 1}, {"group": 6, "id": "randomized", "label": "randomized", "shape": "dot", "size": 1}, {"group": 8, "id": "reduced alpha-synuclein clearance", "label": "reduced alpha-synuclein clearance", "shape": "dot", "size": 2}, {"group": 8, "id": "autophagic pathways", "label": "autophagic pathways", "shape": "dot", "size": 1}, {"group": 8, "id": "endolysosomal pathways", "label": "endolysosomal pathways", "shape": "dot", "size": 1}, {"group": 11, "id": "traditional cerebrospinal fluid (csf) biomarkers", "label": "traditional cerebrospinal fluid (csf) biomarkers", "shape": "dot", "size": 1}]);
+                  edges = new vis.DataSet([{"from": "abx", "title": "penetrates into", "to": "cerebrospinal fluid (csf)", "width": 1.0}, {"from": "abx", "title": "is a modifying treatment in", "to": "dementia with lewy bodies (dlb)", "width": 1.0}, {"from": "abx", "title": "show", "to": "effects", "width": 1.0}, {"from": "abx", "title": "enhances effect on", "to": "glucocerebrosidase (gcase) activity", "width": 1.0}, {"from": "abx", "title": "enhances", "to": "lysosomal alpha-synuclein clearance", "width": 1.0}, {"from": "abx", "title": "has unique mechanism on", "to": "mechanism of action", "width": 1.0}, {"from": "abx", "title": "is tested in models of", "to": "synucleinopathies", "width": 1.0}, {"from": "abx", "title": "reduces concentration of", "to": "toxic alpha-synuclein (as) species", "width": 1.0}, {"from": "abx", "title": "is established by", "to": "treatment rationale", "width": 1.0}, {"from": "abx", "title": "is a potential treatment for", "to": "chaperone-mediated autophagy (cma)", "width": 1.0}, {"from": "abx", "title": "show promising effects of", "to": "preclinical trials", "width": 1.0}, {"from": "abx", "title": "is based on", "to": "rationale for treatment", "width": 1.0}, {"from": "advanced malignancy", "title": "is part of", "to": "exclusion criteria", "width": 1.0}, {"from": "alpha-synuclein", "title": "is characterized by", "to": "dementia with lewy bodies", "width": 1.0}, {"from": "alpha-synuclein", "title": "causes", "to": "pathological deposition", "width": 1.0}, {"from": "alpha-synuclein autophagy-lysosome degradation pathways", "title": "enhanced by", "to": "gcase enzyme activity", "width": 1.0}, {"from": "ambroxol (abx)", "title": "is a modifying drug for", "to": "dementia with lewy bodies (dlb)", "width": 1.0}, {"from": "ambroxol (abx)", "title": "is a type of", "to": "modifying drug", "width": 1.0}, {"from": "ambroxol (abx)", "title": "is administered to", "to": "patients", "width": 1.0}, {"from": "ambroxol (abx)", "title": "may affect", "to": "degradation pathways", "width": 1.0}, {"from": "ambroxol (abx)", "title": "may increase", "to": "gcase enzyme activity", "width": 1.0}, {"from": "ambroxol (abx)", "title": "may increase", "to": "gcase enzyme levels", "width": 1.0}, {"from": "ambroxol in new and early dementia with lewy bodies (aneed)", "title": "is a", "to": "clinical study", "width": 1.0}, {"from": "aneed", "title": "investigates", "to": "effects", "width": 1.0}, {"from": "aneed", "title": "investigates", "to": "safety", "width": 1.0}, {"from": "aneed", "title": "investigates", "to": "tolerability", "width": 1.0}, {"from": "aneed study", "title": "is an", "to": "clinical trial", "width": 1.0}, {"from": "antibiotic abx", "title": "is part of", "to": "clinical trial", "width": 1.0}, {"from": "antibiotic abx", "title": "evaluates", "to": "efficacy profile", "width": 1.0}, {"from": "antibiotic abx", "title": "is tested on", "to": "patients with dlb", "width": 1.0}, {"from": "antibiotic abx", "title": "evaluates", "to": "safety profile", "width": 1.0}, {"from": "antibiotic abx", "title": "is used for treating", "to": "synucleinopathies", "width": 1.0}, {"from": "antibiotic abx", "title": "evaluates", "to": "tolerability profile", "width": 1.0}, {"from": "antiparkinsonian drugs", "title": "are used by", "to": "study participants", "width": 1.0}, {"from": "antiparkinsonian medications", "title": "are prescribed in", "to": "dosage", "width": 1.0}, {"from": "caregiver", "title": "contacts", "to": "frequency of contact", "width": 1.0}, {"from": "caregiver", "title": "has contact with", "to": "participant", "width": 1.0}, {"from": "chaperone-mediated autophagy (cma)", "title": "may reduce", "to": "pathological alpha-synuclein", "width": 1.0}, {"from": "chaperone-mediated autophagy (cma)", "title": "may reduce", "to": "pathological alpha-synuclein (as) depositions", "width": 1.0}, {"from": "clinical outcome measures", "title": "measures", "to": "treatment efficacy", "width": 1.0}, {"from": "cma", "title": "may lead to", "to": "enhancement of clearance", "width": 1.0}, {"from": "dementia medications", "title": "are prescribed in", "to": "dosage", "width": 1.0}, {"from": "dementia medications", "title": "are used by", "to": "study participants", "width": 1.0}, {"from": "dementia with lewy bodies", "title": "has no available", "to": "disease-modifying pharmacological treatment", "width": 1.0}, {"from": "dementia with lewy bodies", "title": "are associated with", "to": "gba mutations", "width": 1.0}, {"from": "dementia with lewy bodies (dlb)", "title": "is a type of", "to": "dementia", "width": 1.0}, {"from": "dementia with lewy bodies (dlb)", "title": "is a type of", "to": "diagnosis", "width": 1.0}, {"from": "dementia with lewy bodies (dlb)", "title": "are more prevalent in", "to": "gba gene mutations", "width": 1.0}, {"from": "dementia with lewy bodies (dlb)", "title": "is a type of", "to": "synucleinopathies", "width": 1.0}, {"from": "dementia with lewy bodies (dlb)", "title": "have", "to": "patients", "width": 1.0}, {"from": "digital cerebrospinal fluid (csf) biomarkers", "title": "measures", "to": "treatment efficacy", "width": 1.0}, {"from": "double-blind", "title": "is a characteristic of", "to": "clinical trial", "width": 1.0}, {"from": "exclusion criteria", "title": "includes", "to": "medical conditions", "width": 1.0}, {"from": "exclusion criteria", "title": "includes", "to": "psychiatric disorders", "width": 1.0}, {"from": "exclusion criteria", "title": "includes", "to": "surgical conditions", "width": 1.0}, {"from": "exclusion criteria", "title": "is part of", "to": "sensitivity to antibiotics", "width": 1.0}, {"from": "gba gene mutations", "title": "are associated with a higher incidence in", "to": "parkinson\u0027s disease (pd)", "width": 1.0}, {"from": "gba gene mutations", "title": "increases the", "to": "risk of developing pd", "width": 1.0}, {"from": "gba gene mutations", "title": "is caused by", "to": "gcase dysfunction", "width": 1.0}, {"from": "gba gene mutations", "title": "confirms correlation with", "to": "genome-wide association study (gwas)", "width": 1.0}, {"from": "gba mutations", "title": "demonstrate higher incidence of", "to": "population studies", "width": 1.0}, {"from": "gcase activity", "title": "is associated with", "to": "alpha-synuclein metabolism", "width": 1.0}, {"from": "gcase dysfunction", "title": "is related to", "to": "glucocerebrosidase", "width": 1.0}, {"from": "gcase enzyme activity", "title": "demonstrate effects on", "to": "in vivo experiments", "width": 1.0}, {"from": "human cells", "title": "is affected by", "to": "glucocerebrosidase (gcase) activity", "width": 1.0}, {"from": "inclusion criteria", "title": "applies to", "to": "study participants", "width": 1.0}, {"from": "informed consent capacity", "title": "is required from", "to": "participant", "width": 1.0}, {"from": "major cardiovascular events", "title": "occurred prior to", "to": "initial visit", "width": 1.0}, {"from": "mckeith criteria", "title": "establishes", "to": "diagnosis", "width": 1.0}, {"from": "mild cognitive impairment due to dlb (mci-dlb)", "title": "is a type of", "to": "diagnosis", "width": 1.0}, {"from": "mini-mental state examination (mmse) score", "title": "is a measure in", "to": "screening", "width": 1.0}, {"from": "multicenter clinical trial", "title": "is a type of", "to": "phase iia", "width": 1.0}, {"from": "parallel group design", "title": "is a design type of", "to": "clinical trial", "width": 1.0}, {"from": "parkinson\u0027s disease (pd)", "title": "is higher for carriers of", "to": "risk of developing", "width": 1.0}, {"from": "placebo-controlled", "title": "is a characteristic of", "to": "clinical trial", "width": 1.0}, {"from": "preclinical evidence", "title": "supports", "to": "clinical evidence", "width": 1.0}, {"from": "randomized", "title": "is a characteristic of", "to": "clinical trial", "width": 1.0}, {"from": "reduced alpha-synuclein clearance", "title": "is caused by failure in", "to": "autophagic pathways", "width": 1.0}, {"from": "reduced alpha-synuclein clearance", "title": "is caused by failure in", "to": "endolysosomal pathways", "width": 1.0}, {"from": "toxic alpha-synuclein (as) species", "title": "is related to", "to": "pathological alpha-synuclein (as) depositions", "width": 1.0}, {"from": "traditional cerebrospinal fluid (csf) biomarkers", "title": "measures", "to": "treatment efficacy", "width": 1.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.015,
+            "damping": 0.4,
+            "gravitationalConstant": -31,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

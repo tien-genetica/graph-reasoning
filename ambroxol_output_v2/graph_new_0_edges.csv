@@ -1,0 +1,180 @@
+,node_1,node_2,edge_list,weight_list
+0,716 compounds,hit compounds,represents,1.0
+1,ambroxol,pharmacological chaperones,is a type of,1.0
+2,assay pipeline,preclinical discovery,is used for,1.0
+3,bioactive compounds,mechanisms of action,have,1.0
+4,biological modulators,cellular regulation,are involved in,1.0
+5,biological modulators,gsk-3 inhibitors,are types of,1.0
+6,biological modulators,proteasome inhibitors,are types of,1.0
+7,cag promoter,transgene,drives sustained expression of,1.0
+8,cell-based assay platform,quantitative high-throughput screening (qhts),provides,1.0
+9,cell-based assays,high-throughput screening,are amenable to,1.0
+10,cell-based assays,high-throughput screening (hts),is amenable to,1.0
+11,cellular systems,target biology,maintains,1.0
+12,combination therapy,synergistic effects,demonstrates,1.0
+13,combinatorial matrix screening,synergistic interactions,is a method to identify,1.0
+14,compound identification,pharmacological validation,is followed by,1.0
+15,compound libraries,bioactive compounds,are enriched with,1.0
+16,compound ncgc326,glucosylsphingosine accumulation,reverses,1.0
+17,compound ncgc326,proteostasis regulators,enhances levels of,1.0
+18,data analysis,statistical methods,Data analysis often employs statistical methods to interpret results.,1.0
+19,discovery and optimization,lead compounds,is limited by,1.0
+20,droplet digital pcr (ddpcr) method,hibit-gba1-wt protein,identifies,1.0
+21,drug discovery pipeline,multilevel approach,is a type of,1.0
+22,experimental procedures,hibit-gba1-wt protein,involves,1.0
+23,experimental techniques,characterization methods,Experimental techniques are used to characterize materials.,1.0
+24,final hit compounds,epigenetic mechanisms,includes,1.0
+25,final hit compounds,mechanisms of action,represented several,1.0
+26,gaucher disease,glucocerebrosidase,is caused by deficiency of,1.0
+27,gaucher disease,monogenic disorder,is a type of,1.0
+28,gaucher disease,related disorders,is related to,1.0
+29,gaucher disease (gd),parkinson's disease (pd),are conditions addressed by,1.0
+30,gaucher disease (gd),therapeutic intervention,is developed for,1.0
+31,gaucher disease (gd),treatment,requires a,1.0
+32,gaucher disease cell model,lead discovery,is amenable to,1.0
+33,gba1,transgene,is expressed from,1.0
+34,gba1 gene,biallelic loss-of-function mutations,is affected by,1.0
+35,gba1 gene,gaucher disease (gd),is a target for,1.0
+36,gba1 gene,gba1-related parkinson's disease (gba1-pd),is related to,1.0
+37,gba1 gene,parkinson's disease,is a genetic risk factor for,1.0
+38,gba1 knockout h4,human neuroglioma cell line,is a type of,1.0
+39,gba1 knockout h4 cell line,transgene cassette,receives integration of,1.0
+40,gba1 knockout h4 clone,single copy,contains,1.0
+41,gba1 molecular target,scientific knowledge,informs the design of,1.0
+42,gba1-knockout h4 cells,gaucher disease cell model,is a type of,1.0
+43,gcase,hibit peptide reporter tag,is labeled with,1.0
+44,gcase,lysosomal localization,is associated with,1.0
+45,gcase,protein misfolding,causes,1.0
+46,gcase,trafficking obstruction,causes,1.0
+47,gcase activity,functional lysosomal activity,is measured by,1.0
+48,gcase activity deficiencies,related diseases,associated with,1.0
+49,gcase enhancers,therapeutic agents,is a type of,1.0
+50,gcase enzyme,compound ncgc326,is targeted by,1.0
+51,gcase maturation,gcase function,affects,1.0
+52,gcase maturation,gcase trafficking,affects,1.0
+53,gcase trafficking,overexpression,is perturbed by,1.0
+54,gcase-l444p variant,enzyme levels,enhanced by,1.0
+55,gcase-l444p variant,protein levels,"are enhanced by,affects",2.0
+56,gcase-l444p variant,synergistic interactions,involves,1.0
+57,glucer accumulation,h4 cell model,is reversed in,1.0
+58,glucocerebrosidase,gba1 gene,is encoded by gene,1.0
+59,glucocerebrosidase (gcase),gaucher disease,is implicated in,1.0
+60,glucocerebrosidase (gcase),parkinson's disease,is implicated in,1.0
+61,glucocerebrosidase modulators,assay pipeline,is the focus of,1.0
+62,gsk-3 inhibitors,therapeutic applications,are used in,1.0
+63,hgcase-1/23,monoclonal antibody,is used in,1.0
+64,hibit peptide reporter tag,gcase variants,preserves trafficking and function of,1.0
+65,hibit reporter,11-amino acid peptide tag,is a type of,1.0
+66,hibit reporter,luminescence-based high-throughput screening (qhts),is suitable for,1.0
+67,hibit tag,gcase trafficking,does not interfere with,1.0
+68,hibit-gba1 transgene,intragenic safe-harbor locus,is integrated into,1.0
+69,hibit-gba1-wt protein,droplet digital pcr (ddpcr) method,was identified via,1.0
+70,hibit-gba1-wt protein,experimental procedures,was used for,1.0
+71,hibit-gcase h4 cell lines,ultrahigh-throughput screening format,tested in,1.0
+72,hibit-gcase-l444p,stabilizers,is stabilized by,1.0
+73,hibit-gcase-l444p assay,drug development,utility for,1.0
+74,hibit-gcase-l444p assay,lead discovery,utility for,1.0
+75,hibit-gcase-l444p assay,protein complexes (pcs),detects,1.0
+76,hibit-gcase-l444p assay,protein residues (prs),detects,1.0
+77,hibit-gcase-l444p variant,dose-dependent response,shows,1.0
+78,hibit-tagged gcase,endogenous gcase,is comparable to,1.0
+79,hibit-tagged gcase,lysosomal localization,shows,1.0
+80,hibit-tagged gcase expression,gcase trafficking,addresses,1.0
+81,high levels of untagged gcase,clear lysosomal localization,indicates lack of,1.0
+82,high-throughput assays,cell-based assays,are a type of,1.0
+83,high-throughput screening (hts),compound identification,drives,1.0
+84,hit compounds,140 confirmed hits,includes,1.0
+85,human glucocerebrosidase (gcase),hibit,is tagged with,1.0
+86,immunofluorescence assay,gcase,visualizes,1.0
+87,integrated approach,rational drug development,enables,1.0
+88,integrative gene transfer method,transgene,allows efficient knock-in of,1.0
+89,intron,citrate lyase beta-like (clybl) gene,is a location within,1.0
+90,l444p variant of gcase,pathogenic variant,is a type of,1.0
+91,lead optimization,structure–activity relationships,is achieved via,1.0
+92,lysofix-gba,fluorescence-quenched substrates,captures,1.0
+93,lysosomal activity,lysosomal translocation,is associated with,1.0
+94,lysosomal activity,small molecules,is enhanced by,1.0
+95,lysosomal translocation,compound ncgc326,is associated with,1.0
+96,material properties,electrical properties,Electrical properties define how materials conduct electricity and are part of the broader category of material properties.,1.0
+97,material properties,mechanical properties,Mechanical properties are a subset of material properties that describe how materials respond to forces.,1.0
+98,material properties,thermal properties,Thermal properties are another subset of material properties that indicate how materials conduct heat.,1.0
+99,materials science,ceramics,"Ceramics is a branch of materials science that deals with the study of inorganic, non-metallic materials.,Ceramics are a category of materials studied within materials science, focusing on inorganic, non-metallic solids.",2.0
+100,materials science,composite materials,"Composite Materials are made from two or more constituent materials with significantly different physical or chemical properties.,Composite materials are made from two or more constituent materials with significantly different physical or chemical properties.",2.0
+101,materials science,conclusion,The conclusion summarizes findings and implications derived from research in materials science.,1.0
+102,materials science,material characterization,Material characterization is a key process in materials science for understanding the properties and structure of materials.,1.0
+103,materials science,materials engineering,Materials engineering applies principles of materials science to design and develop new materials.,1.0
+104,materials science,metallurgy,"Metallurgy is a subfield of materials science focused on the properties and applications of metals.,Metallurgy is a branch of materials science that deals with the physical and chemical behavior of metallic elements.",2.0
+105,materials science,nanomaterials,"Nanomaterials are materials with structural components smaller than 100 nanometers, studied within materials science.,Nanomaterials are a subfield of materials science focusing on materials with structures at the nanoscale.",2.0
+106,materials science,polymer science,"Polymer Science is a subfield of materials science that studies the synthesis, characterization, and applications of polymers.,Polymer science is a field within materials science that studies the properties and applications of polymers.",2.0
+107,mechanical testing,material strength,Mechanical testing assesses the strength of materials.,1.0
+108,moderate expression,hibit-tagged gcase,results in,1.0
+109,molecular identification,pharmacological validation,leads to,1.0
+110,molecular targets,gba1 pathway,regulate,1.0
+111,monoclonal human gcase antibody,hgcase-1/23,is a type of,1.0
+112,mutations,gaucher disease,cause,1.0
+113,n-terminal hibit tag,gcase function,has negligible influence on,1.0
+114,n-terminal hibit tag,gcase maturation,has negligible influence on,1.0
+115,n-terminal hibit tag,gcase trafficking,has negligible influence on,1.0
+116,n-terminal region,hibit,is location of,1.0
+117,ncats bioactive compounds,chemical libraries,is a source of,1.0
+118,ncgc326,noninhibitory chaperones,is a type of,1.0
+119,ncgc326,pharmacological compound (pc),is an improved derivative of,1.0
+120,neuronopathic gaucher disease,gba1-related parkinson's disease,is a disease associated with,1.0
+121,novel chemical entities,gcase enhancers,is a type of,1.0
+122,output set,potential therapeutics,produced a,1.0
+123,panobinostat,proteostasis regulators,is a type of,1.0
+124,parkinson's disease (pd),therapeutic intervention,is developed for,1.0
+125,parkinson's disease (pd),treatment,requires a,1.0
+126,pharmacological agents,combinations,interact synergistically with,1.0
+127,pharmacological validation,medicinal chemistry optimization,"supports,is part of",2.0
+128,physiologically relevant,gcase enhancers,is a characteristic of,1.0
+129,physiologically relevant assays,molecular identification,facilitates,1.0
+130,pladienolide b,gsk-3 inhibitors,is a specific example of,1.0
+131,pladienolide b,mechanism of action,has a novel,1.0
+132,pladienolide b,potent compounds,is a type of,1.0
+133,pladienolide b,proteostasis regulators,is a type of,1.0
+134,potent compounds,screening methods,are identified by,1.0
+135,potential therapeutics,glucocerebrosidase modulators,may include,1.0
+136,primary screening,"10,779 compounds",involves,1.0
+137,primary screening assay,716 compounds,identified,1.0
+138,proteasome inhibitors,therapeutic applications,are used in,1.0
+139,protein stabilization,cellular systems,enables quantitation in,1.0
+140,quantitative assays,correctors of protein misfolding,identify,1.0
+141,reporter protein,localization,is subject to,1.0
+142,results,findings,Results are often referred to as findings in the context of materials science research.,1.0
+143,robust cell-based assays,lead compounds,facilitate discovery of,1.0
+144,screening hits,subsequent investigation,should be prioritized for,1.0
+145,screening hits,validation assays,validated in,1.0
+146,screening process,small molecules,identified,1.0
+147,small molecules,gcase enzyme,target,1.0
+148,small molecules,gcase-l444p variant,increase levels of,1.0
+149,small molecules,glucocerebrosidase,are relevant to,1.0
+150,small-molecule gcase enhancers,cell-based assays,is a challenge for,1.0
+151,small-molecule stabilizers,glucocerebrosidase,are developed for,1.0
+152,synthesis methods,material properties,Synthesis methods influence the properties of the resulting materials.,1.0
+153,talen gene editing,hibit-gba1 transgene,allows stable integration of,1.0
+154,target atlas,molecular targets,provides,1.0
+155,therapeutic intervention,development process,is part of the process of,1.0
+156,therapeutic intervention,efficacy,is a characteristic of,1.0
+157,therapeutic intervention,gaucher disease (gd),is a viable treatment for,1.0
+158,therapeutic intervention,parkinson's disease (pd),is a viable treatment for,1.0
+159,therapeutic intervention,patients,provides for,1.0
+160,therapeutic intervention,treatment,is a type of,1.0
+161,therapeutic target,gcase,is,1.0
+162,thermal analysis,phase transitions,Thermal analysis techniques are used to study phase transitions in materials.,1.0
+163,titration-based quantitative high-throughput screening,lead discovery,is a method for,1.0
+164,trans-isrib,potent compounds,is a type of,1.0
+165,trans-isrib,proteasome inhibitors,is a specific example of,1.0
+166,trans-isrib,proteostasis regulators,is a type of,1.0
+167,transcription activator-like effector nucleases (talens),gene editing,is a method of,1.0
+168,transcription activator-like effector nucleases (talens),transgene cassette,is used to integrate,1.0
+169,transgene,gba1 signal peptide,contains,1.0
+170,transgene,global gene expression,has minimal impact on,1.0
+171,transgene,glycine/serine linker,contains upstream of,1.0
+172,transgene,hibit peptide tag,contains,1.0
+173,transgene,local gene expression,has minimal impact on,1.0
+174,transgene cassette,citrate lyase beta-like (clybl) gene,is integrated into,1.0
+175,translational assays,drug discovery,accelerate,1.0
+176,ultrahigh-throughput screening format,"1,536-well plate",is a type of,1.0
+177,untagged gcase,endoplasmic reticulum accumulation,leads to,1.0
+178,viability,therapeutic intervention,describes the quality of,1.0

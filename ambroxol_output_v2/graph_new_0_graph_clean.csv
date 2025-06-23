@@ -1,0 +1,187 @@
+,node_1,node_2,edge,chunk_id
+0,material properties,mechanical properties,Mechanical properties are a subset of material properties that describe how materials respond to forces.,727aa210b89e4832ba3eb1c54223513e
+1,material properties,thermal properties,Thermal properties are another subset of material properties that indicate how materials conduct heat.,727aa210b89e4832ba3eb1c54223513e
+2,material properties,electrical properties,Electrical properties define how materials conduct electricity and are part of the broader category of material properties.,727aa210b89e4832ba3eb1c54223513e
+3,materials science,material characterization,Material characterization is a key process in materials science for understanding the properties and structure of materials.,727aa210b89e4832ba3eb1c54223513e
+4,materials science,materials engineering,Materials engineering applies principles of materials science to design and develop new materials.,727aa210b89e4832ba3eb1c54223513e
+5,materials science,metallurgy,Metallurgy is a subfield of materials science focused on the properties and applications of metals.,10afa8d0b52143648c29e82dd9311a71
+6,materials science,polymer science,"Polymer Science is a subfield of materials science that studies the synthesis, characterization, and applications of polymers.",10afa8d0b52143648c29e82dd9311a71
+7,materials science,ceramics,"Ceramics is a branch of materials science that deals with the study of inorganic, non-metallic materials.",10afa8d0b52143648c29e82dd9311a71
+8,materials science,nanomaterials,"Nanomaterials are materials with structural components smaller than 100 nanometers, studied within materials science.",10afa8d0b52143648c29e82dd9311a71
+9,materials science,composite materials,Composite Materials are made from two or more constituent materials with significantly different physical or chemical properties.,10afa8d0b52143648c29e82dd9311a71
+10,assay pipeline,preclinical discovery,is used for,3946a6404b2b4560a27cd78b8474a899
+11,glucocerebrosidase modulators,assay pipeline,is the focus of,3946a6404b2b4560a27cd78b8474a899
+12,compound libraries,bioactive compounds,are enriched with,3946a6404b2b4560a27cd78b8474a899
+13,bioactive compounds,mechanisms of action,have,3946a6404b2b4560a27cd78b8474a899
+14,screening process,small molecules,identified,3946a6404b2b4560a27cd78b8474a899
+15,small molecules,glucocerebrosidase,are relevant to,3946a6404b2b4560a27cd78b8474a899
+16,target atlas,molecular targets,provides,3946a6404b2b4560a27cd78b8474a899
+17,molecular targets,gba1 pathway,regulate,3946a6404b2b4560a27cd78b8474a899
+18,output set,potential therapeutics,produced a,3946a6404b2b4560a27cd78b8474a899
+19,potential therapeutics,glucocerebrosidase modulators,may include,3946a6404b2b4560a27cd78b8474a899
+20,gaucher disease,glucocerebrosidase,is caused by deficiency of,e6c37fd7b9734096b7a545e2dc728b2b
+21,glucocerebrosidase,gba1 gene,is encoded by gene,e6c37fd7b9734096b7a545e2dc728b2b
+22,gba1 gene,biallelic loss-of-function mutations,is affected by,e6c37fd7b9734096b7a545e2dc728b2b
+23,gba1 gene,parkinson's disease,is a genetic risk factor for,e6c37fd7b9734096b7a545e2dc728b2b
+24,small-molecule stabilizers,glucocerebrosidase,are developed for,e6c37fd7b9734096b7a545e2dc728b2b
+25,discovery and optimization,lead compounds,is limited by,e6c37fd7b9734096b7a545e2dc728b2b
+26,cell-based assays,high-throughput screening,are amenable to,e6c37fd7b9734096b7a545e2dc728b2b
+27,gaucher disease,related disorders,is related to,e6c37fd7b9734096b7a545e2dc728b2b
+28,robust cell-based assays,lead compounds,facilitate discovery of,e6c37fd7b9734096b7a545e2dc728b2b
+29,mutations,gaucher disease,cause,e6c37fd7b9734096b7a545e2dc728b2b
+30,glucocerebrosidase (gcase),gaucher disease,is implicated in,9739d55bef1f4e19b77d1fc84bdb9f7f
+31,glucocerebrosidase (gcase),parkinson's disease,is implicated in,9739d55bef1f4e19b77d1fc84bdb9f7f
+32,l444p variant of gcase,pathogenic variant,is a type of,9739d55bef1f4e19b77d1fc84bdb9f7f
+33,gcase,protein misfolding,causes,9739d55bef1f4e19b77d1fc84bdb9f7f
+34,gcase,trafficking obstruction,causes,9739d55bef1f4e19b77d1fc84bdb9f7f
+35,therapeutic target,gcase,is,9739d55bef1f4e19b77d1fc84bdb9f7f
+36,high-throughput assays,cell-based assays,are a type of,9739d55bef1f4e19b77d1fc84bdb9f7f
+37,gcase,hibit peptide reporter tag,is labeled with,9739d55bef1f4e19b77d1fc84bdb9f7f
+38,quantitative assays,correctors of protein misfolding,identify,9739d55bef1f4e19b77d1fc84bdb9f7f
+39,gaucher disease,monogenic disorder,is a type of,9739d55bef1f4e19b77d1fc84bdb9f7f
+40,protein stabilization,cellular systems,enables quantitation in,e35825b1f65f4127a808fcf0ef92d448
+41,talen gene editing,hibit-gba1 transgene,allows stable integration of,e35825b1f65f4127a808fcf0ef92d448
+42,hibit-gba1 transgene,intragenic safe-harbor locus,is integrated into,e35825b1f65f4127a808fcf0ef92d448
+43,gba1-knockout h4 cells,gaucher disease cell model,is a type of,e35825b1f65f4127a808fcf0ef92d448
+44,gaucher disease cell model,lead discovery,is amenable to,e35825b1f65f4127a808fcf0ef92d448
+45,titration-based quantitative high-throughput screening,lead discovery,is a method for,e35825b1f65f4127a808fcf0ef92d448
+46,lead optimization,structure–activity relationships,is achieved via,e35825b1f65f4127a808fcf0ef92d448
+47,primary screening,"10,779 compounds",involves,e35825b1f65f4127a808fcf0ef92d448
+48,ncats bioactive compounds,chemical libraries,is a source of,e35825b1f65f4127a808fcf0ef92d448
+49,cellular systems,target biology,maintains,e35825b1f65f4127a808fcf0ef92d448
+50,hibit-gcase-l444p,stabilizers,is stabilized by,ba3bf95efaea4452975aea144a764402
+51,ambroxol,pharmacological chaperones,is a type of,ba3bf95efaea4452975aea144a764402
+52,ncgc326,noninhibitory chaperones,is a type of,ba3bf95efaea4452975aea144a764402
+53,panobinostat,proteostasis regulators,is a type of,ba3bf95efaea4452975aea144a764402
+54,trans-isrib,proteostasis regulators,is a type of,ba3bf95efaea4452975aea144a764402
+55,pladienolide b,proteostasis regulators,is a type of,ba3bf95efaea4452975aea144a764402
+56,lysofix-gba,fluorescence-quenched substrates,captures,ba3bf95efaea4452975aea144a764402
+57,gcase activity,functional lysosomal activity,is measured by,ba3bf95efaea4452975aea144a764402
+58,hgcase-1/23,monoclonal antibody,is used in,ba3bf95efaea4452975aea144a764402
+59,immunofluorescence assay,gcase,visualizes,ba3bf95efaea4452975aea144a764402
+60,lysosomal translocation,compound ncgc326,is associated with,c9c51ec400c44aafaed1197affee365f
+61,compound ncgc326,glucosylsphingosine accumulation,reverses,c9c51ec400c44aafaed1197affee365f
+62,combination therapy,synergistic effects,demonstrates,c9c51ec400c44aafaed1197affee365f
+63,compound ncgc326,proteostasis regulators,enhances levels of,c9c51ec400c44aafaed1197affee365f
+64,gcase-l444p variant,protein levels,are enhanced by,c9c51ec400c44aafaed1197affee365f
+65,physiologically relevant assays,molecular identification,facilitates,c9c51ec400c44aafaed1197affee365f
+66,molecular identification,pharmacological validation,leads to,c9c51ec400c44aafaed1197affee365f
+67,pharmacological validation,medicinal chemistry optimization,supports,c9c51ec400c44aafaed1197affee365f
+68,small molecules,gcase enzyme,target,c9c51ec400c44aafaed1197affee365f
+69,gcase enzyme,compound ncgc326,is targeted by,c9c51ec400c44aafaed1197affee365f
+70,experimental techniques,characterization methods,Experimental techniques are used to characterize materials.,7370cfe963604e849c06694ce7e14e02
+71,data analysis,statistical methods,Data analysis often employs statistical methods to interpret results.,7370cfe963604e849c06694ce7e14e02
+72,synthesis methods,material properties,Synthesis methods influence the properties of the resulting materials.,7370cfe963604e849c06694ce7e14e02
+73,thermal analysis,phase transitions,Thermal analysis techniques are used to study phase transitions in materials.,7370cfe963604e849c06694ce7e14e02
+74,mechanical testing,material strength,Mechanical testing assesses the strength of materials.,7370cfe963604e849c06694ce7e14e02
+75,therapeutic intervention,gaucher disease (gd),is a viable treatment for,c8ae4087001a40bca706eba9227868b2
+76,therapeutic intervention,parkinson's disease (pd),is a viable treatment for,c8ae4087001a40bca706eba9227868b2
+77,gaucher disease (gd),parkinson's disease (pd),are conditions addressed by,c8ae4087001a40bca706eba9227868b2
+78,gaucher disease (gd),therapeutic intervention,is developed for,c8ae4087001a40bca706eba9227868b2
+79,parkinson's disease (pd),therapeutic intervention,is developed for,c8ae4087001a40bca706eba9227868b2
+80,viability,therapeutic intervention,describes the quality of,c8ae4087001a40bca706eba9227868b2
+81,therapeutic intervention,treatment,is a type of,c8ae4087001a40bca706eba9227868b2
+82,gaucher disease (gd),treatment,requires a,c8ae4087001a40bca706eba9227868b2
+83,parkinson's disease (pd),treatment,requires a,c8ae4087001a40bca706eba9227868b2
+84,therapeutic intervention,development process,is part of the process of,c8ae4087001a40bca706eba9227868b2
+85,hibit-gba1-wt protein,droplet digital pcr (ddpcr) method,was identified via,6c2a68ae4c1242c5a213a2676c65637d
+86,hibit-gba1-wt protein,experimental procedures,was used for,6c2a68ae4c1242c5a213a2676c65637d
+87,droplet digital pcr (ddpcr) method,hibit-gba1-wt protein,identifies,6c2a68ae4c1242c5a213a2676c65637d
+88,experimental procedures,hibit-gba1-wt protein,involves,6c2a68ae4c1242c5a213a2676c65637d
+89,hibit reporter,11-amino acid peptide tag,is a type of,f50ebb05e4b24517bf3cf4f176ae098b
+90,hibit reporter,luminescence-based high-throughput screening (qhts),is suitable for,f50ebb05e4b24517bf3cf4f176ae098b
+91,human glucocerebrosidase (gcase),hibit,is tagged with,f50ebb05e4b24517bf3cf4f176ae098b
+92,n-terminal region,hibit,is location of,f50ebb05e4b24517bf3cf4f176ae098b
+93,transgene,gba1 signal peptide,contains,f50ebb05e4b24517bf3cf4f176ae098b
+94,transgene,hibit peptide tag,contains,f50ebb05e4b24517bf3cf4f176ae098b
+95,transgene,glycine/serine linker,contains upstream of,f50ebb05e4b24517bf3cf4f176ae098b
+96,gba1,transgene,is expressed from,f50ebb05e4b24517bf3cf4f176ae098b
+97,gba1 knockout h4,human neuroglioma cell line,is a type of,f50ebb05e4b24517bf3cf4f176ae098b
+98,reporter protein,localization,is subject to,f50ebb05e4b24517bf3cf4f176ae098b
+99,results,findings,Results are often referred to as findings in the context of materials science research.,f27800fba4884822a6f007f16011a77f
+100,monoclonal human gcase antibody,hgcase-1/23,is a type of,552c921bbe58430bba62fc716149ea1b
+101,hibit-tagged gcase,lysosomal localization,shows,552c921bbe58430bba62fc716149ea1b
+102,hibit-tagged gcase,endogenous gcase,is comparable to,552c921bbe58430bba62fc716149ea1b
+103,hibit tag,gcase trafficking,does not interfere with,552c921bbe58430bba62fc716149ea1b
+104,untagged gcase,endoplasmic reticulum accumulation,leads to,552c921bbe58430bba62fc716149ea1b
+105,gcase trafficking,overexpression,is perturbed by,552c921bbe58430bba62fc716149ea1b
+106,hibit-tagged gcase expression,gcase trafficking,addresses,552c921bbe58430bba62fc716149ea1b
+107,gcase,lysosomal localization,is associated with,552c921bbe58430bba62fc716149ea1b
+108,moderate expression,hibit-tagged gcase,results in,552c921bbe58430bba62fc716149ea1b
+109,high levels of untagged gcase,clear lysosomal localization,indicates lack of,552c921bbe58430bba62fc716149ea1b
+110,transgene cassette,citrate lyase beta-like (clybl) gene,is integrated into,30743621907743c18a3ac935f6b15c79
+111,transcription activator-like effector nucleases (talens),transgene cassette,is used to integrate,30743621907743c18a3ac935f6b15c79
+112,gba1 knockout h4 cell line,transgene cassette,receives integration of,30743621907743c18a3ac935f6b15c79
+113,integrative gene transfer method,transgene,allows efficient knock-in of,30743621907743c18a3ac935f6b15c79
+114,cag promoter,transgene,drives sustained expression of,30743621907743c18a3ac935f6b15c79
+115,gba1 knockout h4 clone,single copy,contains,30743621907743c18a3ac935f6b15c79
+116,transgene,local gene expression,has minimal impact on,30743621907743c18a3ac935f6b15c79
+117,transgene,global gene expression,has minimal impact on,30743621907743c18a3ac935f6b15c79
+118,intron,citrate lyase beta-like (clybl) gene,is a location within,30743621907743c18a3ac935f6b15c79
+119,transcription activator-like effector nucleases (talens),gene editing,is a method of,30743621907743c18a3ac935f6b15c79
+120,materials science,nanomaterials,Nanomaterials are a subfield of materials science focusing on materials with structures at the nanoscale.,d9a068b1fde144b8be1d9ae12c164f0a
+121,materials science,metallurgy,Metallurgy is a branch of materials science that deals with the physical and chemical behavior of metallic elements.,d9a068b1fde144b8be1d9ae12c164f0a
+122,materials science,polymer science,Polymer science is a field within materials science that studies the properties and applications of polymers.,d9a068b1fde144b8be1d9ae12c164f0a
+123,materials science,ceramics,"Ceramics are a category of materials studied within materials science, focusing on inorganic, non-metallic solids.",d9a068b1fde144b8be1d9ae12c164f0a
+124,materials science,composite materials,Composite materials are made from two or more constituent materials with significantly different physical or chemical properties.,d9a068b1fde144b8be1d9ae12c164f0a
+125,hibit peptide reporter tag,gcase variants,preserves trafficking and function of,1c5675f4fb034241aaeb0e95567374fd
+126,hibit-gcase h4 cell lines,ultrahigh-throughput screening format,tested in,1c5675f4fb034241aaeb0e95567374fd
+127,ultrahigh-throughput screening format,"1,536-well plate",is a type of,1c5675f4fb034241aaeb0e95567374fd
+128,hibit-gcase-l444p variant,dose-dependent response,shows,1c5675f4fb034241aaeb0e95567374fd
+129,primary screening assay,716 compounds,identified,1c5675f4fb034241aaeb0e95567374fd
+130,716 compounds,hit compounds,represents,1c5675f4fb034241aaeb0e95567374fd
+131,hit compounds,140 confirmed hits,includes,1c5675f4fb034241aaeb0e95567374fd
+132,final hit compounds,mechanisms of action,represented several,1c5675f4fb034241aaeb0e95567374fd
+133,final hit compounds,epigenetic mechanisms,includes,1c5675f4fb034241aaeb0e95567374fd
+134,cell-based assay platform,quantitative high-throughput screening (qhts),provides,1c5675f4fb034241aaeb0e95567374fd
+135,biological modulators,proteasome inhibitors,are types of,d8bea43d8e874d7089c5b3ce753e7125
+136,biological modulators,gsk-3 inhibitors,are types of,d8bea43d8e874d7089c5b3ce753e7125
+137,pladienolide b,potent compounds,is a type of,d8bea43d8e874d7089c5b3ce753e7125
+138,trans-isrib,potent compounds,is a type of,d8bea43d8e874d7089c5b3ce753e7125
+139,pladienolide b,gsk-3 inhibitors,is a specific example of,d8bea43d8e874d7089c5b3ce753e7125
+140,trans-isrib,proteasome inhibitors,is a specific example of,d8bea43d8e874d7089c5b3ce753e7125
+141,proteasome inhibitors,therapeutic applications,are used in,d8bea43d8e874d7089c5b3ce753e7125
+142,gsk-3 inhibitors,therapeutic applications,are used in,d8bea43d8e874d7089c5b3ce753e7125
+143,potent compounds,screening methods,are identified by,d8bea43d8e874d7089c5b3ce753e7125
+144,biological modulators,cellular regulation,are involved in,d8bea43d8e874d7089c5b3ce753e7125
+145,materials science,conclusion,The conclusion summarizes findings and implications derived from research in materials science.,c2e70deee6c2442cb169e8dcb53c2a61
+146,small-molecule gcase enhancers,cell-based assays,is a challenge for,92745fc73fe94b628d4d8ad3859e2297
+147,cell-based assays,high-throughput screening (hts),is amenable to,92745fc73fe94b628d4d8ad3859e2297
+148,high-throughput screening (hts),compound identification,drives,92745fc73fe94b628d4d8ad3859e2297
+149,compound identification,pharmacological validation,is followed by,92745fc73fe94b628d4d8ad3859e2297
+150,pharmacological validation,medicinal chemistry optimization,is part of,92745fc73fe94b628d4d8ad3859e2297
+151,novel chemical entities,gcase enhancers,is a type of,92745fc73fe94b628d4d8ad3859e2297
+152,gba1 molecular target,scientific knowledge,informs the design of,92745fc73fe94b628d4d8ad3859e2297
+153,gcase enhancers,therapeutic agents,is a type of,92745fc73fe94b628d4d8ad3859e2297
+154,integrated approach,rational drug development,enables,92745fc73fe94b628d4d8ad3859e2297
+155,physiologically relevant,gcase enhancers,is a characteristic of,92745fc73fe94b628d4d8ad3859e2297
+156,translational assays,drug discovery,accelerate,58ba000eb1f74acbaf3fb5b74133f5f8
+157,n-terminal hibit tag,gcase maturation,has negligible influence on,58ba000eb1f74acbaf3fb5b74133f5f8
+158,n-terminal hibit tag,gcase trafficking,has negligible influence on,58ba000eb1f74acbaf3fb5b74133f5f8
+159,n-terminal hibit tag,gcase function,has negligible influence on,58ba000eb1f74acbaf3fb5b74133f5f8
+160,hibit-gcase-l444p assay,protein complexes (pcs),detects,58ba000eb1f74acbaf3fb5b74133f5f8
+161,hibit-gcase-l444p assay,protein residues (prs),detects,58ba000eb1f74acbaf3fb5b74133f5f8
+162,hibit-gcase-l444p assay,lead discovery,utility for,58ba000eb1f74acbaf3fb5b74133f5f8
+163,hibit-gcase-l444p assay,drug development,utility for,58ba000eb1f74acbaf3fb5b74133f5f8
+164,gcase maturation,gcase trafficking,affects,58ba000eb1f74acbaf3fb5b74133f5f8
+165,gcase maturation,gcase function,affects,58ba000eb1f74acbaf3fb5b74133f5f8
+166,gba1 gene,gaucher disease (gd),is a target for,bf3a1236649540429951c4a914dbbb3f
+167,gba1 gene,gba1-related parkinson's disease (gba1-pd),is related to,bf3a1236649540429951c4a914dbbb3f
+168,drug discovery pipeline,multilevel approach,is a type of,bf3a1236649540429951c4a914dbbb3f
+169,small molecules,gcase-l444p variant,increase levels of,bf3a1236649540429951c4a914dbbb3f
+170,lysosomal activity,lysosomal translocation,is associated with,bf3a1236649540429951c4a914dbbb3f
+171,pladienolide b,mechanism of action,has a novel,bf3a1236649540429951c4a914dbbb3f
+172,ncgc326,pharmacological compound (pc),is an improved derivative of,bf3a1236649540429951c4a914dbbb3f
+173,glucer accumulation,h4 cell model,is reversed in,bf3a1236649540429951c4a914dbbb3f
+174,gcase-l444p variant,protein levels,affects,bf3a1236649540429951c4a914dbbb3f
+175,lysosomal activity,small molecules,is enhanced by,bf3a1236649540429951c4a914dbbb3f
+176,combinatorial matrix screening,synergistic interactions,is a method to identify,2772668019984017a983a48b60d06f93
+177,pharmacological agents,combinations,interact synergistically with,2772668019984017a983a48b60d06f93
+178,gcase-l444p variant,enzyme levels,enhanced by,2772668019984017a983a48b60d06f93
+179,screening hits,validation assays,validated in,2772668019984017a983a48b60d06f93
+180,therapeutic intervention,patients,provides for,2772668019984017a983a48b60d06f93
+181,neuronopathic gaucher disease,gba1-related parkinson's disease,is a disease associated with,2772668019984017a983a48b60d06f93
+182,gcase activity deficiencies,related diseases,associated with,2772668019984017a983a48b60d06f93
+183,screening hits,subsequent investigation,should be prioritized for,2772668019984017a983a48b60d06f93
+184,therapeutic intervention,efficacy,is a characteristic of,2772668019984017a983a48b60d06f93
+185,gcase-l444p variant,synergistic interactions,involves,2772668019984017a983a48b60d06f93

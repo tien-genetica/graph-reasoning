@@ -1,0 +1,30 @@
+{
+  "processed_files": [
+    "test-ambroxol/10.1002_syn.21967.pdf",
+    "test-ambroxol/10.3988_jcn.2023.0172.pdf",
+    "test-ambroxol/10.1007_s00702-022-02531-3.pdf",
+    "test-ambroxol/ijms-25-12114.pdf",
+    "test-ambroxol/10.3389_fcell.2020.00271.pdf",
+    "test-ambroxol/10.1007_s13311-020-00920-8.pdf",
+    "test-ambroxol/10.1002_ana.24790.pdf",
+    "test-ambroxol/williams-et-al-high-throughput-screening-for-small-molecule-stabilizers-of-misfolded-glucocerebrosidase-in-gaucher.pdf",
+    "test-ambroxol/antioxidants-14-00396.pdf",
+    "test-ambroxol/124.full.pdf",
+    "test-ambroxol/10.1093_brain_awu020.pdf",
+    "test-ambroxol/medicina-59-01756.pdf",
+    "test-ambroxol/10.1038_srep31380.pdf",
+    "test-ambroxol/ijms-24-04437.pdf",
+    "test-ambroxol/American J Hematol - 2021 - Istaiti - Upgrading the evidence for the use of ambroxol in Gaucher disease and GBA related.pdf",
+    "test-ambroxol/ijms-26-03435-v2.pdf",
+    "test-ambroxol/10.1101_2024.03.22.586364.pdf",
+    "test-ambroxol/10.1186_s13195-022-01103-7.pdf",
+    "test-ambroxol/e000535.full.pdf",
+    "test-ambroxol/10.1186_s12883-024-03629-9.pdf",
+    "test-ambroxol/10.3389_fnagi.2023.1163184.pdf",
+    "test-ambroxol/10.1186_s12883-019-1252-3.pdf",
+    "test-ambroxol/10.1038_s41598-018-19479-8.pdf"
+  ],
+  "current_graph_path": "./ambroxol_output_v2//graph_augmented_graphML_integrated.graphml",
+  "last_updated": "2025-06-20T13:04:24.548359",
+  "total_files_processed": 23
+}

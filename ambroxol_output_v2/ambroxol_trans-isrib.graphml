@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d0" for="edge" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="ambroxol"/>
+<node id="glucocerebrosidase (gcase) activity"/>
+<node id="abx"/>
+<node id="mechanism of action"/>
+<node id="pladienolide b"/>
+<node id="potent compounds"/>
+<node id="trans-isrib"/>
+<node id="tfeb"/>
+<edge source="ambroxol" target="glucocerebrosidase (gcase) activity">
+  <data key="d0">increases</data>
+</edge>
+<edge source="glucocerebrosidase (gcase) activity" target="abx">
+  <data key="d0">enhances effect
+on</data>
+</edge>
+<edge source="abx" target="mechanism of action">
+  <data key="d0">has unique
+mechanism on</data>
+</edge>
+<edge source="mechanism of action" target="pladienolide b">
+  <data key="d0">has a
+novel</data>
+</edge>
+<edge source="pladienolide b" target="potent compounds">
+  <data key="d0">is a
+type of</data>
+</edge>
+<edge source="potent compounds" target="trans-isrib">
+  <data key="d0">is a
+type of</data>
+</edge>
+<edge source="trans-isrib" target="tfeb">
+  <data key="d0"></data>
+</edge>
+</graph></graphml>

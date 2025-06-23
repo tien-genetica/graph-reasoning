@@ -1,0 +1,791 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d4" for="edge" attr.name="width" attr.type="double"/>
+<key id="d3" for="edge" attr.name="title" attr.type="string"/>
+<key id="d2" for="node" attr.name="size" attr.type="long"/>
+<key id="d1" for="node" attr.name="color" attr.type="string"/>
+<key id="d0" for="node" attr.name="group" attr.type="long"/>
+<graph edgedefault="undirected"><node id="abx">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">12</data>
+</node>
+<node id="advanced malignancy">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">1</data>
+</node>
+<node id="alpha-synuclein">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">2</data>
+</node>
+<node id="alpha-synuclein autophagy-lysosome degradation pathways">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="ambroxol (abx)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">6</data>
+</node>
+<node id="ambroxol in new and early dementia with lewy bodies (aneed)">
+  <data key="d0">5</data>
+  <data key="d1">#b9db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="aneed">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">3</data>
+</node>
+<node id="aneed study">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="antibiotic abx">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">6</data>
+</node>
+<node id="antiparkinsonian drugs">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="antiparkinsonian medications">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="caregiver">
+  <data key="d0">9</data>
+  <data key="d1">#dbc957</data>
+  <data key="d2">2</data>
+</node>
+<node id="chaperone-mediated autophagy (cma)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">3</data>
+</node>
+<node id="clinical outcome measures">
+  <data key="d0">11</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">1</data>
+</node>
+<node id="cma">
+  <data key="d0">12</data>
+  <data key="d1">#db5f57</data>
+  <data key="d2">1</data>
+</node>
+<node id="degradation pathways">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="dementia medications">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">2</data>
+</node>
+<node id="dementia with lewy bodies">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">3</data>
+</node>
+<node id="dementia with lewy bodies (dlb)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">7</data>
+</node>
+<node id="digital cerebrospinal fluid (csf) biomarkers">
+  <data key="d0">11</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">1</data>
+</node>
+<node id="double-blind">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="exclusion criteria">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">5</data>
+</node>
+<node id="gba gene mutations">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">5</data>
+</node>
+<node id="gba mutations">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">2</data>
+</node>
+<node id="gcase activity">
+  <data key="d0">4</data>
+  <data key="d1">#57dbc9</data>
+  <data key="d2">1</data>
+</node>
+<node id="gcase dysfunction">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="gcase enzyme activity">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">3</data>
+</node>
+<node id="gcase enzyme levels">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="genome-wide association study (gwas)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="glucocerebrosidase">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="human cells">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="in vivo experiments">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="inclusion criteria">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">1</data>
+</node>
+<node id="informed consent capacity">
+  <data key="d0">9</data>
+  <data key="d1">#dbc957</data>
+  <data key="d2">1</data>
+</node>
+<node id="major cardiovascular events">
+  <data key="d0">13</data>
+  <data key="d1">#5f57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="mckeith criteria">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="mild cognitive impairment due to dlb (mci-dlb)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="mini-mental state examination (mmse) score">
+  <data key="d0">14</data>
+  <data key="d1">#84db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="multicenter clinical trial">
+  <data key="d0">15</data>
+  <data key="d1">#db57b9</data>
+  <data key="d2">1</data>
+</node>
+<node id="parallel group design">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="parkinson's disease (pd)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="patients">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="placebo-controlled">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="population studies">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">1</data>
+</node>
+<node id="preclinical evidence">
+  <data key="d0">10</data>
+  <data key="d1">#db9457</data>
+  <data key="d2">1</data>
+</node>
+<node id="preclinical trials">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="randomized">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="rationale for treatment">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="reduced alpha-synuclein clearance">
+  <data key="d0">8</data>
+  <data key="d1">#57b9db</data>
+  <data key="d2">2</data>
+</node>
+<node id="sensitivity to antibiotics">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">1</data>
+</node>
+<node id="toxic alpha-synuclein (as) species">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="traditional cerebrospinal fluid (csf) biomarkers">
+  <data key="d0">11</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">1</data>
+</node>
+<node id="cerebrospinal fluid (csf)">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="effects">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="glucocerebrosidase (gcase) activity">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="lysosomal alpha-synuclein clearance">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="mechanism of action">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="synucleinopathies">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">3</data>
+</node>
+<node id="treatment rationale">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="pathological deposition">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">1</data>
+</node>
+<node id="modifying drug">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="clinical study">
+  <data key="d0">5</data>
+  <data key="d1">#b9db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="safety">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="tolerability">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="clinical trial">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">6</data>
+</node>
+<node id="efficacy profile">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="patients with dlb">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="safety profile">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="tolerability profile">
+  <data key="d0">6</data>
+  <data key="d1">#9457db</data>
+  <data key="d2">1</data>
+</node>
+<node id="study participants">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">3</data>
+</node>
+<node id="dosage">
+  <data key="d0">7</data>
+  <data key="d1">#57db5f</data>
+  <data key="d2">2</data>
+</node>
+<node id="frequency of contact">
+  <data key="d0">9</data>
+  <data key="d1">#dbc957</data>
+  <data key="d2">1</data>
+</node>
+<node id="participant">
+  <data key="d0">9</data>
+  <data key="d1">#dbc957</data>
+  <data key="d2">2</data>
+</node>
+<node id="pathological alpha-synuclein">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="pathological alpha-synuclein (as) depositions">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">2</data>
+</node>
+<node id="treatment efficacy">
+  <data key="d0">11</data>
+  <data key="d1">#5784db</data>
+  <data key="d2">3</data>
+</node>
+<node id="enhancement of clearance">
+  <data key="d0">12</data>
+  <data key="d1">#db5f57</data>
+  <data key="d2">1</data>
+</node>
+<node id="disease-modifying pharmacological treatment">
+  <data key="d0">3</data>
+  <data key="d1">#c957db</data>
+  <data key="d2">1</data>
+</node>
+<node id="dementia">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="diagnosis">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">3</data>
+</node>
+<node id="medical conditions">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">1</data>
+</node>
+<node id="psychiatric disorders">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">1</data>
+</node>
+<node id="surgical conditions">
+  <data key="d0">2</data>
+  <data key="d1">#db5784</data>
+  <data key="d2">1</data>
+</node>
+<node id="risk of developing pd">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="alpha-synuclein metabolism">
+  <data key="d0">4</data>
+  <data key="d1">#57dbc9</data>
+  <data key="d2">1</data>
+</node>
+<node id="initial visit">
+  <data key="d0">13</data>
+  <data key="d1">#5f57db</data>
+  <data key="d2">1</data>
+</node>
+<node id="screening">
+  <data key="d0">14</data>
+  <data key="d1">#84db57</data>
+  <data key="d2">1</data>
+</node>
+<node id="phase iia">
+  <data key="d0">15</data>
+  <data key="d1">#db57b9</data>
+  <data key="d2">1</data>
+</node>
+<node id="risk of developing">
+  <data key="d0">1</data>
+  <data key="d1">#57db94</data>
+  <data key="d2">1</data>
+</node>
+<node id="clinical evidence">
+  <data key="d0">10</data>
+  <data key="d1">#db9457</data>
+  <data key="d2">1</data>
+</node>
+<node id="autophagic pathways">
+  <data key="d0">8</data>
+  <data key="d1">#57b9db</data>
+  <data key="d2">1</data>
+</node>
+<node id="endolysosomal pathways">
+  <data key="d0">8</data>
+  <data key="d1">#57b9db</data>
+  <data key="d2">1</data>
+</node>
+<edge source="abx" target="cerebrospinal fluid (csf)">
+  <data key="d3">penetrates into</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="dementia with lewy bodies (dlb)">
+  <data key="d3">is a modifying treatment in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="effects">
+  <data key="d3">show</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">enhances effect on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="lysosomal alpha-synuclein clearance">
+  <data key="d3">enhances</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="mechanism of action">
+  <data key="d3">has unique mechanism on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="synucleinopathies">
+  <data key="d3">is tested in models of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="toxic alpha-synuclein (as) species">
+  <data key="d3">reduces concentration of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="treatment rationale">
+  <data key="d3">is established by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="chaperone-mediated autophagy (cma)">
+  <data key="d3">is a potential treatment for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="preclinical trials">
+  <data key="d3">show promising effects of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="abx" target="rationale for treatment">
+  <data key="d3">is based on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="advanced malignancy" target="exclusion criteria">
+  <data key="d3">is part of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="alpha-synuclein" target="dementia with lewy bodies">
+  <data key="d3">is characterized by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="alpha-synuclein" target="pathological deposition">
+  <data key="d3">causes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="alpha-synuclein autophagy-lysosome degradation pathways" target="gcase enzyme activity">
+  <data key="d3">enhanced by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="dementia with lewy bodies (dlb)">
+  <data key="d3">is a modifying drug for</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="modifying drug">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="patients">
+  <data key="d3">is administered to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="degradation pathways">
+  <data key="d3">may affect</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="gcase enzyme activity">
+  <data key="d3">may increase</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol (abx)" target="gcase enzyme levels">
+  <data key="d3">may increase</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="ambroxol in new and early dementia with lewy bodies (aneed)" target="clinical study">
+  <data key="d3">is a</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="aneed" target="effects">
+  <data key="d3">investigates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="aneed" target="safety">
+  <data key="d3">investigates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="aneed" target="tolerability">
+  <data key="d3">investigates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="aneed study" target="clinical trial">
+  <data key="d3">is an</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="clinical trial">
+  <data key="d3">is part of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="efficacy profile">
+  <data key="d3">evaluates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="patients with dlb">
+  <data key="d3">is tested on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="safety profile">
+  <data key="d3">evaluates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="synucleinopathies">
+  <data key="d3">is used for treating</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antibiotic abx" target="tolerability profile">
+  <data key="d3">evaluates</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antiparkinsonian drugs" target="study participants">
+  <data key="d3">are used by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="antiparkinsonian medications" target="dosage">
+  <data key="d3">are prescribed in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="caregiver" target="frequency of contact">
+  <data key="d3">contacts</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="caregiver" target="participant">
+  <data key="d3">has contact with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="chaperone-mediated autophagy (cma)" target="pathological alpha-synuclein">
+  <data key="d3">may reduce</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="chaperone-mediated autophagy (cma)" target="pathological alpha-synuclein (as) depositions">
+  <data key="d3">may reduce</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="clinical outcome measures" target="treatment efficacy">
+  <data key="d3">measures</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="cma" target="enhancement of clearance">
+  <data key="d3">may lead to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia medications" target="dosage">
+  <data key="d3">are prescribed in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia medications" target="study participants">
+  <data key="d3">are used by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies" target="disease-modifying pharmacological treatment">
+  <data key="d3">has no available</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies" target="gba mutations">
+  <data key="d3">are associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="dementia">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="diagnosis">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="gba gene mutations">
+  <data key="d3">are more prevalent in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="synucleinopathies">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="dementia with lewy bodies (dlb)" target="patients">
+  <data key="d3">have</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="digital cerebrospinal fluid (csf) biomarkers" target="treatment efficacy">
+  <data key="d3">measures</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="double-blind" target="clinical trial">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="exclusion criteria" target="medical conditions">
+  <data key="d3">includes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="exclusion criteria" target="psychiatric disorders">
+  <data key="d3">includes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="exclusion criteria" target="surgical conditions">
+  <data key="d3">includes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="exclusion criteria" target="sensitivity to antibiotics">
+  <data key="d3">is part of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba gene mutations" target="parkinson's disease (pd)">
+  <data key="d3">are associated with a higher incidence in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba gene mutations" target="risk of developing pd">
+  <data key="d3">increases the</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba gene mutations" target="gcase dysfunction">
+  <data key="d3">is caused by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba gene mutations" target="genome-wide association study (gwas)">
+  <data key="d3">confirms correlation with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gba mutations" target="population studies">
+  <data key="d3">demonstrate higher incidence of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase activity" target="alpha-synuclein metabolism">
+  <data key="d3">is associated with</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase dysfunction" target="glucocerebrosidase">
+  <data key="d3">is related to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="gcase enzyme activity" target="in vivo experiments">
+  <data key="d3">demonstrate effects on</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="human cells" target="glucocerebrosidase (gcase) activity">
+  <data key="d3">is affected by</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="inclusion criteria" target="study participants">
+  <data key="d3">applies to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="informed consent capacity" target="participant">
+  <data key="d3">is required from</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="major cardiovascular events" target="initial visit">
+  <data key="d3">occurred prior to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="mckeith criteria" target="diagnosis">
+  <data key="d3">establishes</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="mild cognitive impairment due to dlb (mci-dlb)" target="diagnosis">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="mini-mental state examination (mmse) score" target="screening">
+  <data key="d3">is a measure in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="multicenter clinical trial" target="phase iia">
+  <data key="d3">is a type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="parallel group design" target="clinical trial">
+  <data key="d3">is a design type of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="parkinson's disease (pd)" target="risk of developing">
+  <data key="d3">is higher for carriers of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="placebo-controlled" target="clinical trial">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="preclinical evidence" target="clinical evidence">
+  <data key="d3">supports</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="randomized" target="clinical trial">
+  <data key="d3">is a characteristic of</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="reduced alpha-synuclein clearance" target="autophagic pathways">
+  <data key="d3">is caused by failure in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="reduced alpha-synuclein clearance" target="endolysosomal pathways">
+  <data key="d3">is caused by failure in</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="toxic alpha-synuclein (as) species" target="pathological alpha-synuclein (as) depositions">
+  <data key="d3">is related to</data>
+  <data key="d4">1.0</data>
+</edge>
+<edge source="traditional cerebrospinal fluid (csf) biomarkers" target="treatment efficacy">
+  <data key="d3">measures</data>
+  <data key="d4">1.0</data>
+</edge>
+</graph></graphml>
